@@ -18,14 +18,14 @@ public class Jalak extends Animal {
     * @param f Jumlah makanan Jalak.
     * @param t Status jinak Jalak.
     */
-  public Jalak(float w, float f, boolean t) {
+  public Jalak(double w, double f, boolean t) {
   	super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Jalak.
     * @return Mengembalikan string yang merepresentasikan suara Jalak.
     */
-  public string Interact() {
+  public String Interact() {
   	return "Tweet!";
   }
   /**

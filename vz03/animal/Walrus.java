@@ -4,28 +4,32 @@
   * @author Catherine Almira - 13515111
   */
 public class Walrus extends Animal {
-  /** Constructor.
+  /**
+    * Constructor.
     * Menciptakan objek Walrus.
     */
   public Walrus() {
     super(1000, 50, false);
   }
-  /** Constructor dengan parameter.
+  /**
+    * Constructor dengan parameter.
     * Menciptakan objek Walrus dengan berat w, jumlah makanan f, dan status jinak t.
     * @param w Berat Walrus.
     * @param f Jumlah makanan Walrus.
     * @param t Status jinak Walrus.
     */
-  public Walrus(float w, float f, boolean t) {
+  public Walrus(double w, double f, boolean t) {
     super(w, f, t);
   }
-  /** Interaksi yang dilakukan Walrus.
+  /**
+    * Interaksi yang dilakukan Walrus.
     * @return Mengembalikan string yang merepresentasikan suara Walrus.
     */
-  public string Interact() {
+  public String Interact() {
     return "Aaarhhh";
   }
-  /** Render dari Walrus.
+  /**
+    * Render dari Walrus.
     * @return Mengembalikan char yang merupakan representasi kode Walrus.
     */
   public char Render() {
