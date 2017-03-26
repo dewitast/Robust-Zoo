@@ -1,7 +1,7 @@
 package animal;
 import point.*;
 
-/** 
+/**
   * File : Animal.java
   * Kelas animal merepresentasikan binatang beserta perilakunya.
   * @author Dewita Sonya Tarabunga - 13515021
@@ -11,7 +11,6 @@ public abstract class Animal {
   protected float food;
   protected boolean tame;
   protected Point pos;
-
   /**
     * Constructor tanpa parameter.
     */
@@ -64,28 +63,32 @@ public abstract class Animal {
     return pos;
   }
   /**
-    * Mengubah nilai berat binatang.
+    * I.S. Berat binatang sembarang dan w terdefinisi.
+    * F.S. Berat binatang bernilai w.
     * @param w nilai berat yang akan dimasukkan.
     */
   public void SetWeight(float w) {
     weight = w;
   }
   /**
-    * Mengubah nilai jumlah makanan binatang.
+    * I.S. Jumlah makanan binatang sembarang dan f terdefinisi.
+    * F.S. Jumlah makanan binatang bernilai f.
     * @param f nilai jumlah makanan yang akan dimasukkan.
     */
   public void SetFood(float f) {
     food = f;
   }
   /**
-    * Mengubah kejinakan binatang.
+    * I.S. Status jinak binatang sembarang dan t terdefinisi.
+    * F.S. Status jinak binatang bernilai t.
     * @param t kejinakan yang akan dimasukkan.
     */
   public void SetTame(boolean t) {
     tame = t;
   }
   /**
-    * Mengubah lokasi binatang.
+    * I.S. Lokasi binatang sembarang dan p terdefinisi.
+    * F.S. Lokasi binatang bernilai p.
     * @param p lokasi yang akan dimasukkan.
     */
   public void SetPoint(Point p) {
@@ -93,7 +96,8 @@ public abstract class Animal {
     pos.SetOrdinat(p.GetOrdinat());
   }
   /**
-    * Mengubah lokasi binatang.
+    * I.S. Lokasi binatang sembarang dan abs serta ord terdefinisi.
+    * F.S. Lokasi binatang bernilai abs, ord.
     * @param abs nilai absis lokasi yang akan dimasukkan.
     * @param ord nilai ordinat lokasi yang akan dimasukkan.
     */
