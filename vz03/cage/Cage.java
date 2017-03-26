@@ -2,7 +2,7 @@ package class;
 import animal.*;
 import System.*;
 
-/** 
+/**
   * File : Cage.java
   * Kelas cage merupakan kumpulan dari beberapa titik beserta
   * kumpulan binatang yang terdapat di dalamnya.
@@ -35,7 +35,7 @@ public class Cage {
     animal[] = new Animal[3*maxSize/10];
   }
   /**
-    * Constructor tanpa parameter.
+    * Constructor dengan parameter.
     */
   public Cage(int posOrd, int posAbs) {
     size = 1;
