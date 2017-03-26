@@ -1,11 +1,11 @@
-/** File : Exit.java
-  * Penanggung jawab : Sylvia Juliana - 13515070
-  */
-
-/** Kelas Exit merepresentasikan pintu keluar.
+/**
+  * File : Exit.java
+  * Kelas Exit merepresentasikan pintu keluar.
+  * @author Sylvia Juliana - 13515070
   */
 public class Exit extends Exit {
-  /** Render dari Exit.
+  /**
+    * Render dari Exit.
     * @return Mengembalikan char yang merupakan representasi kode Exit.
     */
   public char Render() {
