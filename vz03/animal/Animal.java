@@ -1,11 +1,10 @@
-/** File : Animal.java
-  * Penanggung jawab : Dewita Sonya Tarabunga - 13515021
-  */
-
 package animal;
 import point.*;
 
-/** Kelas animal merepresentasikan binatang beserta perilakunya.
+/** 
+  * File : Animal.java
+  * Kelas animal merepresentasikan binatang beserta perilakunya.
+  * @author Dewita Sonya Tarabunga - 13515021
   */
 public abstract class Animal {
   protected float weight;
