@@ -18,14 +18,14 @@ public class Duck extends Animal {
     * @param k Jumlah makanan Duck.
     * @param t Status jinak Duck.
     */
-  public Duck(float w, float f, boolean t) {
+  public Duck(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Duck.
     * @return Mengembalikan string yang merepresentasikan suara Duck.
     */
-  public string Interact() {
+  public String Interact() {
     return ("Quaackk!");
   }
   /**

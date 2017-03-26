@@ -18,14 +18,14 @@ public class Giraffe extends Animal {
     * @param k Jumlah makanan Giraffe.
     * @param t Status jinak Giraffe.
     */
-  public Giraffe(float w, float f, boolean t) {
+  public Giraffe(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Giraffe.
     * @return Mengembalikan string yang merepresentasikan suara Giraffe.
     */
-  public string Interact() {
+  public String Interact() {
     return ("Hmm!");
   }
   /**

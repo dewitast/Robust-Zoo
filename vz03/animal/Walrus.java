@@ -18,14 +18,14 @@ public class Walrus extends Animal {
     * @param f Jumlah makanan Walrus.
     * @param t Status jinak Walrus.
     */
-  public Walrus(float w, float f, boolean t) {
+  public Walrus(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Walrus.
     * @return Mengembalikan string yang merepresentasikan suara Walrus.
     */
-  public string Interact() {
+  public String Interact() {
     return "Aaarhhh";
   }
   /**

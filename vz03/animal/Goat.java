@@ -18,14 +18,14 @@ public class Goat extends Animal {
     * @param f Jumlah makanan Goat.
     * @param t Status jinak Goat.
     */
-  public Goat(float w, float f, boolean t) {
+  public Goat(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Goat.
     * @return Mengembalikan string yang merepresentasikan suara Goat.
     */
-  public string Interact() {
+  public String Interact() {
     return "Mbeeeee!";
   }
   /**

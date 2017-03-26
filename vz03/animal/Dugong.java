@@ -18,14 +18,14 @@ public class Dugong extends Animal {
     * @param k Jumlah makanan Dugong.
     * @param t Status jinak Dugong.
     */
-  public Dugong(float w, float f, boolean t) {
+  public Dugong(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Dugong.
     * @return Mengembalikan string yang merepresentasikan suara Dugong.
     */
-  public string Interact() {
+  public String Interact() {
     return ("Splashh!");
   }
   /**

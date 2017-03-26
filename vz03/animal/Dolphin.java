@@ -18,14 +18,14 @@ public class Dolphin extends Animal {
     * @param f Jumlah makanan Dolphin.
     * @param t Status jinak Dolphin.
     */
-  public Dolphin(float w, float f, boolean t) {
+  public Dolphin(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Dolphin.
     * @return Mengembalikan string yang merepresentasikan suara Dolphin.
     */
-  public string Interact() {
+  public String Interact() {
     return "A a a a a";
   }
   /**

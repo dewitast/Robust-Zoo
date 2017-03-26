@@ -18,14 +18,14 @@ public class Lion extends Animal {
     * @param k Jumlah makanan Lion.
     * @param t Status jinak Lion.
     */
-  public Lion(float w, float f, boolean t) {
+  public Lion(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Lion.
     * @return Mengembalikan string yang merepresentasikan suara Lion.
     */
-  public string Interact() {
+  public String Interact() {
     return ("Roaarr!");
   }
   /**

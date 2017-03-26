@@ -18,14 +18,14 @@ public class Cobra extends Animal {
     * @param f Jumlah makanan Cobra.
     * @param t Status jinak Cobra.
     */
-  public Cobra(float w, float f, boolean t) {
+  public Cobra(double w, double f, boolean t) {
   	super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Cobra.
     * @return Mengembalikan string yang merepresentasikan suara Cobra.
     */
-  public string Interact() {
+  public String Interact() {
   	return "Ssshh!";
   }
   /**

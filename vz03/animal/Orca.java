@@ -18,14 +18,14 @@ public class Orca extends Animal {
     * @param f Jumlah makanan Orca.
     * @param t Status jinak Orca.
     */
-  public Orca(float w, float f, boolean t) {
+  public Orca(double w, double f, boolean t) {
   	super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Orca.
     * @return Mengembalikan string yang merepresentasikan suara Orca.
     */
-  public string Interact() {
+  public String Interact() {
   	return "Ngiak!";
   }
   /**

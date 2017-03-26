@@ -18,14 +18,14 @@ public class Elephant extends Animal {
     * @param k Jumlah makanan Cormorant.
     * @param t Status jinak Cormorant.
   */
-  public Cormorant(float w, float f, boolean t) {
+  public Cormorant(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Cormorant.
     * @return Mengembalikan string yang merepresentasikan suara Cormorant.
     */
-  public string Interact() {
+  public String Interact() {
     return ("Ooookkk!");
   }
   /**

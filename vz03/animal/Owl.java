@@ -18,14 +18,14 @@ public class Owl extends Animal {
     * @param f Jumlah makanan Owl.
     * @param t Status jinak Owl.
     */
-  public Owl(float w, float f, boolean t) {
+  public Owl(double w, double f, boolean t) {
   	super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Owl.
     * @return Mengembalikan string yang merepresentasikan suara Owl.
     */
-  public string Interact() {
+  public String Interact() {
   	return "Hoot!";
   }
   /**

@@ -18,14 +18,14 @@ public class Komodo extends Animal {
     * @param k Jumlah makanan Komodo.
     * @param t Status jinak Komodo.
     */
-  public Komodo(float w, float f, boolean t) {
+  public Komodo(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Komodo.
     * @return Mengembalikan string yang merepresentasikan suara Komodo.
     */
-  public string Interact() {
+  public String Interact() {
     return ("Slpp!");
   }
   /**

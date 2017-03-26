@@ -18,14 +18,14 @@ public class Polar_Bear extends Animal {
     * @param f Jumlah makanan Polar_Bear.
     * @param t Status jinak Polar_Bear.
     */
-  public Polar_Bear(float w, float f, boolean t) {
+  public Polar_Bear(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Polar_Bear.
     * @return Mengembalikan string yang merepresentasikan suara Polar_Bear.
     */
-  public string Interact() {
+  public String Interact() {
     return "Auuummm";
   }
   /**

@@ -18,14 +18,14 @@ public class Alligator extends Animal {
     * @param f Jumlah makanan Alligator.
     * @param t Status jinak Alligator.
     */
-  public Alligator(float w, float f, boolean t) {
+  public Alligator(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Alligator.
     * @return Mengembalikan string yang merepresentasikan suara Alligator.
     */
-  public string Interact() {
+  public String Interact() {
     return ("Grrrrrr");
   }
   /**

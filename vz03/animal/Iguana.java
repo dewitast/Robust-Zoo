@@ -18,14 +18,14 @@ public class Iguana extends Animal {
     * @param f Jumlah makanan Iguana.
     * @param t Status jinak Iguana.
     */
-  public Iguana(float w, float f, boolean t) {
+  public Iguana(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Iguana.
     * @return Mengembalikan string yang merepresentasikan suara Iguana.
     */
-  public string Interact() {
+  public String Interact() {
     return "Purrrr";
   }
   /**

@@ -18,14 +18,14 @@ public class Tiger extends Animal {
     * @param f Jumlah makanan Tiger.
     * @param t Status jinak Tiger.
     */
-  public Tiger(float w, float f, boolean t) {
+  public Tiger(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Tiger.
     * @return Mengembalikan string yang merepresentasikan suara Tiger.
     */
-  public string Interact() {
+  public String Interact() {
     return "Growl";
   }
   /**

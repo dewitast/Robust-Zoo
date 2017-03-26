@@ -18,14 +18,14 @@ public class Eagle extends Animal {
     * @param f Jumlah makanan Eagle.
     * @param t Status jinak Eagle.
     */
-  public Eagle(float w, float f, boolean t) {
+  public Eagle(double w, double f, boolean t) {
   	super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Eagle.
     * @return Mengembalikan string yang merepresentasikan suara Eagle.
     */
-  public string Interact() {
+  public String Interact() {
   	return "Nguiikk!";
   }
   /**

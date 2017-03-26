@@ -18,14 +18,14 @@ public class Parrot extends Animal {
     * @param f Jumlah makanan Parrot.
     * @param t Status jinak Parrot.
     */
-  public Parrot(float w, float f, boolean t) {
+  public Parrot(double w, double f, boolean t) {
     super(w, f, t);
   }
   /**
     * Interaksi yang dilakukan Parrot.
     * @return Mengembalikan string yang merepresentasikan suara Parrot.
     */
-  public string Interact() {
+  public String Interact() {
     return "Cuiitt";
   }
   /**
