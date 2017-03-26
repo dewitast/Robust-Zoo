@@ -1,13 +1,12 @@
-/** File : Cage.java
-  * Penanggung jawab : Dewita Sonya Tarabunga - 13515021
-  */
-
 package class;
 import animal.*;
 import System.*;
 
-/** Kelas cage merupakan kumpulan dari beberapa titik beserta
+/** 
+  * File : Animal.java
+  * Kelas cage merupakan kumpulan dari beberapa titik beserta
   * kumpulan binatang yang terdapat di dalamnya.
+  * @author Dewita Sonya Tarabunga - 13515021
   */
 public class Cage {
   private final int maxSize = 100;

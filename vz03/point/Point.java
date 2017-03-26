@@ -1,10 +1,9 @@
-/** File : Point.java
-  * Penanggung jawab : Dewita Sonya Tarabunga - 13515021
-  */
-
 package point;
 
-/** Kelas point merepresentasikan suatu titik dengan absis dan ordinat nya.
+/** 
+  * File : Animal.java
+  * Kelas point merepresentasikan suatu titik dengan absis dan ordinat nya.
+  * @author Dewita Sonya Tarabunga - 13515021
   */
 public class Point {
   private int absis;
