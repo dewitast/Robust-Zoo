@@ -51,13 +51,13 @@ public class Cage {
   public Cage(Cage c) {
     this.size = c.size;
     loc[] = new Point[maxSize];
-    for (int i = 0; i< size; ++i) {
-      /* ????????? */
+    for (int i = 0; i < size; ++i) {
+      loc[i] = new Point(c.loc[i]);
     }
     totalAnimal = c.totalAnimal;
     animal[] = new Animal[3*maxSize/10];
-    for (int i = 0; i< totalAnimal; ++i) {
-      /* ????????? */
+    for (int i = 0; i < totalAnimal; ++i) {
+      animal[i] = (c.animal[i]).clone();
     }
   }
   /**
