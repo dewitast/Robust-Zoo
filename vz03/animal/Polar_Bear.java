@@ -35,4 +35,11 @@ public class Polar_Bear extends Animal {
   public char Render() {
     return 'B';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Polar_Bear baru.
+    * @return Mengembalikan objek Polar_Bear baru.
+    */
+  public Polar_Bear Clone() {
+    return new Polar_Bear(this);
+  }
 }

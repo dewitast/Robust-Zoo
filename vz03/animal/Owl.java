@@ -35,4 +35,11 @@ public class Owl extends Animal {
   public char Render() {
   	return 'O';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Owl baru.
+    * @return Mengembalikan objek Owl baru.
+    */
+  public Owl Clone() {
+    return new Owl(this);
+  }
 }

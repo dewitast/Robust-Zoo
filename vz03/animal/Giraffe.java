@@ -35,4 +35,11 @@ public class Giraffe extends Animal {
   public char Render() {
     return 'F';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Girrafe baru.
+    * @return Mengembalikan objek Girrafe baru.
+    */
+  public Girrafe Clone() {
+    return new Girrafe(this);
+  }
 }

@@ -35,4 +35,11 @@ public class Goat extends Animal {
   public char Render() {
     return 'G';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Goat baru.
+    * @return Mengembalikan objek Goat baru.
+    */
+  public Goat Clone() {
+    return new Goat(this);
+  }
 }

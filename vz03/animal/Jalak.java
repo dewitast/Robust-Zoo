@@ -35,4 +35,11 @@ public class Jalak extends Animal {
   public char Render() {
   	return 'J';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Jalak baru.
+    * @return Mengembalikan objek Jalak baru.
+    */
+  public Jalak Clone() {
+    return new Jalak(this);
+  }
 }

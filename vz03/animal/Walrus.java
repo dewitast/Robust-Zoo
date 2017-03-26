@@ -35,4 +35,11 @@ public class Walrus extends Animal {
   public char Render() {
     return 'W';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Walrus baru.
+    * @return Mengembalikan objek Walrus baru.
+    */
+  public Walrus Clone() {
+    return new Walrus(this);
+  }
 }

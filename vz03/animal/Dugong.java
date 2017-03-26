@@ -29,10 +29,10 @@ public class Dugong extends Animal {
     return ("Splashh!");
   }
   /**
-    * Render dari Dugong.
-    * @return Mengembalikan char yang merupakan representasi kode Dugong.
+    * Melakukan cloning untuk menciptakan objek Dugong baru.
+    * @return Mengembalikan objek Dugong baru.
     */
-  public char Render() {
-    return 'U';
+  public Dugong Clone() {
+    return new Dugong(this);
   }
 }

@@ -35,4 +35,11 @@ public class Elephant extends Animal {
   public char Render() {
     return 'M';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Cormorant baru.
+    * @return Mengembalikan objek Cormorant baru.
+    */
+  public Cormorant Clone() {
+    return new Cormorant(this);
+  }
 }

@@ -35,4 +35,11 @@ public class Parrot extends Animal {
   public char Render() {
     return 'P';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Parrot baru.
+    * @return Mengembalikan objek Parrot baru.
+    */
+  public Parrot Clone() {
+    return new Parrot(this);
+  }
 }

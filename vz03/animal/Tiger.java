@@ -35,4 +35,11 @@ public class Tiger extends Animal {
   public char Render() {
     return 'T';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Tiger baru.
+    * @return Mengembalikan objek Tiger baru.
+    */
+  public Tiger Clone() {
+    return new Tiger(this);
+  }
 }

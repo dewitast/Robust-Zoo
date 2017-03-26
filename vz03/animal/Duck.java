@@ -35,4 +35,11 @@ public class Duck extends Animal {
   public char Render() {
     return 'D';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Duck baru.
+    * @return Mengembalikan objek Duck baru.
+    */
+  public Duck Clone() {
+    return new Duck(this);
+  }
 }
