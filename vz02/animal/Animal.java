@@ -11,9 +11,9 @@ public class Animal() {
   private String sound;
   private String food_type;
   private String[] habitat;
-  private float weight;
-  private float food_meat;
-  private float food_veggie;
+  private double weight;
+  private double food_meat;
+  private double food_veggie;
   private int number_habitat;
   private boolean tame;
   private char render;
@@ -57,9 +57,9 @@ public class Animal() {
                 String suara,
                 String jenis_makanan,
                 String[] tempat_hidup,
-                float berat,
-                float daging,
-                float sayur,
+                double berat,
+                double daging,
+                double sayur,
                 int jumlah_habitat,
                 boolean jinak,
                 char cetak) {
@@ -159,14 +159,14 @@ public class Animal() {
     * Mengembalikan nilai berat binatang.
     * @return nilai berat binatang.
     */
-  public float GetWeight() {
+  public double GetWeight() {
     return weight;
   }
   /**
     * Mengembalikan nilai jumlah makanan (daging) binatang.
     * @return nilai jumlah makanan (daging) binatang.
     */
-  public float GetFoodMeat() {
+  public double GetFoodMeat() {
     if (IsCarnivore() || IsOmnivore())
       return (weight * 0.05);
     else
@@ -176,7 +176,7 @@ public class Animal() {
     * Mengembalikan nilai jumlah makanan (sayur) binatang.
     * @return nilai jumlah makanan (sayur) binatang.
     */
-  public float GetFoodVeggie() {
+  public double GetFoodVeggie() {
     if (IsHerbivore() || IsOmnivore())
       return (weight * 0.05);
     else

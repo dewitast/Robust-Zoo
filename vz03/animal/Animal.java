@@ -7,8 +7,8 @@ import point.*;
   * @author Dewita Sonya Tarabunga - 13515021
   */
 public abstract class Animal {
-  protected float weight;
-  protected float food;
+  protected double weight;
+  protected double food;
   protected boolean tame;
   protected Point pos;
   /**
@@ -25,28 +25,46 @@ public abstract class Animal {
     * @param w nilai berat binatang.
     * @param f nilai jumlah makanan binatang.
     * @param t jinak atau tidaknya binatang.
-    * @param abs nilai absis dari lokasi binatang.
-    * @param ord nilai ordinat dari lokasi binatang.
     */
-  public Animal(int w, int f, boolean t, int abs, int ord) {
+  public Animal(double w, double f, boolean t) {
     weight = w;
     food = f;
     tame = t;
-    pos = new Point(abs, ord);
+    pos = new Point(-1, -1);
   }
   /**
     * Mengembalikan nilai berat binatang.
     * @return nilai berat binatang.
     */
-  public float GetWeight() {
+  public double GetWeight() {
     return weight;
   }
   /**
     * Mengembalikan nilai jumlah makanan binatang.
     * @return nilai jumlah makanan binatang.
     */
-  public float GetFood() {
+  public double GetFood() {
     return food;
+  }
+  /**
+    * Mengembalikan nilai jumlah makanan (daging) binatang.
+    * @return nilai jumlah makanan (daging) binatang.
+    */
+  public double GetFoodMeat() {
+    if (this instanceof Carnivore || this instanceof Omnivore)
+      return (weight * 0.05);
+    else
+      return 0;
+  }
+  /**
+    * Mengembalikan nilai jumlah makanan (sayur) binatang.
+    * @return nilai jumlah makanan (sayur) binatang.
+    */
+  public double GetFoodVeggie() {
+    if (this instanceof Hernivore || this instanceof Omnivore)
+      return (weight * 0.05);
+    else
+      return 0;
   }
   /**
     * Mengembalikan jinak tidaknya binatang.
@@ -67,7 +85,7 @@ public abstract class Animal {
     * F.S. Berat binatang bernilai w.
     * @param w nilai berat yang akan dimasukkan.
     */
-  public void SetWeight(float w) {
+  public void SetWeight(double w) {
     weight = w;
   }
   /**
@@ -75,7 +93,7 @@ public abstract class Animal {
     * F.S. Jumlah makanan binatang bernilai f.
     * @param f nilai jumlah makanan yang akan dimasukkan.
     */
-  public void SetFood(float f) {
+  public void SetFood(double f) {
     food = f;
   }
   /**

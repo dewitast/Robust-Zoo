@@ -15,19 +15,19 @@ public class Zoo {
   private final int maxKolom = 100;
   private int baris;
   private int kolom;
-  private Cell cell[][];
+  private Cell[][] cell;
   private final int maxJumlahCage = 100;
   private int jumlahCage;
-  private Cage cage[];
+  private Cage[] cage;
   /**
     * Constructor tanpa parameter.
     */
   public Zoo() {
     baris = 0;
     kolom = 0;
-    cell[][] = new Cell[maxBaris][maxKolom];
+    cell = new Cell[maxBaris][maxKolom];
     jumlahCage = 0;
-    cage[] = new Cage[maxJumlahCage];
+    cage = new Cage[maxJumlahCage];
   }
   /**
     * Constructor dengan parameter.
@@ -37,9 +37,9 @@ public class Zoo {
   public Zoo(int brs, int kol) {
     baris = brs;
     kolom = kol;
-    cell[][] = new Cell[maxBaris][maxKolom];
+    cell = new Cell[maxBaris][maxKolom];
     jumlahCage = 0;
-    cage[] = new Cage[maxJumlahCage];
+    cage = new Cage[maxJumlahCage];
   }
   /**
     * Getter elemen pada cell.
@@ -88,6 +88,29 @@ public class Zoo {
     boolean found = false;
     int i = 0;
     Point p = new Point(abs, ord);
+    while (!found && (i < jumlahCage)) {
+      if (cage[i].IsInCage(p)) {
+        found = true;
+      }
+      else {
+        ++i;
+      }
+    }
+    if (found) {
+      return cage[i];
+    }
+    else {
+      return cage[0];
+    }
+  }
+  /**
+    * Mencari point p berada pada cage mana.
+    * @param p Objek point yang akan dicari.
+    * @return Objek cage yang mengandung point yang dicari.
+    */
+  public Cage SearchPoint(Point p) {
+    boolean found = false;
+    int i = 0;
     while (!found && (i < jumlahCage)) {
       if (cage[i].IsInCage(p)) {
         found = true;

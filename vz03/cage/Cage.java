@@ -80,6 +80,14 @@ public class Cage {
     return totalAnimal;
   }
   /**
+    * Getter binatang pada cage.
+    * Mengembalikan binatang pada array ke-indeks.
+    * @return indeks nilai indeks pada array animal.
+    */
+  public Animal GetAnimal(int indeks) {
+    return animal[indeks];
+  }
+  /**
     * I.S. sembarang.
     * F.S. Binatang A terdapat didalam cage jika cage belum penuh
     * serta binatang sesuai dengan jenis cage.

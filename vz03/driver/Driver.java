@@ -84,12 +84,12 @@ public class Driver {
         }
         rand = new Random();
         random = rand.nextInt(z.GetBaris());
-        if ((z.GetElement(0,random)).IsEntrance()) {
+        if ((z.GetElement(0,random)) instanceof Entrance) {
           found = true;
           p.SetAbsis(0);
           p.SetOrdinat(random);
         }
-        else if ((z.GetElement(z.GetBaris()-1,random)).IsEntrance()) {
+        else if ((z.GetElement(z.GetBaris()-1,random)) instanceof Entrance) {
           found = true;
           p.SetAbsis(z.GetBaris()-1);
           p.SetOrdinat(random);
@@ -97,12 +97,12 @@ public class Driver {
         if (!found) {
           rand = new Random();
           random = rand.nextInt(z.GetKolom());
-          if ((z.GetElement(random,0)).IsEntrance()) {
+          if ((z.GetElement(random,0)) instanceof Entrance) {
             found = true;
             p.SetAbsis(random);
             p.SetOrdinat(0);
           }
-          else if ((z.GetElement(random,z.GetKolom()-1)).IsEntrance()) {
+          else if ((z.GetElement(random,z.GetKolom()-1)) instanceof Entrance) {
             found = true;
             p.SetAbsis(random);
             p.SetOrdinat(z.GetKolom()-1);
@@ -112,10 +112,10 @@ public class Driver {
     }
     else {
       visited[p.GetAbsis()][p.GetOrdinat()] = true;
-      boolean b1 = ((p.GetAbsis()>0)&&(!visited[p.GetAbsis()-1][p.GetOrdinat()])&&((z.GetElement(p.GetAbsis()-1,p.GetOrdinat()))).IsRoad());
-      boolean b2 = ((p.GetOrdinat()<z.GetKolom()-1)&&(!visited[p.GetAbsis()][p.GetOrdinat()+1])&&((z.GetElement(p.GetAbsis(),p.GetOrdinat()+1))).IsRoad());
-      boolean b3 = ((p.GetAbsis()<z.GetBaris()-1)&&(!visited[p.GetAbsis()+1][p.GetOrdinat()])&&((z.GetElement(p.GetAbsis()+1,p.GetOrdinat()))).IsRoad());
-      boolean b4 = ((p.GetOrdinat()>0)&&(!visited[p.GetAbsis()][p.GetOrdinat()-1])&&((z.GetElement(p.GetAbsis(),p.GetOrdinat()-1))).IsRoad());
+      boolean b1 = ((p.GetAbsis()>0)&&(!visited[p.GetAbsis()-1][p.GetOrdinat()])&&((z.GetElement(p.GetAbsis()-1,p.GetOrdinat()))) instanceof Road);
+      boolean b2 = ((p.GetOrdinat()<z.GetKolom()-1)&&(!visited[p.GetAbsis()][p.GetOrdinat()+1])&&((z.GetElement(p.GetAbsis(),p.GetOrdinat()+1))) instanceof Road);
+      boolean b3 = ((p.GetAbsis()<z.GetBaris()-1)&&(!visited[p.GetAbsis()+1][p.GetOrdinat()])&&((z.GetElement(p.GetAbsis()+1,p.GetOrdinat()))) instanceof Road);
+      boolean b4 = ((p.GetOrdinat()>0)&&(!visited[p.GetAbsis()][p.GetOrdinat()-1])&&((z.GetElement(p.GetAbsis(),p.GetOrdinat()-1))) instanceof Road);
       if ((!b1)&&(!b2)&&(!b3)&&(!b4)) {
         p.SetAbsis(-1);
         p.SetOrdinat(-1);
@@ -150,7 +150,7 @@ public class Driver {
         }
       }
       GetExperience();
-      if ((z.GetElement(p)).IsExit()) {
+      if ((z.GetElement(p)) instanceof Exit) {
         System.out.println("Posisi : (" + p.GetAbsis() + "," + p.GetOrdinat() + ")");
         System.out.println("You've reached the end of this journey.");
         p.SetAbsis(-1);
