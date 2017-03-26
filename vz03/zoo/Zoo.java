@@ -1,15 +1,14 @@
-/** File : Zoo.java
-  * Penanggung jawab : Dewita Sonya Tarabunga - 13515021
-  */
-
 package zoo;
 import cage.*;
 import cell.*;
 import animal.*;
 import System.*;
 
-/** Kelas zoo merepresentasikan kebun binatang dengan matriks cell,
+/** 
+  * File : Animal.java
+  * Kelas zoo merepresentasikan kebun binatang dengan matriks cell,
   * kumpulan cage.
+  * @author Dewita Sonya Tarabunga - 13515021
   */
 public class Zoo {
   private final int maxBaris = 100;
