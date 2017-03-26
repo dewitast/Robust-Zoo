@@ -1,9 +1,10 @@
-/** 
+package animal;
+
+/**
   * File : Animal.java 
   * Kelas animal merepresentasikan binatang beserta perilakunya.
   * @author Catherine Almira - 13515111
   */
-package animal;
 public class Animal() {
   private Point position;
   private String species;
@@ -16,7 +17,9 @@ public class Animal() {
   private int number_habitat;
   private boolean tame;
   private char render;
-  /** Constructor.
+
+  /**
+    * Constructor.
     * Menciptakan animal kosong.
     */
   public Animal() {
@@ -34,7 +37,8 @@ public class Animal() {
     habitat = new String[number_habitat];
     habitat[0] = "Water";
   }
-  /** Constructor dengan parameter.
+  /**
+    * Constructor dengan parameter.
     * Menciptakan animal sesuai dengan parameter yang diberikan.
     * @param posisi Letak Animal dalam  Zoo.
     * @param spesies Nama spesies Animal.
@@ -74,7 +78,8 @@ public class Animal() {
     tame = jinak;
     render = cetak;
   }
-  /** Constructor dengan parameter.
+  /**
+    * Constructor dengan parameter.
     * Menciptakan animal sesuai dengan parameter yang diberikan.
     * @param a Animal yang akan disalin.
     */
@@ -94,20 +99,28 @@ public class Animal() {
     tame = a.tame;
     render = a.render;
   }
-  /** 
+  /**
     * Mengecek apakah binatang merupakan karnivor.
-    * @return karnivor atau.
+    * @return true jika binatang adalah karnivor.
     */
   public boolean IsCarnivore() {
     return (food_type=="Carnivore");
   }
+  /**
+    * Mengecek apakah binatang merupakan omnivor.
+    * @return true jika binatang adalah omnivor.
+    */
   public boolean IsOmnivore() {
     return (food_type=="Omnivore");
   }
+  /**
+    * Mengecek apakah binatang merupakan herbivor.
+    * @return true jika binatang adalah herbivor.
+    */
   public boolean IsHerbivore() {
     return (food_type=="Herbivore");
   }
-  /** 
+  /**
     * Mengeluarkan point yang merupakan posisi binatang.
     * @return posisi binatang.
     */
@@ -121,35 +134,35 @@ public class Animal() {
   public String GetSpecies() {
     return species;
   }
-  /** 
+  /**
     * Mengeluarkan string yang merupakan bentuk interaksi dari binatang.
     * @return String yang merupakan suara binatang.
     */
   public String Interact() {
     return sound;
   }
-  /** 
+  /**
     * Mengembalikan jenis makanan binatang.
     * @return jenis makanan binatang.
     */
   public String GetFoodType() {
     return food_type;
   }
-  /** 
+  /**
     * Mengembalikan jinak tidaknya binatang.
     * @return jinak tidaknya binatang.
     */
   public String[] GetHabitat() {
     return habitat;
   }
-  /** 
+  /**
     * Mengembalikan nilai berat binatang.
     * @return nilai berat binatang.
     */
   public float GetWeight() {
     return weight;
   }
-  /** 
+  /**
     * Mengembalikan nilai jumlah makanan (daging) binatang.
     * @return nilai jumlah makanan (daging) binatang.
     */
@@ -159,7 +172,7 @@ public class Animal() {
     else
       return 0;
   }
-  /** 
+  /**
     * Mengembalikan nilai jumlah makanan (sayur) binatang.
     * @return nilai jumlah makanan (sayur) binatang.
     */
@@ -169,28 +182,28 @@ public class Animal() {
     else
       return 0;
   }
-  /** 
+  /**
     * Mengembalikan nilai jumlah habitat yang dapat ditinggali.
     * @return nilai jumlah habitat yang dapat ditinggali.
     */
   public int GetNumberOfHabitat() {
     return number_habitat;
   }
-  /** 
+  /**
     * Mengembalikan jinak tidaknya binatang.
     * @return jinak tidaknya binatang.
     */
   public boolean GetTame() {
     return tame;
   }
-  /** 
+  /**
     * Mengembalikan karakter yang akan dicetak.
     * @return karakter yang akan dicetak.
     */
   public char Render() {
     return render;
   }
-  /** 
+  /**
     * I.S. Point sembarang
     * F.S. Point bernilai absis, ordinat.
     * @param absis Absis point.
@@ -200,7 +213,7 @@ public class Animal() {
     position.SetAbsis(absis);
     position.SetOrdinat(ordinat);
   }
-  /** 
+  /**
     * I.S. Point sembarang
     * F.S. Point bernilai sama dengan p.
     * @param p Point yang akan disalin.

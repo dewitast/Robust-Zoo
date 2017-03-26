@@ -2,8 +2,8 @@ package cage;
 import animal.*;
 import System.*;
 
-/** 
-  * File : Animal.java
+/**
+  * File : Cage.java
   * Kelas cage merupakan kumpulan dari beberapa titik beserta
   * kumpulan binatang yang terdapat di dalamnya.
   * @author Dewita Sonya Tarabunga - 13515021
