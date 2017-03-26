@@ -5,7 +5,7 @@ package animal;
   * Kelas animal merepresentasikan binatang beserta perilakunya.
   * @author Catherine Almira - 13515111
   */
-public class Animal() {
+public class Animal {
   private Point position;
   private String species;
   private String sound;

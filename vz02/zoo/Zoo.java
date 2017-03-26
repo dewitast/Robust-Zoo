@@ -63,6 +63,20 @@ public class Zoo {
     return (cell[brs][kol]);
   }
   /**
+    * Getter ukuran baris pada kebun binatang.
+    * @return ukuran baris pada kebun binatang.
+    */
+  public int GetBaris() {
+    return baris;
+  }
+  /**
+    * Getter ukuran kolom pada kebun binatang.
+    * @return ukuran kolom pada kebun binatang.
+    */
+  public int GetKolom() {
+    return kolom;
+  }
+  /**
     * Getter jumlah cage pada kebun binatang.
     * @return jumlah cage pada kebun binatang.
     */
