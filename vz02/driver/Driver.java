@@ -1,9 +1,9 @@
 package driver;
 import zoo.*;
 import java.io.*;
-import java.Math.Random;
+import java.util.Random;
 
-/** 
+/**
   * File : Driver.java
   * Kelas Driver merupakan kelas sebagai pilihan menu aplikasi.
   * @author Catherine Almira - 13515111
@@ -13,7 +13,7 @@ public class Driver {
   public boolean visited[][];
   public Point p;
 
-  /** 
+  /**
     * Constructor Driver.
     * Menciptakan Zoo dengan konfigurasi dari file eksternal.
     */
@@ -22,28 +22,28 @@ public class Driver {
     BELOM KELAR
     BACA FILE BELOM
   }
-  /** 
+  /**
     * I.S. Zoo sudah ada.
     * F.S. Zoo sudah tercetak pada layar dengan ukuran sesuai input pengunjung.
     */
   public void DisplayZoo() {
     for (int i = 0; i < z.GetJumlahCage(); ++i) {
-        z.GetCage(i).Move();
+      z.GetCage(i).Move();
     }
     System.out.println(z);
   }
-  /** 
+  /**
     * I.S. Pengunjung sudah memasuki zoo dan melakukan tour.
     * F.S. Experience berupa interaksi dari seluruh binatang di cage
     * sekitar tercetak pada layar.
     */
   public void GetExperience() {
     if (p.GetAbsis()>0) {
-      if ((z.GetElement(p.PrevX()).IsHabitat()) {
+      if (z.GetElement(p.PrevX()).IsHabitat()) {
         (z.SearchPoint(p.PrevX())).Interact();
       }
     }
-    if (p.GetAbsis()<z.GetBeff()-1) {
+    if (p.GetAbsis()<z.GetBaris()-1) {
       if ((z.GetElement(p.NextX())).IsHabitat()) {
         (z.SearchPoint(p.NextX())).Interact();
       }
@@ -54,14 +54,14 @@ public class Driver {
         (z.SearchPoint(p.PrevY())).Interact();
       }
     }
-    if (p.GetAbsis()<z.GetKeff()-1)
+    if (p.GetAbsis()<z.GetKolom()-1)
     {
       if ((z.GetElement(p.NextY())).IsHabitat()) {
         (z.SearchPoint(p.NextY())).Interact();
       }
     }
   }
-  /** 
+  /**
     * I.S. Zoo sudah ada.
     * F.S. Pengunjung melakukan tour sampai selesai,
     * antara mencapai exit atau tidak ada pilihan jalan lain.
@@ -72,57 +72,58 @@ public class Driver {
       z.GetCage(i).Move();
     }
     Random rand = new Random();
+    int random;
     boolean found = false;
     if ((p.GetAbsis()==-1)&&(p.GetOrdinat()==-1)) {
       System.out.println("Welcome to the zoo.");
       while (!found) {
-        for (int i = 0; i < z.GetBeff(); ++i) {
-          for (int j = 0; j < z.GetKeff(); ++j) {
+        for (int i = 0; i < z.GetBaris(); ++i) {
+          for (int j = 0; j < z.GetKolom(); ++j) {
             visited[i][j] = false;
           }
         }
-        Random rand = new Random();
-        int random = rand.nextInt(z.GetBeff());
-        if ((z.GetElement(0,random)).IsEntrance()) {
+        rand = new Random();
+        random = rand.nextInt(z.GetBaris());
+        if ((z.GetElement(0,random)) instanceof Entrance) {
           found = true;
           p.SetAbsis(0);
           p.SetOrdinat(random);
         }
-        else if ((z.GetElement(z.GetBeff()-1,random)).IsEntrance()) {
+        else if ((z.GetElement(z.GetBaris()-1,random)) instanceof Entrance) {
           found = true;
-          p.SetAbsis(z.GetBeff()-1);
+          p.SetAbsis(z.GetBaris()-1);
           p.SetOrdinat(random);
         }   
         if (!found) {
-          Random rand = new Random();
-          int random = rand.nextInt(z.GetKeff());
-          if ((z.GetElement(random,0)).IsEntrance()) {
+          rand = new Random();
+          random = rand.nextInt(z.GetKolom());
+          if ((z.GetElement(random,0)) instanceof Entrance) {
             found = true;
             p.SetAbsis(random);
             p.SetOrdinat(0);
           }
-          else if ((z.GetElement(random,z.GetKeff()-1)).IsEntrance()) {
+          else if ((z.GetElement(random,z.GetKolom()-1)) instanceof Entrance) {
             found = true;
             p.SetAbsis(random);
-            p.SetOrdinat(z.GetKeff()-1);
+            p.SetOrdinat(z.GetKolom()-1);
           }
         }
       }
     }
     else {
       visited[p.GetAbsis()][p.GetOrdinat()] = true;
-      boolean b1 = ((p.GetAbsis()>0)&&(!visited[p.GetAbsis()-1][p.GetOrdinat()])&&((z.GetElement(p.GetAbsis()-1,p.GetOrdinat()))).IsRoad());
-      boolean b2 = ((p.GetOrdinat()<z.GetKeff()-1)&&(!visited[p.GetAbsis()][p.GetOrdinat()+1])&&((z.GetElement(p.GetAbsis(),p.GetOrdinat()+1))).IsRoad());
-      boolean b3 = ((p.GetAbsis()<z.GetBeff()-1)&&(!visited[p.GetAbsis()+1][p.GetOrdinat()])&&((z.GetElement(p.GetAbsis()+1,p.GetOrdinat()))).IsRoad());
-      boolean b4 = ((p.GetOrdinat()>0)&&(!visited[p.GetAbsis()][p.GetOrdinat()-1])&&((z.GetElement(p.GetAbsis(),p.GetOrdinat()-1))).IsRoad());
+      boolean b1 = ((p.GetAbsis()>0)&&(!visited[p.GetAbsis()-1][p.GetOrdinat()])&&((z.GetElement(p.GetAbsis()-1,p.GetOrdinat()))) instanceof Road);
+      boolean b2 = ((p.GetOrdinat()<z.GetKolom()-1)&&(!visited[p.GetAbsis()][p.GetOrdinat()+1])&&((z.GetElement(p.GetAbsis(),p.GetOrdinat()+1))) instanceof Road);
+      boolean b3 = ((p.GetAbsis()<z.GetBaris()-1)&&(!visited[p.GetAbsis()+1][p.GetOrdinat()])&&((z.GetElement(p.GetAbsis()+1,p.GetOrdinat()))) instanceof Road);
+      boolean b4 = ((p.GetOrdinat()>0)&&(!visited[p.GetAbsis()][p.GetOrdinat()-1])&&((z.GetElement(p.GetAbsis(),p.GetOrdinat()-1))) instanceof Road);
       if ((!b1)&&(!b2)&&(!b3)&&(!b4)) {
         p.SetAbsis(-1);
         p.SetOrdinat(-1);
         return;
       }
       while (!found) {
-        Random rand = new Random();
-        int random = rand.nextInt(4);
+        rand = new Random();
+        random = rand.nextInt(4);
         if (random == 0) {
           if (b1) {
             found = true;
@@ -149,7 +150,7 @@ public class Driver {
         }
       }
       GetExperience();
-      if ((z.GetElement(p)).IsExit()) {
+      if ((z.GetElement(p)) instanceof Exit) {
         System.out.println("Posisi : (" + p.GetAbsis() + "," + p.GetOrdinat() + ")");
         System.out.println("You've reached the end of this journey.");
         p.SetAbsis(-1);
@@ -159,7 +160,7 @@ public class Driver {
     if (p.GetAbsis()!=-1)
       System.out.println("Posisi : (" + p.GetAbsis() + "," + p.GetOrdinat() + ")");
   }
-  /** 
+  /**
     * Melakukan perhitungan makanan (sayuran) yang harus disiapkan.
     * @return Mengembalikan jumlah makanan (sayuran) yang harus disiapkan.
     */
@@ -172,7 +173,7 @@ public class Driver {
     }
     return sum;
   }
-  /** 
+  /**
     * Melakukan perhitungan makanan (daging) yang harus disiapkan.
     * @return Mengembalikan jumlah makanan (daging) yang harus disiapkan.
     */
@@ -185,7 +186,7 @@ public class Driver {
     }
     return sum;
   }
-  /** 
+  /**
     * I.S. sembarang.
     * F.S. Menu telah tercetak ke layar.
     */
@@ -197,14 +198,14 @@ public class Driver {
     System.out.println("4. Exit");
     System.out.print("Input your number of choice here: ");
   }
-  /** 
+  /**
     * Getter Zoo.
     * @return Mengembalikan zoo.
     */
   public Zoo GetZoo() {
     return z;
   }
-  /** 
+  /**
     * Getter Point.
     * @return Mengembalikan point.
     */
