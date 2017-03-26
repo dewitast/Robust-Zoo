@@ -1,7 +1,7 @@
 package point;
 
 /** 
-  * File : Animal.java
+  * File : Point.java
   * Kelas point merepresentasikan suatu titik dengan absis dan ordinat nya.
   * @author Dewita Sonya Tarabunga - 13515021
   */
