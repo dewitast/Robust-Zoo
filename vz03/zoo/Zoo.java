@@ -5,7 +5,7 @@ import animal.*;
 import System.*;
 
 /** 
-  * File : Animal.java
+  * File : Zoo.java
   * Kelas zoo merepresentasikan kebun binatang dengan matriks cell,
   * kumpulan cage.
   * @author Dewita Sonya Tarabunga - 13515021
