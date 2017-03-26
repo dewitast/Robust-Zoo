@@ -1,6 +1,7 @@
-package class;
+package cage;
 import animal.*;
-import System.*;
+import java.io.*;
+import java.Math.Random;
 
 /**
   * File : Cage.java
@@ -36,6 +37,8 @@ public class Cage {
   }
   /**
     * Constructor dengan parameter.
+    * @param possOrd posisi ordinat.
+    * @param possAbs posisi absis.
     */
   public Cage(int posOrd, int posAbs) {
     size = 1;
@@ -92,8 +95,21 @@ public class Cage {
     * @param a Objek binatang yang akan dimasukkan.
     */
   public void AdoptAnimal(Animal a) {
-    if (!IsFullAnimal() && !IsInCage(a) && CanPut(a)) {
-      /* ????? */
+    if (IsFull()) {
+      System.out.println("Kandang penuh.");
+    }
+    else if (!IsInCage(a)) {
+      if (CanPut(a)) {
+        Random rand = new Random();
+        int random = rand.nextInt(size);
+        while (IsOccupied(random)) {
+          Random rand = new Random();
+          int random = rand.nextInt(size);
+        }
+        a.SetPoint(GetPoint(random));
+        animal[totalAnimal] = a.clone();
+        ++totalAnimal;
+      }
     }
   }
   /**
@@ -198,6 +214,27 @@ public class Cage {
     * F.S. Binatang di cage bergerak, walau mungkin diam.
     */
   public void Move() {
-    /* ??????? */
+    Random rand = new Random();
+    int random;
+    Point p2,p;
+    for (int i = 0; i < totalAnimal; ++i) {
+      p2 = animal[i].GetPos();
+      random = rand.nextInt(4) + 1;
+      if (random == 1) {
+        p = p2.PrevX();
+      }
+      else if (random == 2) {
+        p = NextX();
+      }
+      else if (random == 3) {
+        p = PrevY();
+      }
+      else if (random == 4) {
+        p = NextY();
+        
+      }
+      if ((IsInCage(p)) && (!IsOccupied(p)))
+          animal[i].SetPoint(p);
+    }
   }
 }
