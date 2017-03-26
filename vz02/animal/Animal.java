@@ -1,7 +1,9 @@
-/** File : Animal.java */
-/** Penanggung jawab : Catherine Almira - 13515111
+/** 
+  * File : Animal.java 
+  * Kelas animal merepresentasikan binatang beserta perilakunya.
+  * @author Catherine Almira - 13515111
   */
-
+package animal;
 public class Animal() {
   private Point position;
   private String species;
@@ -14,9 +16,9 @@ public class Animal() {
   private int number_habitat;
   private boolean tame;
   private char render;
-
-  //constructor
-  //menciptakan animal kosong
+  /** Constructor.
+    * Menciptakan animal kosong.
+    */
   public Animal() {
     position.SetAbsis(-1);
     position.SetOrdinat(-1);
@@ -32,97 +34,178 @@ public class Animal() {
     habitat = new String[number_habitat];
     habitat[0] = "Water";
   }
-  //constructor dengan parameter
+  /** Constructor dengan parameter.
+    * Menciptakan animal sesuai dengan parameter yang diberikan.
+    * @param posisi Letak Animal dalam  Zoo.
+    * @param spesies Nama spesies Animal.
+    * @param suara Suara yang dihasilkan Animal.
+    * @param jenis_makanan Carnivore, Omnivore, atau Herbivore.
+    * @param tempat_hidup Hanitat Animal.
+    * @param berat Berat Animal.
+    * @param daging Jumlah makanan (daging) yang dimakan Animal.
+    * @param sayur Jumlah makanan (sayur) yang dimakan Animal.
+    * @param jumlah_habitat Jumlah habitat yang dapat ditinggali oleh Animal
+    * @param jinak Menyatakan jinak atau buasnya Animal.
+    * @param cetak Karakter yang merepresentasikan Animal.
+    */
   public Animal(Point posisi,
-  	            String spesies,
-  	            String suara,
-  	            String jenis_makanan,
-  	            String[] tempat_hidup,
-  	            float berat,
-  	            float daging,
-  	            float sayur,
-  	            int jumlah_habitat,
-  	            boolean jinak,
-  	            char cetak) {
-  	position = posisi;
-  	species = spesies;
-  	sound = suara;
-  	food_type = jenis_makanan;
-  	number_habitat = jumlah_habitat;
-  	habitat= new String[number_habitat];
-  	for (int i=0; i<number_habitat; i++) {
-  	  habitat[i] = tempat_hidup[i];
-  	}
-  	weight = berat;
-  	food_meat = daging;
-  	food_veggie = sayur;
-  	tame = jinak;
-  	render = cetak;
+                String spesies,
+                String suara,
+                String jenis_makanan,
+                String[] tempat_hidup,
+                float berat,
+                float daging,
+                float sayur,
+                int jumlah_habitat,
+                boolean jinak,
+                char cetak) {
+    position = posisi;
+    species = spesies;
+    sound = suara;
+    food_type = jenis_makanan;
+    number_habitat = jumlah_habitat;
+    habitat = new String[number_habitat];
+    for (int i = 0; i < number_habitat; i++) {
+      habitat[i] = tempat_hidup[i];
+    }
+    weight = berat;
+    food_meat = daging;
+    food_veggie = sayur;
+    tame = jinak;
+    render = cetak;
   }
-  
-
-
-
-
+  /** Constructor dengan parameter.
+    * Menciptakan animal sesuai dengan parameter yang diberikan.
+    * @param a Animal yang akan disalin.
+    */
+  public Animal(Animal a) {
+    position = a.position;
+    species = a.species;
+    sound = a.sound;
+    food_type = a.food_type;
+    number_habitat = a.number_habitat;
+    habitat = new String[number_habitat];
+    for (int i = 0; i < number_habitat; i++) {
+      habitat[i] = a.habitat[i];
+    }
+    weight = a.weight;
+    food_meat = a.food_meat;
+    food_veggie = a.food_veggie;
+    tame = a.tame;
+    render = a.render;
+  }
+  /** 
+    * Mengecek apakah binatang merupakan karnivor.
+    * @return karnivor atau.
+    */
   public boolean IsCarnivore() {
-  	return (food_type=="Carnivore");
+    return (food_type=="Carnivore");
   }
   public boolean IsOmnivore() {
-  	return (food_type=="Omnivore");
+    return (food_type=="Omnivore");
   }
   public boolean IsHerbivore() {
-  	return (food_type=="Herbivore");
+    return (food_type=="Herbivore");
   }
-
-  //Getter
+  /** 
+    * Mengeluarkan point yang merupakan posisi binatang.
+    * @return posisi binatang.
+    */
   public Point GetPos() {
-  	return position;
+    return position;
   }
+  /**
+    * Mengeluarkan string yang merupakan nama spesies binatang.
+    * @return String yang merupakan nama spesies binatang.
+    */
   public String GetSpecies() {
-  	return species;
+    return species;
   }
+  /** 
+    * Mengeluarkan string yang merupakan bentuk interaksi dari binatang.
+    * @return String yang merupakan suara binatang.
+    */
   public String Interact() {
-  	return sound;
+    return sound;
   }
+  /** 
+    * Mengembalikan jenis makanan binatang.
+    * @return jenis makanan binatang.
+    */
   public String GetFoodType() {
-  	return food_type;
+    return food_type;
   }
+  /** 
+    * Mengembalikan jinak tidaknya binatang.
+    * @return jinak tidaknya binatang.
+    */
   public String[] GetHabitat() {
-  	return habitat;
+    return habitat;
   }
+  /** 
+    * Mengembalikan nilai berat binatang.
+    * @return nilai berat binatang.
+    */
   public float GetWeight() {
-  	return weight;
+    return weight;
   }
+  /** 
+    * Mengembalikan nilai jumlah makanan (daging) binatang.
+    * @return nilai jumlah makanan (daging) binatang.
+    */
   public float GetFoodMeat() {
     if (IsCarnivore() || IsOmnivore())
-  	  return (weight * 0.05);
-  	else
-  	  return 0;
+      return (weight * 0.05);
+    else
+      return 0;
   }
+  /** 
+    * Mengembalikan nilai jumlah makanan (sayur) binatang.
+    * @return nilai jumlah makanan (sayur) binatang.
+    */
   public float GetFoodVeggie() {
-  	if (IsHerbivore() || IsOmnivore())
-  	  return (weight * 0.05);
-  	else
-  	  return 0;
+    if (IsHerbivore() || IsOmnivore())
+      return (weight * 0.05);
+    else
+      return 0;
   }
+  /** 
+    * Mengembalikan nilai jumlah habitat yang dapat ditinggali.
+    * @return nilai jumlah habitat yang dapat ditinggali.
+    */
   public int GetNumberOfHabitat() {
-  	return number_habitat;
+    return number_habitat;
   }
-  public boolean IsTame() {
-  	return tame;
+  /** 
+    * Mengembalikan jinak tidaknya binatang.
+    * @return jinak tidaknya binatang.
+    */
+  public boolean GetTame() {
+    return tame;
   }
+  /** 
+    * Mengembalikan karakter yang akan dicetak.
+    * @return karakter yang akan dicetak.
+    */
   public char Render() {
-  	return render;
+    return render;
   }
-
-  //Setter
+  /** 
+    * I.S. Point sembarang
+    * F.S. Point bernilai absis, ordinat.
+    * @param absis Absis point.
+    * @param ordinat Ordinat point.
+    */
   public void SetPoint(int absis, int ordinat) {
-  	position.SetAbsis(absis);
-  	position.SetOrdinat(ordinat);
+    position.SetAbsis(absis);
+    position.SetOrdinat(ordinat);
   }
+  /** 
+    * I.S. Point sembarang
+    * F.S. Point bernilai sama dengan p.
+    * @param p Point yang akan disalin.
+    */
   public void SetPoint(Point p) {
-  	position = p;
+    position = p;
   }
-
-
 }

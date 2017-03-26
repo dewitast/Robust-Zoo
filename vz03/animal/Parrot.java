@@ -1,15 +1,14 @@
-/** File : Parrot.java
-  * Penanggung jawab : Catherine Almira - 13515111
-  */
-  
-/** Kelas Parrot merupakan kelas untuk real object Parrot.
+/** 
+  * File : Parrot.java
+  * Kelas Parrot merupakan kelas untuk real object Parrot.
+  * @author Catherine Almira - 13515111
   */
 public class Parrot extends Animal {
   /** Constructor.
     * Menciptakan objek Parrot.
     */
   public Parrot() {
-	super(1.2, 0.06, true);
+    super(1.2, 0.06, true);
   }
   /** Constructor dengan parameter.
     * Menciptakan objek Parrot dengan berat w, jumlah makanan f, dan status jinak t.
@@ -18,18 +17,18 @@ public class Parrot extends Animal {
     * @param t Status jinak Parrot.
     */
   public Parrot(float w, float f, boolean t) {
-	super(w, f, t);
+    super(w, f, t);
   }
   /** Interaksi yang dilakukan Parrot.
     * @return Mengembalikan string yang merepresentasikan suara Parrot.
     */
   public string Interact() {
-	return "Cuiitt";
+    return "Cuiitt";
   }
   /** Render dari Parrot.
     * @return Mengembalikan char yang merupakan representasi kode Parrot.
     */
   public char Render() {
-	return 'P';
+    return 'P';
   }
 }

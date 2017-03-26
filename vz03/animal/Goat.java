@@ -1,15 +1,14 @@
-/** File : Goat.java
-  * Penanggung jawab : Catherine Almira - 13515111
-  */
-  
-/** Kelas Goat merupakan kelas untuk real object Goat.
+/**
+  * File : Goat.java
+  * Kelas Goat merupakan kelas untuk real object Goat.
+  * @author Catherine Almira - 13515111
   */
 public class Goat extends Animal {
   /** Constructor.
     * Menciptakan objek Goat.
     */
   public Goat() {
-	super(90, 4.5, false);
+    super(90, 4.5, false);
   }
   /** Constructor dengan parameter.
     * Menciptakan objek Goat dengan berat w, jumlah makanan f, dan status jinak t.
@@ -18,18 +17,18 @@ public class Goat extends Animal {
     * @param t Status jinak Goat.
     */
   public Goat(float w, float f, boolean t) {
-	super(w, f, t);
+    super(w, f, t);
   }
   /** Interaksi yang dilakukan Goat.
     * @return Mengembalikan string yang merepresentasikan suara Goat.
     */
   public string Interact() {
-	return "Mbeeeee!";
+    return "Mbeeeee!";
   }
   /** Render dari Goat.
     * @return Mengembalikan char yang merupakan representasi kode Goat.
     */
   public char Render() {
-	return 'G';
+    return 'G';
   }
 }
