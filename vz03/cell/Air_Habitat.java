@@ -11,4 +11,11 @@ public class Air_Habitat extends Cell {
   public char Render() {
   	return '^';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Air_Habitat baru.
+    * @return Mengembalikan Air_Habitat.
+    */
+  public Air_Habitat Clone() {
+    return new Air_Habitat(this);
+  }
 }

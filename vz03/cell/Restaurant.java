@@ -11,4 +11,11 @@ public class Restaurant extends Cell {
   public char Render() {
   	return 'S';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Restaurant baru.
+    * @return Mengembalikan Restaurant.
+    */
+  public Restaurant Clone() {
+    return new Restaurant(this);
+  }
 }

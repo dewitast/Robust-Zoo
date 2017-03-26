@@ -11,4 +11,11 @@ public class Exit extends Road {
   public char Render() {
   	return 'X';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Exit baru.
+    * @return Mengembalikan Exit.
+    */
+  public Exit Clone() {
+    return new Exit(this);
+  }
 }

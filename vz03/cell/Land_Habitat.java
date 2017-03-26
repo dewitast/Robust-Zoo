@@ -11,4 +11,11 @@ public class Land_Habitat extends Cell {
   public char Render() {
   	return '@';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Land_Habitat baru.
+    * @return Mengembalikan Land_Habitat.
+    */
+  public Land_Habitat Clone() {
+    return new Land_Habitat(this);
+  }
 }

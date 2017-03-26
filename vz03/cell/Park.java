@@ -11,4 +11,11 @@ public class Park extends Cell {
   public char Render() {
   	return '#';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Park baru.
+    * @return Mengembalikan Park.
+    */
+  public Park Clone() {
+    return new Park(this);
+  }
 }

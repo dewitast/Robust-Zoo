@@ -11,4 +11,11 @@ public class Entrance extends Road {
   public char Render() {
   	return 'Z';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Entrance baru.
+    * @return Mengembalikan Entrance.
+    */
+  public Entrance Clone() {
+    return new Entrance(this);
+  }
 }

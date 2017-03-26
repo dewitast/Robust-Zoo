@@ -11,4 +11,11 @@ public class Road extends Cell {
   public char Render() {
   	return '+';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Road baru.
+    * @return Mengembalikan Road.
+    */
+  public Road Clone() {
+    return new Road(this);
+  }
 }

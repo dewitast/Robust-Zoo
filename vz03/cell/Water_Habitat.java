@@ -11,4 +11,11 @@ public class Water_Habitat extends Cell {
   public char Render() {
   	return '~';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Water_Habitat baru.
+    * @return Mengembalikan Water_Habitat.
+    */
+  public Water_Habitat Clone() {
+    return new Water_Habitat(this);
+  }
 }
