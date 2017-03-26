@@ -4,7 +4,7 @@ import cell.*;
 import animal.*;
 import System.*;
 
-/** 
+/**
   * File : Zoo.java
   * Kelas zoo merepresentasikan kebun binatang dengan matriks cell,
   * kumpulan cage.
@@ -19,7 +19,6 @@ public class Zoo {
   private final int maxJumlahCage = 100;
   private int jumlahCage;
   private Cage cage[];
-
   /**
     * Constructor tanpa parameter.
     */
@@ -39,11 +38,6 @@ public class Zoo {
     baris = brs;
     kolom = kol;
     cell[][] = new Cell[maxBaris][maxKolom];
-    for (int i = 0; i < brs; ++i) {
-      for (int j = 0; j < kol; ++j) {
-        cell[i][j] = new Cell();
-      }
-    }
     jumlahCage = 0;
     cage[] = new Cage[maxJumlahCage];
   }
@@ -56,7 +50,7 @@ public class Zoo {
   public Cell GetElement(Point p) {
     int brs = P.GetAbsis();
     int kol = P.GetOrdinat();
-    return (cell[brs][kol])
+    return (cell[brs][kol]);
   }
   /**
     * Getter elemen pada cell.
@@ -66,7 +60,7 @@ public class Zoo {
     * @return elemen cell pada matriks dengan baris brs dan kolom kol.
     */
   public Cell GetElement(int brs, int kol) {
-    return (cell[brs][kol])
+    return (cell[brs][kol]);
   }
   /**
     * Getter ukuran baris pada kebun binatang.
@@ -96,7 +90,7 @@ public class Zoo {
     * @return Objek cage sesuai indeks pada kebun binatang.
     */
   public Cage GetCage(int indeks) {
-    return cage[i];
+    return cage[indeks];
   }
   /**
     * Mencari point p berada pada cage mana.
@@ -108,7 +102,7 @@ public class Zoo {
     boolean found = false;
     int i = 0;
     Point p = new Point(abs, ord);
-    while (!found && i<jumlahCage) {
+    while (!found && (i < jumlahCage)) {
       if (cage[i].IsInCage(p)) {
         found = true;
       }
@@ -124,10 +118,9 @@ public class Zoo {
     }
   }
   /**
-    * Mencari point p berada pada cage mana.
-    * @param abs nilai absis yang akan dicari.
-    * @param ord nilai ordinat yang akan dicari.
-    * @return Objek cage yang mengandung point yang dicari.
+    * I.S. Zoo sembarang dan c terdefinisi.
+    * F.S. Zoo baru dengan tambahan cage c.
+    * @param c Cage yang akan ditambahkan pada zoo.
     */
   public void AddCage(Cage c) {
     cage[jumlahCage] = new Cage(c);
