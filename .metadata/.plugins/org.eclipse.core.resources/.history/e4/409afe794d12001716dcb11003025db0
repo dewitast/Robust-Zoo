@@ -22,7 +22,6 @@ public class Driver {
 	    z.ReadMap();
 	    visited = new boolean[z.GetBaris()][z.GetKolom()];
 	    z.ReadAnimal();
-	    p = new Point(-1,-1);
 	  }
 	  /**
 	    * I.S. Zoo sudah ada.

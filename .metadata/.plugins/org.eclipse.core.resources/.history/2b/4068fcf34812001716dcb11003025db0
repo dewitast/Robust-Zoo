@@ -153,7 +153,7 @@ public class Zoo {
 	    ++jumlahCage;
 	  }
 	  /**
-	    * I.S. File eksternal "map.txt" sudah tersedia.
+	    * I.S. file eksternal "map.txt" sudah tersedia.
 	    * F.S. Zoo terkonfigurasi dari file eksternal.
 	    */
 	  public void ReadMap() {
@@ -215,10 +215,6 @@ public class Zoo {
 		  System.out.println("File not found!");
 		}
 	  }
-	  /**
-	    * I.S. File eksternal "animal.txt" sudah tersedia, peta zoo sudah ada.
-	    * F.S. Zoo sudah terisi binatang dari file eksternal.
-	    */
 	  public void ReadAnimal() {
 		File filename = new File("animal.txt");
 		try {

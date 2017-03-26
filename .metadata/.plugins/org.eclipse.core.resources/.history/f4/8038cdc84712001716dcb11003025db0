@@ -2,7 +2,6 @@ package zoo;
 import cage.*;
 import cell.*;
 import point.*;
-import animal.*;
 import java.util.Scanner;
 import java.io.*;
 
@@ -152,10 +151,6 @@ public class Zoo {
 	    cage[jumlahCage] = new Cage(c);
 	    ++jumlahCage;
 	  }
-	  /**
-	    * I.S. File eksternal "map.txt" sudah tersedia.
-	    * F.S. Zoo terkonfigurasi dari file eksternal.
-	    */
 	  public void ReadMap() {
 		File filename = new File("map.txt");
 		try {
@@ -212,109 +207,6 @@ public class Zoo {
 		  }
 		  sc.close();
 		} catch (IOException e) {
-		  System.out.println("File not found!");
-		}
-	  }
-	  /**
-	    * I.S. File eksternal "animal.txt" sudah tersedia, peta zoo sudah ada.
-	    * F.S. Zoo sudah terisi binatang dari file eksternal.
-	    */
-	  public void ReadAnimal() {
-		File filename = new File("animal.txt");
-		try {
-		  Scanner sc = new Scanner(filename);
-		  char c;
-		  int abs;
-		  int ord;
-		  while (sc.hasNextLine()) {
-		    c = sc.next().charAt(0);
-		    abs = sc.nextInt();
-		    ord = sc.nextInt();
-		    Animal a;
-		    if (c == 'A') {
-		      a = new Animal();
-		      if ((GetElement(abs-1,ord-1).IsLandHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'C') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'M') {
-		      a = new Animal();
-		      if ((GetElement(abs-1,ord-1).IsAirHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'N') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'D') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'U') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'E') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsAirHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'H') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'F') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'G') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'I') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'J') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsAirHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'K') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'L') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'R') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'O') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsAirHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'P') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsAirHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'B') {
-		      a = new Animal();
-		      if ((GetElement(abs-1,ord-1).IsLandHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'T') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'W') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    }
-		  }
-	      sc.close();
-	 } catch (IOException e) {
 		  System.out.println("File not found!");
 		}
 	  }

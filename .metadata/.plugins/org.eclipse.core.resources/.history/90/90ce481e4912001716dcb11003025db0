@@ -10,7 +10,7 @@ import java.util.Random;
  */
 public class Driver {
 	  public Zoo z;
-	  public boolean[][] visited;
+	  public boolean visited[][];
 	  public Point p;
 
 	  /**
@@ -18,11 +18,9 @@ public class Driver {
 	    * Menciptakan Zoo dengan konfigurasi dari file eksternal.
 	    */
 	  public Driver() {
-		z = new Zoo();
-	    z.ReadMap();
-	    visited = new boolean[z.GetBaris()][z.GetKolom()];
-	    z.ReadAnimal();
-	    p = new Point(-1,-1);
+	    /*p(-1,-1);
+	    BELOM KELAR
+	    BACA FILE BELOM*/
 	  }
 	  /**
 	    * I.S. Zoo sudah ada.

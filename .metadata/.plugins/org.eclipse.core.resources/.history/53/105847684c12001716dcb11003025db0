@@ -163,10 +163,12 @@ public class Zoo {
 		  int baris = sc.nextInt();
 		  int kolom = sc.nextInt();
 		  Cage cg;
+		  String s;
 		  char c;
 		  for (int i = 0; i < baris; i++) {
+			s = sc.next();
 		    for (int j = 0; j < kolom; j++) {
-		      c = sc.next().charAt(0);
+		      c = s.charAt(j);
 		      if (c=='@') {
 		        cell[i][j] = new Cell("LandHabitat");
 		        if ((i!=0)&&(cell[i-1][j].IsLandHabitat())) {

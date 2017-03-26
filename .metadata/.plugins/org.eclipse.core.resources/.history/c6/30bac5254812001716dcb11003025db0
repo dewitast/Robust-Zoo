@@ -153,7 +153,7 @@ public class Zoo {
 	    ++jumlahCage;
 	  }
 	  /**
-	    * I.S. File eksternal "map.txt" sudah tersedia.
+	    * I.S. file eksternal "map.txt" sudah tersedia.
 	    * F.S. Zoo terkonfigurasi dari file eksternal.
 	    */
 	  public void ReadMap() {
@@ -215,10 +215,6 @@ public class Zoo {
 		  System.out.println("File not found!");
 		}
 	  }
-	  /**
-	    * I.S. File eksternal "animal.txt" sudah tersedia, peta zoo sudah ada.
-	    * F.S. Zoo sudah terisi binatang dari file eksternal.
-	    */
 	  public void ReadAnimal() {
 		File filename = new File("animal.txt");
 		try {
@@ -230,87 +226,86 @@ public class Zoo {
 		    c = sc.next().charAt(0);
 		    abs = sc.nextInt();
 		    ord = sc.nextInt();
-		    Animal a;
 		    if (c == 'A') {
-		      a = new Animal();
-		      if ((GetElement(abs-1,ord-1).IsLandHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Alligator A;
+		      if ((GetElement(abs-1,ord-1) instanceof Land_Habitat)||(GetElement(abs-1,ord-1) instanceof Water_Habitat))
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(A);
 		    } else if (c == 'C') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Cobra C;
+		      if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(C);
 		    } else if (c == 'M') {
-		      a = new Animal();
-		      if ((GetElement(abs-1,ord-1).IsAirHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Cormorant M;
+		      if ((GetElement(abs-1,ord-1) instanceof Air_Habitat)||(GetElement(abs-1,ord-1) instanceof Water_Habitat))
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(M);
 		    } else if (c == 'N') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Dolphin N;
+		      if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(N);
 		    } else if (c == 'D') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Duck D;
+		      if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(D);
 		    } else if (c == 'U') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Dugong U;
+		      if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(U);
 		    } else if (c == 'E') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsAirHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Eagle E;
+		      if (GetElement(abs-1,ord-1) instanceof Air_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(E);
 		    } else if (c == 'H') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Elephant H;
+		      if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(H);
 		    } else if (c == 'F') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Giraffe F;
+		      if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(F);
 		    } else if (c == 'G') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Goat G;
+		      if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(G);
 		    } else if (c == 'I') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Iguana I;
+		      if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(I);
 		    } else if (c == 'J') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsAirHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Jalak J;
+		      if (GetElement(abs-1,ord-1) instanceof Air_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(J);
 		    } else if (c == 'K') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Komodo K;
+		      if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(K);
 		    } else if (c == 'L') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Lion L;
+		      if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(L);
 		    } else if (c == 'R') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Orca R;
+		      if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(R);
 		    } else if (c == 'O') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsAirHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Owl O;
+		      if (GetElement(abs-1,ord-1) instanceof Air_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(O);
 		    } else if (c == 'P') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsAirHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Parrot P;
+		      if (GetElement(abs-1,ord-1) instanceof Air_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(P);
 		    } else if (c == 'B') {
-		      a = new Animal();
-		      if ((GetElement(abs-1,ord-1).IsLandHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      PolarBear B;
+		      if ((GetElement(abs-1,ord-1) instanceof Land_Habitat)||(GetElement(abs-1,ord-1) instanceof Water_Habitat))
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(B);
 		    } else if (c == 'T') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Tiger T;
+		      if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(T);
 		    } else if (c == 'W') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		      Walrus W;
+		      if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
+		        SearchPoint(abs-1, ord-1).AdoptAnimal(W);
 		    }
 		  }
 	      sc.close();

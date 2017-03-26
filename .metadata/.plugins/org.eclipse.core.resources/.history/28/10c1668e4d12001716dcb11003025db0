@@ -230,6 +230,7 @@ public class Zoo {
 		    c = sc.next().charAt(0);
 		    abs = sc.nextInt();
 		    ord = sc.nextInt();
+		    System.out.println(c + " " + abs + " " + ord);
 		    Animal a;
 		    if (c == 'A') {
 		      a = new Animal();

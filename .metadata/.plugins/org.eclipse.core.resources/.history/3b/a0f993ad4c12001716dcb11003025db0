@@ -165,8 +165,10 @@ public class Zoo {
 		  Cage cg;
 		  char c;
 		  for (int i = 0; i < baris; i++) {
+			System.out.println("i = " + i);
 		    for (int j = 0; j < kolom; j++) {
 		      c = sc.next().charAt(0);
+		      System.out.println("j = " + j + " bernilai " + c);
 		      if (c=='@') {
 		        cell[i][j] = new Cell("LandHabitat");
 		        if ((i!=0)&&(cell[i-1][j].IsLandHabitat())) {

@@ -24,7 +24,8 @@ public class Animal {
 	    * Menciptakan animal kosong.
 	    */
 	  public Animal() {
-	    position = new Point(-1,-1);
+	    position.SetAbsis(-1);
+	    position.SetOrdinat(-1);
 	    species = "Dugong";
 	    sound = "Splashh!";
 	    food_type = "Herbivore";

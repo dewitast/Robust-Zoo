@@ -157,16 +157,22 @@ public class Zoo {
 	    * F.S. Zoo terkonfigurasi dari file eksternal.
 	    */
 	  public void ReadMap() {
+		  System.out.println(1);
 		File filename = new File("map.txt");
 		try {
 		  Scanner sc = new Scanner(filename);
+		  System.out.println(1);
 		  int baris = sc.nextInt();
 		  int kolom = sc.nextInt();
 		  Cage cg;
+		  String s;
 		  char c;
 		  for (int i = 0; i < baris; i++) {
+			  System.out.println("i = " + i);
+			s = sc.next();
 		    for (int j = 0; j < kolom; j++) {
-		      c = sc.next().charAt(0);
+		    	System.out.println("j = " + j);
+		      c = s.charAt(j);
 		      if (c=='@') {
 		        cell[i][j] = new Cell("LandHabitat");
 		        if ((i!=0)&&(cell[i-1][j].IsLandHabitat())) {
