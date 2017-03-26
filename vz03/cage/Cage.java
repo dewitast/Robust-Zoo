@@ -1,6 +1,7 @@
 package cage;
 import animal.*;
-import System.*;
+import java.io.*;
+import java.Math.Random;
 
 /**
   * File : Cage.java
@@ -53,13 +54,13 @@ public class Cage {
   public Cage(Cage c) {
     this.size = c.size;
     loc[] = new Point[maxSize];
-    for (int i = 0; i< size; ++i) {
+    for (int i = 0; i < size; ++i) {
       loc[i] = new Point(c.loc[i]);
     }
     totalAnimal = c.totalAnimal;
     animal[] = new Animal[3*maxSize/10];
-    for (int i = 0; i< totalAnimal; ++i) {
-      animal[i].clone();
+    for (int i = 0; i < totalAnimal; ++i) {
+      animal[i] = (c.animal[i]).clone();
     }
   }
   /**
@@ -97,16 +98,16 @@ public class Cage {
     if (IsFull()) {
       System.out.println("Kandang penuh.");
     }
-    else if (IsInCage(a)==-1) {
+    else if (!IsInCage(a)) {
       if (CanPut(a)) {
         Random rand = new Random();
-        int random = rand.nextInt(size());
+        int random = rand.nextInt(size);
         while (IsOccupied(random)) {
           Random rand = new Random();
-          int random = rand.nextInt(size());
+          int random = rand.nextInt(size);
         }
         a.SetPoint(GetPoint(random));
-        animal[totalAnimal] = a;
+        animal[totalAnimal] = a.clone();
         ++totalAnimal;
       }
     }
@@ -215,30 +216,25 @@ public class Cage {
   public void Move() {
     Random rand = new Random();
     int random;
-    Point p2;
+    Point p2,p;
     for (int i = 0; i < totalAnimal; ++i) {
       p2 = animal[i].GetPos();
-      random = rand.nextInt(4);
+      random = rand.nextInt(4) + 1;
       if (random == 1) {
-        Point p(p2.GetAbsis() - 1, p2.GetOrdinat());
-        if ((IsInCage(p)) && (!IsOccupied(p)))
-          animal[i].SetPoint(p);
+        p = p2.PrevX();
       }
       else if (random == 2) {
-        Point p(p2.GetAbsis() - 1, p2.GetOrdinat());
-        if ((IsInCage(p)) && (!IsOccupied(p)));
-          animal[i].SetPoint(p);
+        p = NextX();
       }
       else if (random == 3) {
-        Point p(p2.GetAbsis() - 1, p2.GetOrdinat());
-        if ((IsInCage(p)) && (!IsOccupied(p)))
-          animal[i].SetPoint(p);
+        p = PrevY();
       }
       else if (random == 4) {
-        Point p(p2.GetAbsis() - 1, p2.GetOrdinat());
-        if ((IsInCage(p)) && (!IsOccupied(p)))
-          animal[i].SetPoint(p);
+        p = NextY();
+        
       }
+      if ((IsInCage(p)) && (!IsOccupied(p)))
+          animal[i].SetPoint(p);
     }
   }
 }
