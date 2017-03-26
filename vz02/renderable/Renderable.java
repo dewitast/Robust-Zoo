@@ -6,9 +6,10 @@ package renderable;
   * @author Catherine Almira - 13515111
   */
 interface Renderable {
-  /** Fungsi render akan menghasilkan karakter yang dipakai untuk representasi
+  /**
+    * Fungsi render akan menghasilkan karakter yang dipakai untuk representasi,
     * objek pada Zoo.
     * @return Mengembalikan char yang merupakan representasi kode objek.
     */
-  abstract void char Render();	
+  abstract void char Render();
 }
