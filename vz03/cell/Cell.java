@@ -11,4 +11,4 @@ public abstract class Cell implements Renderable {
   public boolean IsHabitat() {
     return (this instanceof LandHabitat || this instanceof WaterHabitat || this instanceof AirHabitat);
   }
-};
+}

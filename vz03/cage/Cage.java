@@ -1,4 +1,4 @@
-package class;
+package cage;
 import animal.*;
 import System.*;
 
@@ -35,7 +35,9 @@ public class Cage {
     animal[] = new Animal[3*maxSize/10];
   }
   /**
-    * Constructor tanpa parameter.
+    * Constructor dengan parameter.
+    * @param possOrd posisi ordinat.
+    * @param possAbs posisi absis.
     */
   public Cage(int posOrd, int posAbs) {
     size = 1;
@@ -52,12 +54,12 @@ public class Cage {
     this.size = c.size;
     loc[] = new Point[maxSize];
     for (int i = 0; i< size; ++i) {
-      /* ????????? */
+      loc[i] = new Point(c.loc[i]);
     }
     totalAnimal = c.totalAnimal;
     animal[] = new Animal[3*maxSize/10];
     for (int i = 0; i< totalAnimal; ++i) {
-      /* ????????? */
+      animal[i].clone();
     }
   }
   /**
@@ -92,8 +94,21 @@ public class Cage {
     * @param a Objek binatang yang akan dimasukkan.
     */
   public void AdoptAnimal(Animal a) {
-    if (!IsFullAnimal() && !IsInCage(a) && CanPut(a)) {
-      /* ????? */
+    if (IsFull()) {
+      System.out.println("Kandang penuh.");
+    }
+    else if (IsInCage(a)==-1) {
+      if (CanPut(a)) {
+        Random rand = new Random();
+        int random = rand.nextInt(size());
+        while (IsOccupied(random)) {
+          Random rand = new Random();
+          int random = rand.nextInt(size());
+        }
+        a.SetPoint(GetPoint(random));
+        animal[totalAnimal] = a;
+        ++totalAnimal;
+      }
     }
   }
   /**
@@ -198,6 +213,32 @@ public class Cage {
     * F.S. Binatang di cage bergerak, walau mungkin diam.
     */
   public void Move() {
-    /* ??????? */
+    Random rand = new Random();
+    int random;
+    Point p2;
+    for (int i = 0; i < totalAnimal; ++i) {
+      p2 = animal[i].GetPos();
+      random = rand.nextInt(4);
+      if (random == 1) {
+        Point p(p2.GetAbsis() - 1, p2.GetOrdinat());
+        if ((IsInCage(p)) && (!IsOccupied(p)))
+          animal[i].SetPoint(p);
+      }
+      else if (random == 2) {
+        Point p(p2.GetAbsis() - 1, p2.GetOrdinat());
+        if ((IsInCage(p)) && (!IsOccupied(p)));
+          animal[i].SetPoint(p);
+      }
+      else if (random == 3) {
+        Point p(p2.GetAbsis() - 1, p2.GetOrdinat());
+        if ((IsInCage(p)) && (!IsOccupied(p)))
+          animal[i].SetPoint(p);
+      }
+      else if (random == 4) {
+        Point p(p2.GetAbsis() - 1, p2.GetOrdinat());
+        if ((IsInCage(p)) && (!IsOccupied(p)))
+          animal[i].SetPoint(p);
+      }
+    }
   }
 }
