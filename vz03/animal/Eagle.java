@@ -1,17 +1,18 @@
-/** File : Eagle.java
-  * Penanggung jawab : Sylvia Juliana - 13515070
-  */
-
-/** Kelas Eagle merupakan kelas untuk real object Eagle.
+/**
+  * File : Eagle.java
+  * Kelas Eagle merupakan kelas untuk real object Eagle.
+  * @author Sylvia Juliana - 13515070
   */
 public class Eagle extends Animal {
-  /** Constructor.
+  /**
+    * Constructor.
     * Menciptakan objek Eagle.
     */
   public Eagle() {
   	super(5.8, 0.29, false);
   }
-  /** Constructor dengan parameter.
+  /**
+    * Constructor dengan parameter.
     * Menciptakan objek Eagle dengan berat w, jumlah makanan f, dan status jinak t.
     * @param w Berat Eagle.
     * @param f Jumlah makanan Eagle.
@@ -20,13 +21,15 @@ public class Eagle extends Animal {
   public Eagle(float w, float f, boolean t) {
   	super(w, f, t);
   }
-  /** Interaksi yang dilakukan Eagle.
+  /**
+    * Interaksi yang dilakukan Eagle.
     * @return Mengembalikan string yang merepresentasikan suara Eagle.
     */
   public string Interact() {
   	return "Nguiikk!";
   }
-  /** Render dari Eagle.
+  /**
+    * Render dari Eagle.
     * @return Mengembalikan char yang merupakan representasi kode Eagle.
     */
   public char Render() {

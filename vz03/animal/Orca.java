@@ -1,17 +1,18 @@
-/** File : Orca.java
-  * Penanggung jawab : Sylvia Juliana - 13515070
-  */
-  
-/** Kelas Orca merupakan kelas untuk real object Orca.
+/**
+  * File : Orca.java
+  * Kelas Orca merupakan kelas untuk real object Orca.
+  * @author Sylvia Juliana - 13515070
   */
 public class Orca extends Animal {
-  /** Constructor.
+  /**
+    * Constructor.
     * Menciptakan objek Orca.
     */
   public Orca() {
   	super(4000, 200, false);
   }
-  /** Constructor dengan parameter.
+  /**
+    * Constructor dengan parameter.
     * Menciptakan objek Orca dengan berat w, jumlah makanan f, dan status jinak t.
     * @param w Berat Orca.
     * @param f Jumlah makanan Orca.
@@ -20,13 +21,15 @@ public class Orca extends Animal {
   public Orca(float w, float f, boolean t) {
   	super(w, f, t);
   }
-  /** Interaksi yang dilakukan Orca.
+  /**
+    * Interaksi yang dilakukan Orca.
     * @return Mengembalikan string yang merepresentasikan suara Orca.
     */
   public string Interact() {
   	return "Ngiak!";
   }
-  /** Render dari Orca.
+  /**
+    * Render dari Orca.
     * @return Mengembalikan char yang merupakan representasi kode Orca.
     */
   public char Render() {
