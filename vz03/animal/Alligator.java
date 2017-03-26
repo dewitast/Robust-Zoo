@@ -35,4 +35,11 @@ public class Alligator extends Animal {
   public char Render() {
     return 'A';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Alligator baru.
+    * @return Mengembalikan objek Alligator baru.
+    */
+  public Alligator Clone() {
+    return new Alligator(this);
+  }
 }

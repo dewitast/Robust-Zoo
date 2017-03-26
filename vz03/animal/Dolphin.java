@@ -35,4 +35,11 @@ public class Dolphin extends Animal {
   public char Render() {
     return 'N';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Dolphin baru.
+    * @return Mengembalikan objek Dolphin baru.
+    */
+  public Dolphin Clone() {
+    return new Dolphin(this);
+  }
 }

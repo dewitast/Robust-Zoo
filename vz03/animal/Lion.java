@@ -34,5 +34,12 @@ public class Lion extends Animal {
     */
   public char Render() {
     return 'L';
-  } 
+  }
+  /**
+    * Melakukan cloning untuk menciptakan objek Lion baru.
+    * @return Mengembalikan objek Lion baru.
+    */
+  public Lion Clone() {
+    return new Lion(this);
+  }
 }

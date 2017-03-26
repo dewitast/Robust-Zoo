@@ -35,4 +35,11 @@ public class Cobra extends Animal {
   public char Render() {
   	return 'C';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Cobra baru.
+    * @return Mengembalikan objek Cobra baru.
+    */
+  public Cobra Clone() {
+    return new Cobra(this);
+  }
 }

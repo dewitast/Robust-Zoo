@@ -35,4 +35,11 @@ public class Eagle extends Animal {
   public char Render() {
   	return 'E';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Eagle baru.
+    * @return Mengembalikan objek Eagle baru.
+    */
+  public Eagle Clone() {
+    return new Eagle(this);
+  }
 }

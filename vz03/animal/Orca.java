@@ -35,4 +35,11 @@ public class Orca extends Animal {
   public char Render() {
   	return 'R';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Orca baru.
+    * @return Mengembalikan objek Orca baru.
+    */
+  public Orca Clone() {
+    return new Orca(this);
+  }
 }

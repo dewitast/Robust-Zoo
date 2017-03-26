@@ -35,4 +35,11 @@ public class Iguana extends Animal {
   public char Render() {
     return 'I';
   }
+  /**
+    * Melakukan cloning untuk menciptakan objek Iguana baru.
+    * @return Mengembalikan objek Iguana baru.
+    */
+  public Iguana Clone() {
+    return new Iguana(this);
+  }
 }

@@ -29,10 +29,17 @@ public class Komodo extends Animal {
     return ("Slpp!");
   }
   /**
-    * Render dari Alligator.
+    * Render dari Komodo.
     * @return Mengembalikan char yang merupakan representasi kode Komodo.
     */
   public char Render() {
     return 'K';
+  }
+  /**
+    * Melakukan cloning untuk menciptakan objek Komodo baru.
+    * @return Mengembalikan objek Komodo baru.
+    */
+  public Komodo Clone() {
+    return new Komodo(this);
   }
 }
