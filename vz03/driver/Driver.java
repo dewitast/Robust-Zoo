@@ -1,7 +1,7 @@
 package driver;
 import zoo.*;
 import java.io.*;
-import java.Math.Random;
+import java.util.Random;
 
 /**
   * File : Driver.java
@@ -39,7 +39,7 @@ public class Driver {
     */
   public void GetExperience() {
     if (p.GetAbsis()>0) {
-      if ((z.GetElement(p.PrevX()).IsHabitat()) {
+      if (z.GetElement(p.PrevX()).IsHabitat()) {
         (z.SearchPoint(p.PrevX())).Interact();
       }
     }
@@ -72,6 +72,7 @@ public class Driver {
       z.GetCage(i).Move();
     }
     Random rand = new Random();
+    int random;
     boolean found = false;
     if ((p.GetAbsis()==-1)&&(p.GetOrdinat()==-1)) {
       System.out.println("Welcome to the zoo.");
@@ -81,8 +82,8 @@ public class Driver {
             visited[i][j] = false;
           }
         }
-        Random rand = new Random();
-        int random = rand.nextInt(z.GetBaris());
+        rand = new Random();
+        random = rand.nextInt(z.GetBaris());
         if ((z.GetElement(0,random)).IsEntrance()) {
           found = true;
           p.SetAbsis(0);
@@ -94,8 +95,8 @@ public class Driver {
           p.SetOrdinat(random);
         }   
         if (!found) {
-          Random rand = new Random();
-          int random = rand.nextInt(z.GetKolom());
+          rand = new Random();
+          random = rand.nextInt(z.GetKolom());
           if ((z.GetElement(random,0)).IsEntrance()) {
             found = true;
             p.SetAbsis(random);
@@ -121,8 +122,8 @@ public class Driver {
         return;
       }
       while (!found) {
-        Random rand = new Random();
-        int random = rand.nextInt(4);
+        rand = new Random();
+        random = rand.nextInt(4);
         if (random == 0) {
           if (b1) {
             found = true;

@@ -28,7 +28,7 @@ public class Driver {
     */
   public void DisplayZoo() {
     for (int i = 0; i < z.GetJumlahCage(); ++i) {
-        z.GetCage(i).Move();
+      z.GetCage(i).Move();
     }
     System.out.println(z);
   }
@@ -39,7 +39,7 @@ public class Driver {
     */
   public void GetExperience() {
     if (p.GetAbsis()>0) {
-      if ((z.GetElement(p.PrevX()).IsHabitat()) {
+      if (z.GetElement(p.PrevX()).IsHabitat()) {
         (z.SearchPoint(p.PrevX())).Interact();
       }
     }

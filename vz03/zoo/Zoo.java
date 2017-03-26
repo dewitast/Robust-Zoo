@@ -48,8 +48,8 @@ public class Zoo {
     * @return elemen cell pada matriks dengan koordinat p.
     */
   public Cell GetElement(Point p) {
-    int brs = P.GetAbsis();
-    int kol = P.GetOrdinat();
+    int brs = p.GetAbsis();
+    int kol = p.GetOrdinat();
     return (cell[brs][kol]);
   }
   /**

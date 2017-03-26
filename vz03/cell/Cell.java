@@ -11,6 +11,6 @@ public abstract class Cell implements Renderable {
     * @return Menghasilkan true jika kode pada layar merupakan kode Land, Air, atau Water Habitat.
     */
   public boolean IsHabitat() {
-    return (this instanceof LandHabitat || this instanceof WaterHabitat || this instanceof AirHabitat);
+    return (this instanceof Land_Habitat || this instanceof Water_Habitat || this instanceof Air_Habitat);
   }
 }

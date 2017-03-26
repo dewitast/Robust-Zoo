@@ -1,7 +1,7 @@
 package cage;
 import animal.*;
 import java.io.*;
-import java.Math.Random;
+import java.util.Random;
 
 /**
   * File : Cage.java
@@ -11,9 +11,9 @@ import java.Math.Random;
   */
 public class Cage {
   private final int maxSize = 100;
-  private Point loc[];
+  private Point[] loc;
   private int size;
-  private Animal animal[];
+  private Animal[] animal;
   private int totalAnimal;
 
   /**
@@ -21,9 +21,9 @@ public class Cage {
     */
   public Cage() {
     size = 0;
-    loc[] = new Point[maxSize];
+    loc = new Point[maxSize];
     totalAnimal = 0;
-    animal[] = new Animal[3*maxSize/10];
+    animal = new Animal[3*maxSize/10];
   }
   /**
     * Constructor dengan parameter.
@@ -31,9 +31,9 @@ public class Cage {
     */
   public Cage(int size) {
     this.size = size;
-    loc[] = new Point[maxSize];
+    loc = new Point[maxSize];
     totalAnimal = 0;
-    animal[] = new Animal[3*maxSize/10];
+    animal = new Animal[3*maxSize/10];
   }
   /**
     * Constructor dengan parameter.
@@ -42,10 +42,10 @@ public class Cage {
     */
   public Cage(int posOrd, int posAbs) {
     size = 1;
-    loc[] = new Point[maxSize];
+    loc = new Point[maxSize];
     loc[0] = new Point(posAbs, posOrd);
     totalAnimal = 0;
-    animal[] = new Animal[3*maxSize/10];
+    animal = new Animal[3*maxSize/10];
   }
   /**
     * Constructor dengan parameter.
@@ -53,24 +53,15 @@ public class Cage {
     */
   public Cage(Cage c) {
     this.size = c.size;
-    loc[] = new Point[maxSize];
+    loc = new Point[maxSize];
     for (int i = 0; i < size; ++i) {
       loc[i] = new Point(c.loc[i]);
     }
     totalAnimal = c.totalAnimal;
-    animal[] = new Animal[3*maxSize/10];
+    animal = new Animal[3*maxSize/10];
     for (int i = 0; i < totalAnimal; ++i) {
       animal[i] = (c.animal[i]).clone();
     }
-  }
-  /**
-    * Constructor tanpa parameter.
-    */
-  public Cage() {
-    size = 0;
-    loc[] = new Point[maxSize];
-    totalAnimal = 0;
-    animal[] = new Animal[3*maxSize/10];
   }
   /**
     * Getter ukuran cage.
@@ -103,10 +94,10 @@ public class Cage {
         Random rand = new Random();
         int random = rand.nextInt(size);
         while (IsOccupied(random)) {
-          Random rand = new Random();
-          int random = rand.nextInt(size);
+          rand = new Random();
+          random = rand.nextInt(size);
         }
-        a.SetPoint(GetPoint(random));
+        a.SetPoint(loc[random]);
         animal[totalAnimal] = a.clone();
         ++totalAnimal;
       }
@@ -170,7 +161,7 @@ public class Cage {
     boolean found = false;
     int i = 0;
     while (!found && i < totalAnimal) {
-      if (a.equals(animal[i])) {
+      if (p.equals(loc[i])) {
         found = true;
       }
       ++i;
@@ -178,12 +169,19 @@ public class Cage {
     return found;
   }
   /**
+    * Memeriksa apakah cage penuh.
+    * @return true jika binatang a terdapat pada cage.
+    */
+  public boolean IsFull() {
+    return (totalAnimal == 3*size/100);
+  }
+  /**
     * I.S. sembarang.
     * F.S. semua binatang yang terdapat pada cage berinteraksi.
     */
   public void Interact() {
     for (int i = 0; i < totalAnimal; ++i) {
-      System.out.println(a[i].Interact());
+      System.out.println(animal[i].Interact());
     }
   }
   /**
@@ -224,13 +222,13 @@ public class Cage {
         p = p2.PrevX();
       }
       else if (random == 2) {
-        p = NextX();
+        p = p2.NextX();
       }
       else if (random == 3) {
-        p = PrevY();
+        p = p2.PrevY();
       }
       else if (random == 4) {
-        p = NextY();
+        p = p2.NextY();
         
       }
       if ((IsInCage(p)) && (!IsOccupied(p)))

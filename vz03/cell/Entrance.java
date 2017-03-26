@@ -8,7 +8,7 @@ public class Entrance extends Road {
     * Render dari Entrance.
     * @return Mengembalikan char yang merupakan representasi kode Entrance.
     */
-  public Render() {
+  public char Render() {
   	return 'Z';
   }
 }
