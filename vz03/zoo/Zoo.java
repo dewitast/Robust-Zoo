@@ -3,6 +3,8 @@ import cage.*;
 import cell.*;
 import animal.*;
 import System.*;
+import java.io.*;
+import java.util.Scanner;
 
 /**
   * File : Zoo.java
@@ -148,5 +150,161 @@ public class Zoo {
   public void AddCage(Cage c) {
     cage[jumlahCage] = new Cage(c);
     ++jumlahCage;
+  }
+  public void ReadMap() {
+    File filename = new File("map.txt");
+    try {
+      Scanner sc = new Scanner(filename);
+      int baris = sc.nextInt();
+      int kolom = sc.nextInt();
+      char c;
+      for (int i = 0; i < baris; i++) {
+        for (int j = 0; j < kolom; j++) {
+          c = sc.next().charAt(0);
+          if (c=='@') {
+            cell[i][j] = new LandHabitat();
+            if ((i!=0)&&(cell[i-1][j] instanceof Land_Habitat)) {
+              SearchPoint(i-1,j).AddPoint(P);
+            } else if ((j!=0)&&(cell[i][j-1] instanceof Land_Habitat)) {
+              SearchPoint(i,j-1).AddPoint(P);
+            } else {
+              Cage c(i,j);
+              AddCage(c);
+            }
+          } else if (c=='^') {
+            cell[i][j] = new AirHabitat();
+            if ((i!=0)&&(cell[i-1][j] instanceof Air_Habitat)) {
+              SearchPoint(i-1,j).AddPoint(P);
+            } else if ((j!=0)&&(cell[i][j-1] instanceof Air_Habitat)) {
+              SearchPoint(i,j-1).AddPoint(P);
+            } else {
+              Cage c(i,j);
+              AddCage(c);
+            }
+          } else if (c=='~') {
+            cell[i][j] = new WaterHabitat();
+            if ((i!=0)&&(cell[i-1][j] instanceof Water_Habitat)) {
+              SearchPoint(i-1,j).AddPoint(P);
+            } else if ((j!=0)&&(cell[i][j-1] instanceof Water_Habitat)) {
+              SearchPoint(i,j-1).AddPoint(P);
+            } else {
+              Cage c(i,j);
+              AddCage(c);
+            }
+          } else if (c=='S') {
+            cell[i][j] = new Restaurant();
+          } else if (c=='#') {
+            cell[i][j] = new Park();
+          } else if (c=='+') {
+            cell[i][j] = new Road();
+          } else if (c=='X') {
+            cell[i][j] = new Exit();
+          } else if (c=='Z') {
+            cell[i][j] = new Entrance();
+          }
+        }
+      }
+      sc.close();
+    } catch (IOException e) {
+      System.out.println("File not found!");
+    }
+  }
+  public void ReadAnimal() {
+    File filename = new File("animal.txt");
+    try {
+      Scanner sc = new Scanner(filename);
+      char c;
+      int abs;
+      int ord;
+      while (sc.hasNextLine()) {
+        c = sc.next().charAt(0);
+        abs = sc.nextInt();
+        ord = sc.nextInt();
+        if (c == 'A') {
+          Alligator A;
+          if ((GetElement(abs-1,ord-1) instanceof Land_Habitat)||(GetElement(abs-1,ord-1) instanceof Water_Habitat))
+            SearchPoint(abs-1, ord-1).AdoptAnimal(A);
+        } else if (c == 'C') {
+          Cobra C;
+          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(C);
+        } else if (c == 'M') {
+          Cormorant M;
+          if ((GetElement(abs-1,ord-1) instanceof Air_Habitat)||(GetElement(abs-1,ord-1) instanceof Water_Habitat))
+            SearchPoint(abs-1, ord-1).AdoptAnimal(M);
+        } else if (c == 'N') {
+          Dolphin N;
+          if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(N);
+        } else if (c == 'D') {
+          Duck D;
+          if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(D);
+        } else if (c == 'U') {
+          Dugong U;
+          if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(U);
+        } else if (c == 'E') {
+          Eagle E;
+          if (GetElement(abs-1,ord-1) instanceof Air_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(E);
+        } else if (c == 'H') {
+          Elephant H;
+          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(H);
+        } else if (c == 'F') {
+          Giraffe F;
+          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(F);
+        } else if (c == 'G') {
+          Goat G;
+          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(G);
+        } else if (c == 'I') {
+          Iguana I;
+          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(I);
+        } else if (c == 'J') {
+          Jalak J;
+          if (GetElement(abs-1,ord-1) instanceof Air_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(J);
+        } else if (c == 'K') {
+          Komodo K;
+          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(K);
+        } else if (c == 'L') {
+          Lion L;
+          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(L);
+        } else if (c == 'R') {
+          Orca R;
+          if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(R);
+        } else if (c == 'O') {
+          Owl O;
+          if (GetElement(abs-1,ord-1) instanceof Air_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(O);
+        } else if (c == 'P') {
+          Parrot P;
+          if (GetElement(abs-1,ord-1) instanceof Air_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(P);
+        } else if (c == 'B') {
+          PolarBear B;
+          if ((GetElement(abs-1,ord-1) instanceof Land_Habitat)||(GetElement(abs-1,ord-1) instanceof Water_Habitat))
+            SearchPoint(abs-1, ord-1).AdoptAnimal(B);
+        } else if (c == 'T') {
+          Tiger T;
+          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(T);
+        } else if (c == 'W') {
+          Walrus W;
+          if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
+            SearchPoint(abs-1, ord-1).AdoptAnimal(W);
+        }
+      }
+      sc.close();
+    } catch (IOException e) {
+      System.out.println("File not found!");
+    }
   }
 }

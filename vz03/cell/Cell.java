@@ -13,4 +13,10 @@ public abstract class Cell implements Renderable {
   public boolean IsHabitat() {
     return (this instanceof Land_Habitat || this instanceof Water_Habitat || this instanceof Air_Habitat);
   }
+  /**
+    * Constructor dengan parameter.
+    * @param c Cell yang akan disalin.
+    */
+  public Cell(Cell c) {
+  }
 }
