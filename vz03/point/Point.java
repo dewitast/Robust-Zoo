@@ -1,6 +1,6 @@
 package point;
 
-/** 
+/**
   * File : Point.java
   * Kelas point merepresentasikan suatu titik dengan absis dan ordinat nya.
   * @author Dewita Sonya Tarabunga - 13515021
@@ -48,14 +48,16 @@ public class Point {
     return ordinat;
   }
   /**
-    * Mengubah nilai absis point.
+    * I.S. nilai absis terdefinisi.
+    * F.S. nilai absis dari objek point sudah diganti.
     * @param abs nilai absis yang akan dimasukkan.
     */
   public void SetAbsis(int abs) {
     absis = abs;
   }
   /**
-    * Mengubah nilai ordinat point.
+    * I.S. nilai ordinat terdefinisi.
+    * F.S. nilai ordinat dari objek point sudah diganti.
     * @param ord nilai ordinat yang akan dimasukkan.
     */
   public void SetOrdinat(int ord) {
