@@ -3,7 +3,7 @@
   * Kelas Alligator merupakan kelas untuk real object Alligator.
   * @author Kezia Suhendra - 13515063
   */
-public class Alligator extends Reptile {
+public class Alligator extends Alligator {
   /**
     * Constructor.
     * Menciptakan objek Alligator.
@@ -20,6 +20,34 @@ public class Alligator extends Reptile {
     */
   public Alligator(double w, double f, boolean t) {
     super(w, f, t);
+  }
+  /**
+    * Jenis makanan yang dimakan Alligator.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Alligator.
+    */
+  public String GetFoodType() {
+    return "Carnivore";
+  }
+  /**
+    * Memeriksa apakah Alligator adalah hewan darat.
+    * @return Mengembalikan true jika Alligator adalah hewan darat dan false jika Alligator bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Alligator adalah hewan air.
+    * @return Mengembalikan true jika Alligator adalah hewan air dan false jika Alligator bukan hewan air.
+    */
+  public boolean IsWater() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Alligator adalah hewan udara.
+    * @return Mengembalikan true jika Alligator adalah hewan udara dan false jika Alligator bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
   }
   /**
     * Interaksi yang dilakukan Alligator.

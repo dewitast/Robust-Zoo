@@ -22,6 +22,34 @@ public class Eagle extends Aves {
   	super(w, f, t);
   }
   /**
+    * Jenis makanan yang dimakan Eagle.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Eagle.
+    */
+  public String GetFoodType() {
+    return "Carnivore";
+  }
+  /**
+    * Memeriksa apakah Eagle adalah hewan darat.
+    * @return Mengembalikan true jika Eagle adalah hewan darat dan false jika Eagle bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Eagle adalah hewan air.
+    * @return Mengembalikan true jika Eagle adalah hewan air dan false jika Eagle bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Eagle adalah hewan udara.
+    * @return Mengembalikan true jika Eagle adalah hewan udara dan false jika Eagle bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return true;
+  }
+  /**
     * Interaksi yang dilakukan Eagle.
     * @return Mengembalikan string yang merepresentasikan suara Eagle.
     */

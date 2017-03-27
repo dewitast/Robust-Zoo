@@ -22,6 +22,34 @@ public class Goat extends Mammal {
     super(w, f, t);
   }
   /**
+    * Jenis makanan yang dimakan Goat.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Goat.
+    */
+  public String GetFoodType() {
+    return "Herbivore";
+  }
+  /**
+    * Memeriksa apakah Goat adalah hewan darat.
+    * @return Mengembalikan true jika Goat adalah hewan darat dan false jika Goat bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Goat adalah hewan air.
+    * @return Mengembalikan true jika Goat adalah hewan air dan false jika Goat bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Goat adalah hewan udara.
+    * @return Mengembalikan true jika Goat adalah hewan udara dan false jika Goat bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
+  }
+  /**
     * Interaksi yang dilakukan Goat.
     * @return Mengembalikan string yang merepresentasikan suara Goat.
     */

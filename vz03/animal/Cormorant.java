@@ -22,6 +22,34 @@ public class Cormorant extends Aves {
     super(w, f, t);
   }
   /**
+    * Jenis makanan yang dimakan Cormorant.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Cormorant.
+    */
+  public String GetFoodType() {
+    return "Carnivore";
+  }
+  /**
+    * Memeriksa apakah Cormorant adalah hewan darat.
+    * @return Mengembalikan true jika Cormorant adalah hewan darat dan false jika Cormorant bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Cormorant adalah hewan air.
+    * @return Mengembalikan true jika Cormorant adalah hewan air dan false jika Cormorant bukan hewan air.
+    */
+  public boolean IsWater() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Cormorant adalah hewan udara.
+    * @return Mengembalikan true jika Cormorant adalah hewan udara dan false jika Cormorant bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return true;
+  }
+  /**
     * Interaksi yang dilakukan Cormorant.
     * @return Mengembalikan string yang merepresentasikan suara Cormorant.
     */

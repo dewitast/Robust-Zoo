@@ -3,7 +3,7 @@
   * Kelas Cobra merupakan kelas untuk real object Cobra.
   * @author Sylvia Juliana - 13515070
   */
-public class Cobra extends Reptile {
+public class Cobra extends Cobra {
   /**
     * Constructor.
     * Menciptakan objek Cobra.
@@ -20,6 +20,34 @@ public class Cobra extends Reptile {
     */
   public Cobra(double w, double f, boolean t) {
   	super(w, f, t);
+  }
+  /**
+    * Jenis makanan yang dimakan Cobra.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Cobra.
+    */
+  public String GetFoodType() {
+    return "Carnivore";
+  }
+  /**
+    * Memeriksa apakah Cobra adalah hewan darat.
+    * @return Mengembalikan true jika Cobra adalah hewan darat dan false jika Cobra bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Cobra adalah hewan air.
+    * @return Mengembalikan true jika Cobra adalah hewan air dan false jika Cobra bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Cobra adalah hewan udara.
+    * @return Mengembalikan true jika Cobra adalah hewan udara dan false jika Cobra bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
   }
   /**
     * Interaksi yang dilakukan Cobra.

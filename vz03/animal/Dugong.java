@@ -22,6 +22,34 @@ public class Dugong extends Mammal {
     super(w, f, t);
   }
   /**
+    * Jenis makanan yang dimakan Dugong.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Dugong.
+    */
+  public String GetFoodType() {
+    return "Herbivore";
+  }
+  /**
+    * Memeriksa apakah Dugong adalah hewan darat.
+    * @return Mengembalikan true jika Dugong adalah hewan darat dan false jika Dugong bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Dugong adalah hewan air.
+    * @return Mengembalikan true jika Dugong adalah hewan air dan false jika Dugong bukan hewan air.
+    */
+  public boolean IsWater() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Dugong adalah hewan udara.
+    * @return Mengembalikan true jika Dugong adalah hewan udara dan false jika Dugong bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
+  }
+  /**
     * Interaksi yang dilakukan Dugong.
     * @return Mengembalikan string yang merepresentasikan suara Dugong.
     */

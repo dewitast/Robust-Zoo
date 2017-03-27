@@ -22,6 +22,34 @@ public class Giraffe extends Mammal {
     super(w, f, t);
   }
   /**
+    * Jenis makanan yang dimakan Giraffe.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Giraffe.
+    */
+  public String GetFoodType() {
+    return "Herbivore";
+  }
+  /**
+    * Memeriksa apakah Giraffe adalah hewan darat.
+    * @return Mengembalikan true jika Giraffe adalah hewan darat dan false jika Giraffe bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Giraffe adalah hewan air.
+    * @return Mengembalikan true jika Giraffe adalah hewan air dan false jika Giraffe bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Giraffe adalah hewan udara.
+    * @return Mengembalikan true jika Giraffe adalah hewan udara dan false jika Giraffe bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
+  }
+  /**
     * Interaksi yang dilakukan Giraffe.
     * @return Mengembalikan string yang merepresentasikan suara Giraffe.
     */
