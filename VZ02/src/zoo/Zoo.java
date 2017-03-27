@@ -361,22 +361,22 @@ public class Zoo {
 		          h[0] = "Land";
 		          h[1] = "Water";
 		          a = new Animal(p, "PolarBear", "Auuummm", "Carnivore", h, 300, 15, 0, jh, false, c);
-		          if ((GetElement(abs-1,ord-1).IsLandHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if ((getElement(abs-1,ord-1).isLandHabitat())||(getElement(abs-1,ord-1).isWaterHabitat()))
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'T') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Land";
 		          a = new Animal(p, "Tiger", "Growl", "Carnivore", h, 200, 10, 0, jh, false, c);
-		          if (GetElement(abs-1,ord-1).IsLandHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1,ord-1).isLandHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'W') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Water";
 		          a = new Animal(p, "Walrus", "Aaarhhh", "Carnivore", h, 1000, 50, 0, jh, false, c);
-		          if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1,ord-1).isWaterHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        }
 		      }
 		      sc.close();
@@ -393,16 +393,16 @@ public class Zoo {
 		  for (int i = 0; i < baris; ++i) {
 			  s[i] = new StringBuffer();
 			  for (int j = 0; j < kolom; ++j) {
-				  s[i] = s[i].append(GetElement(i,j).Render());
+				  s[i] = s[i].append(getElement(i,j).render());
 				  s[i] = s[i].append(' ');
 			  }
 		  }
 		  Point p;
 		  for (int i = 0; i < jumlahCage; ++i) {
 			  Cage cg = cage[i];
-			  for (int j = 0; j < cg.GetTotalAnimal(); ++j) {
-				  p = cage[i].GetAnimal(j).GetPos();
-				  s[p.GetAbsis()].setCharAt(2*p.GetOrdinat(),cage[i].GetAnimal(j).Render()); 
+			  for (int j = 0; j < cg.getTotalAnimal(); ++j) {
+				  p = cage[i].getAnimal(j).getPos();
+				  s[p.getAbsis()].setCharAt(2*p.getOrdinat(),cage[i].getAnimal(j).render()); 
 			  }
 		  }
 		  String out = new String();
