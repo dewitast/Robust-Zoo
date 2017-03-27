@@ -9,24 +9,24 @@ public class Main {
 	public static void main(String[] args) {
 		int x;
 		Driver d = new Driver();
-		d.DisplayMenu();
+		d.displayMenu();
 		Scanner sc = new Scanner(System.in);
 		x = sc.nextInt();
 		while (x != 4) {
 			if (x == 1) {
-				d.DisplayZoo();
+				d.displayZoo();
 			} else if (x == 2) {
-				d.TourZoo();
-				while (d.GetPoint().GetAbsis() != -1) {
-					d.TourZoo();
+				d.tourZoo();
+				while (d.getPoint().getAbsis() != -1) {
+					d.tourZoo();
 				}
 			} else if (x == 3) {
-				System.out.println("Total meat calculation : " + d.FoodCalcMeat());
-				System.out.println("Total veggie calculation : " + d.FoodCalcVeggie());
+				System.out.println("Total meat calculation : " + d.foodCalcMeat());
+				System.out.println("Total veggie calculation : " + d.foodCalcVeggie());
 			} else {
 				System.out.println("Your input is invalid. Please choose a number from 1 to 4.");
 			}
-			d.DisplayMenu();
+			d.displayMenu();
 			x = sc.nextInt();
 			System.out.println("");
 		}

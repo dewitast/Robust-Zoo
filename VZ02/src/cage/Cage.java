@@ -10,8 +10,8 @@ import java.util.Random;
  * @author Catherine Almira - 13515111
  */
 public class Cage {
-	  private final int maxSize = 100;
-	  private Point[] loc;
+	  private final int MAXSIZE = 100;
+	  public Point[] loc;
 	  private int size;
 	  private Animal[] animal;
 	  private int totalAnimal;
@@ -21,9 +21,9 @@ public class Cage {
 	    */
 	  public Cage() {
 	    size = 0;
-	    loc = new Point[maxSize];
+	    loc = new Point[MAXSIZE];
 	    totalAnimal = 0;
-	    animal = new Animal[3*maxSize/10];
+	    animal = new Animal[3 * MAXSIZE / 10];
 	  }
 	  /**
 	    * Constructor dengan parameter.
@@ -31,21 +31,21 @@ public class Cage {
 	    */
 	  public Cage(int size) {
 	    this.size = size;
-	    loc = new Point[maxSize];
+	    loc = new Point[MAXSIZE];
 	    totalAnimal = 0;
-	    animal = new Animal[3*maxSize/10];
+	    animal = new Animal[3 * MAXSIZE / 10];
 	  }
 	  /**
 	    * Constructor dengan parameter.
 	    * @param possOrd posisi ordinat.
 	    * @param possAbs posisi absis.
 	    */
-	  public Cage(int posOrd, int posAbs) {
+	  public Cage(int posAbs, int posOrd) {
 	    size = 1;
-	    loc = new Point[maxSize];
+	    loc = new Point[MAXSIZE];
 	    loc[0] = new Point(posAbs, posOrd);
 	    totalAnimal = 0;
-	    animal = new Animal[3*maxSize/10];
+	    animal = new Animal[3*MAXSIZE/10];
 	  }
 	  /**
 	    * Constructor dengan parameter.
@@ -53,14 +53,14 @@ public class Cage {
 	    */
 	  public Cage(Cage c) {
 	    this.size = c.size;
-	    loc = new Point[maxSize];
-	    for (int i = 0; i< size; ++i) {
+	    loc = new Point[MAXSIZE];
+	    for (int i = 0; i < size; ++i) {
 	      loc[i] = new Point(c.loc[i]);
 	    }
 	    totalAnimal = c.totalAnimal;
-	    animal = new Animal[3*maxSize/10];
-	    for (int i = 0; i< totalAnimal; ++i) {
-	      animal[i] = new Animal (c.animal[i]);
+	    animal = new Animal[3*MAXSIZE/10];
+	    for (int i = 0; i < totalAnimal; ++i) {
+	      animal[i] = new Animal(c.animal[i]);
 	    }
 	  }
 	  /**
@@ -68,7 +68,7 @@ public class Cage {
 	    * Mengembalikan ukuran cage.
 	    * @return nilai ukuran cage.
 	    */
-	  public int GetSize() {
+	  public int getSize() {
 	    return size;
 	  }
 	  /**
@@ -76,7 +76,7 @@ public class Cage {
 	    * Mengembalikan jumlah binatang pada cage.
 	    * @return nilai jumlah binatang pada cage.
 	    */
-	  public int GetTotalAnimal() {
+	  public int getTotalAnimal() {
 	    return totalAnimal;
 	  }
 	  /**
@@ -84,7 +84,7 @@ public class Cage {
 	    * Mengembalikan binatang pada array ke-indeks.
 	    * @return indeks nilai indeks pada array animal.
 	    */
-	  public Animal GetAnimal(int indeks) {
+	  public Animal getAnimal(int indeks) {
 	    return animal[indeks];
 	  }
 	  /**
@@ -93,19 +93,18 @@ public class Cage {
 	    * serta binatang sesuai dengan jenis cage.
 	    * @param a Objek binatang yang akan dimasukkan.
 	    */
-	  public void AdoptAnimal(Animal a) {
-	    if (IsFull()) {
+	  public void adoptAnimal(Animal a) {
+	    if (isFull()) {
 	      System.out.println("Kandang penuh.");
-	    }
-	    else if (!IsInCage(a)) {
-	      if (CanPut(a)) {
+	    } else if (!isInCage(a)) {
+	      if (canPut(a)) {
 	        Random rand = new Random();
 	        int random = rand.nextInt(size);
-	        while (IsOccupied(random)) {
+	        while (isOccupied(random)) {
 	          rand = new Random();
 	          random = rand.nextInt(size);
 	        }
-	        a.SetPoint(loc[random]);
+	        a.setPoint(loc[random]);
 	        animal[totalAnimal] = new Animal(a);
 	        ++totalAnimal;
 	      }
@@ -115,7 +114,7 @@ public class Cage {
 	    * Memeriksa apakah posisi pada indeks ke-i sudah terdapat binatang.
 	    * @return true jika cage penuh.
 	    */
-	  public boolean IsFull() {
+	  public boolean isFull() {
 	    return (totalAnimal == 3*size/10);
 	  }
 	  /**
@@ -123,11 +122,11 @@ public class Cage {
 	    * @param index nilai indeks penunjuk posisi pada cage.
 	    * @return true jika cage ke-i sudah terisi.
 	    */
-	  public boolean IsOccupied(int index) {
+	  public boolean isOccupied(int index) {
 	    boolean found = false;
 	    int i = 0;
 	    while (!found && i < totalAnimal) {
-	      if ((loc[i]).equals(animal[i].GetPos())) {
+	      if ((loc[i]).isSame(animal[i].getPos())) {
 	        found = true;
 	      }
 	      ++i;
@@ -140,11 +139,11 @@ public class Cage {
 	    * @param p Objek point yang terdapat pada cage.
 	    * @return true jika point p sudah terisi.
 	    */
-	  public boolean IsOccupied(Point p) {
+	  public boolean isOccupied(Point p) {
 	    boolean found = false;
 	    int i = 0;
 	    while (!found && i < totalAnimal) {
-	      if (p.equals(animal[i].GetPos())) {
+	      if (p.isSame(animal[i].getPos())) {
 	        found = true;
 	      }
 	      ++i;
@@ -156,11 +155,11 @@ public class Cage {
 	    * @param a Objek binatang yang akan diperiksa.
 	    * @return true jika binatang a terdapat pada cage.
 	    */
-	  public boolean IsInCage(Animal a) {
+	  public boolean isInCage(Animal a) {
 	    boolean found = false;
 	    int i = 0;
 	    while (!found && i < totalAnimal) {
-	      if (a.equals(animal[i])) {
+	      if (a.isSame(animal[i])) {
 	        found = true;
 	      }
 	      ++i;
@@ -172,11 +171,11 @@ public class Cage {
 	    * @param p Objek point yang akan diperiksa.
 	    * @return true jika point p terdapat pada cage.
 	    */
-	  public boolean IsInCage(Point p) {
+	  public boolean isInCage(Point p) {
 	    boolean found = false;
 	    int i = 0;
-	    while (!found && i < totalAnimal) {
-	      if (p.equals(loc[i])) {
+	    while (!found && i < size) {
+	      if (p.isSame(loc[i])) {
 	        found = true;
 	      }
 	      ++i;
@@ -187,9 +186,9 @@ public class Cage {
 	    * I.S. sembarang.
 	    * F.S. semua binatang yang terdapat pada cage berinteraksi.
 	    */
-	  public void Interact() {
+	  public void interact() {
 	    for (int i = 0; i < totalAnimal; ++i) {
-	      System.out.println(animal[i].Interact());
+	      System.out.println(animal[i].interact());
 	    }
 	  }
 	  /**
@@ -198,7 +197,7 @@ public class Cage {
 	    * @param posAbs nilai absis point yang akan dimasukkan.
 	    * @param posOrd nilai ordinat point yang akan dimasukkan.
 	    */
-	  public void AddPoint(int posAbs, int posOrd) {
+	  public void addPoint(int posAbs, int posOrd) {
 	    loc[size] = new Point(posAbs, posOrd);
 	    ++size;
 	  }
@@ -207,39 +206,38 @@ public class Cage {
 	    * @param a Objek binatang yang akan diperiksa.
 	    * @return true jika animal a dapat dimasukkan ke cage.
 	    */
-	  public boolean CanPut(Animal a) {
+	  public boolean canPut(Animal a) {
 	    if (totalAnimal == 0) {
 	      return true;
 	    }
 	    else {
-	      return (animal[0].GetTame()==a.GetTame());
+	      return (animal[0].getTame() == a.getTame());
 	    }
 	  }
 	  /**
 	    * I.S. sembarang.
 	    * F.S. Binatang di cage bergerak, walau mungkin diam.
 	    */
-	  public void Move() {
+	  public void move() {
 	    Random rand = new Random();
 	    int random;
-	    Point p2,p;
+	    Point p2, p;
 	    for (int i = 0; i < totalAnimal; ++i) {
-	      p2 = animal[i].GetPos();
+	      p2 = animal[i].getPos();
 	      random = rand.nextInt(4) + 1;
 	      if (random == 1) {
-	        p = p2.PrevX();
+	        p = p2.prevX();
 	      } else if (random == 2) {
-	        p = p2.NextX();
+	        p = p2.nextX();
 	      } else if (random == 3) {
-	        p = p2.PrevY();
+	        p = p2.prevY();
 	      } else if (random == 4) {
-	        p = p2.NextY();
-	      }
-	      else {
+	        p = p2.nextY();
+	      } else {
 	    	p = new Point(-1,-1);
 	      }
-	      if ((IsInCage(p)) && (!IsOccupied(p)))
-	          animal[i].SetPoint(p);
+	      if ((isInCage(p)) && (!isOccupied(p)))
+	          animal[i].setPoint(p);
 	    }
 	  }
 }
