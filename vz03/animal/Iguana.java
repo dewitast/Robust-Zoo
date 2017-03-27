@@ -22,6 +22,14 @@ public class Iguana extends Iguana {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Iguana hasil salinan i.
+   * @param i Iguana yang akan disalin.
+   */
+  public Iguana(Iguana i) {
+    super(i.weight, i.food, i.tame);
+  }
+  /**
     * Jenis makanan yang dimakan Iguana.
     * @return Mengembalikan string yang merepresentasikan jenis makanan Iguana.
     */

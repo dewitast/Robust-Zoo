@@ -22,6 +22,14 @@ public class PolarBear extends Mammal {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek PolarBear hasil salinan p.
+   * @param p PolarBear yang akan disalin.
+   */
+  public PolarBear(PolarBear p) {
+    super(p.weight, p.food, p.tame);
+  }
+  /**
     * Jenis makanan yang dimakan PolarBear.
     * @return Mengembalikan string yang merepresentasikan jenis makanan PolarBear.
     */

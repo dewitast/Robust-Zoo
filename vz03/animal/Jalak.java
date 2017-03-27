@@ -22,6 +22,14 @@ public class Jalak extends Aves {
   	super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Jalak hasil salinan j.
+   * @param j Jalak yang akan disalin.
+   */
+  public Jalak(Jalak j) {
+    super(j.weight, j.food, j.tame);
+  }
+  /**
     * Jenis makanan yang dimakan Jalak.
     * @return Mengembalikan string yang merepresentasikan jenis makanan Jalak.
     */

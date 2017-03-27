@@ -22,6 +22,14 @@ public class Parrot extends Aves {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Parrot hasil salinan p.
+   * @param p Parrot yang akan disalin.
+   */
+  public Parrot(Parrot p) {
+    super(p.weight, p.food, p.tame);
+  }
+  /**
     * Jenis makanan yang dimakan Parrot.
     * @return Mengembalikan string yang merepresentasikan jenis makanan Parrot.
     */

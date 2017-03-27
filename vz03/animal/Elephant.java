@@ -22,6 +22,14 @@ public class Elephant extends Mammal {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Elephant hasil salinan e.
+   * @param e Elephant yang akan disalin.
+   */
+  public Elephant(Elephant e) {
+    super(e.weight, e.food, e.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Elephant.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Elephant.
    */

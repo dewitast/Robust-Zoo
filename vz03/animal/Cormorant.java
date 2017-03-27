@@ -22,6 +22,14 @@ public class Cormorant extends Aves {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Cormorant hasil salinan c.
+   * @param c Cormorant yang akan disalin.
+   */
+  public Cormorant(Cormorant c) {
+    super(c.weight, c.food, c.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Cormorant.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Cormorant.
    */

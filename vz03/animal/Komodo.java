@@ -22,6 +22,14 @@ public class Komodo extends Komodo {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Komodo hasil salinan k.
+   * @param k Komodo yang akan disalin.
+   */
+  public Komodo(Komodo k) {
+    super(k.weight, k.food, k.tame);
+  }
+  /**
     * Jenis makanan yang dimakan Komodo.
     * @return Mengembalikan string yang merepresentasikan jenis makanan Komodo.
     */

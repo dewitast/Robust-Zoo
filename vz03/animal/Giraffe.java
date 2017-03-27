@@ -22,6 +22,14 @@ public class Giraffe extends Mammal {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Giraffe hasil salinan g.
+   * @param g Giraffe yang akan disalin.
+   */
+  public Giraffe(Giraffe g) {
+    super(g.weight, g.food, g.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Giraffe.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Giraffe.
    */
