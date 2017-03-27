@@ -19,18 +19,18 @@ public class Driver {
 	    */
 	  public Driver() {
 		z = new Zoo();
-	    z.ReadMap();
-	    visited = new boolean[z.GetBaris()][z.GetKolom()];
-	    z.ReadAnimal();
+	    z.readMap();
+	    visited = new boolean[z.getBaris()][z.getKolom()];
+	    z.readAnimal();
 	    p = new Point(-1,-1);
 	  }
 	  /**
 	    * I.S. Zoo sudah ada.
 	    * F.S. Zoo sudah tercetak pada layar dengan ukuran sesuai input pengunjung.
 	    */
-	  public void DisplayZoo() {
-	    for (int i = 0; i < z.GetJumlahCage(); ++i) {
-	      z.GetCage(i).Move();
+	  public void displayZoo() {
+	    for (int i = 0; i < z.getJumlahCage(); ++i) {
+	      z.getCage(i).move();
 	    }
 	    System.out.println(z);
 	  }
@@ -39,27 +39,27 @@ public class Driver {
 	    * F.S. Experience berupa interaksi dari seluruh binatang di cage
 	    * sekitar tercetak pada layar.
 	    */
-	  public void GetExperience() {
-	    if (p.GetAbsis()>0) {
-	      if (z.GetElement(p.PrevX()).IsHabitat()) {
-	        (z.SearchPoint(p.PrevX())).Interact();
+	  public void getExperience() {
+	    if (p.getAbsis()>0) {
+	      if (z.getElement(p.prevX()).isHabitat()) {
+	        (z.searchPoint(p.prevX())).interact();
 	      }
 	    }
-	    if (p.GetAbsis()<z.GetBaris()-1) {
-	      if ((z.GetElement(p.NextX())).IsHabitat()) {
-	        (z.SearchPoint(p.NextX())).Interact();
+	    if (p.getAbsis()<z.getBaris()-1) {
+	      if ((z.getElement(p.nextX())).isHabitat()) {
+	        (z.searchPoint(p.nextX())).interact();
 	      }
 	    }
-	    if (p.GetOrdinat()>0)
+	    if (p.getOrdinat()>0)
 	    {
-	      if ((z.GetElement(p.PrevY())).IsHabitat()) {
-	        (z.SearchPoint(p.PrevY())).Interact();
+	      if ((z.getElement(p.prevY())).isHabitat()) {
+	        (z.searchPoint(p.prevY())).interact();
 	      }
 	    }
-	    if (p.GetAbsis()<z.GetKolom()-1)
+	    if (p.getAbsis()<z.getKolom()-1)
 	    {
-	      if ((z.GetElement(p.NextY())).IsHabitat()) {
-	        (z.SearchPoint(p.NextY())).Interact();
+	      if ((z.getElement(p.nextY())).isHabitat()) {
+	        (z.searchPoint(p.nextY())).interact();
 	      }
 	    }
 	  }
@@ -69,59 +69,59 @@ public class Driver {
 	    * antara mencapai exit atau tidak ada pilihan jalan lain.
 	    * Selagi perjalanan, semua experience tercetak di layar.
 	    */
-	  public void TourZoo() {
-	    for (int i = 0; i < z.GetJumlahCage(); ++i) {
-	      z.GetCage(i).Move();
+	  public void tourZoo() {
+	    for (int i = 0; i < z.getJumlahCage(); ++i) {
+	      z.getCage(i).move();
 	    }
 	    Random rand = new Random();
 	    int random;
 	    boolean found = false;
-	    if ((p.GetAbsis()==-1)&&(p.GetOrdinat()==-1)) {
+	    if ((p.getAbsis()==-1)&&(p.getOrdinat()==-1)) {
 	      System.out.println("Welcome to the zoo.");
 	      System.out.println(" ");
 	      while (!found) {
-	        for (int i = 0; i < z.GetBaris(); ++i) {
-	          for (int j = 0; j < z.GetKolom(); ++j) {
+	        for (int i = 0; i < z.getBaris(); ++i) {
+	          for (int j = 0; j < z.getKolom(); ++j) {
 	            visited[i][j] = false;
 	          }
 	        }
 	        rand = new Random();
-	        random = rand.nextInt(z.GetBaris());
-	        if ((z.GetElement(0,random)).IsEntrance()) {
+	        random = rand.nextInt(z.getBaris());
+	        if ((z.getElement(0,random)).isEntrance()) {
 	          found = true;
-	          p.SetAbsis(0);
-	          p.SetOrdinat(random);
+	          p.setAbsis(0);
+	          p.setOrdinat(random);
 	        }
-	        else if ((z.GetElement(z.GetBaris()-1,random)).IsEntrance()) {
+	        else if ((z.getElement(z.getBaris()-1,random)).isEntrance()) {
 	          found = true;
-	          p.SetAbsis(z.GetBaris()-1);
-	          p.SetOrdinat(random);
+	          p.setAbsis(z.getBaris()-1);
+	          p.setOrdinat(random);
 	        }   
 	        if (!found) {
 	          rand = new Random();
-	          random = rand.nextInt(z.GetKolom());
-	          if ((z.GetElement(random,0)).IsEntrance()) {
+	          random = rand.nextInt(z.getKolom());
+	          if ((z.getElement(random,0)).isEntrance()) {
 	            found = true;
-	            p.SetAbsis(random);
-	            p.SetOrdinat(0);
+	            p.setAbsis(random);
+	            p.setOrdinat(0);
 	          }
-	          else if ((z.GetElement(random,z.GetKolom()-1)).IsEntrance()) {
+	          else if ((z.getElement(random,z.getKolom()-1)).isEntrance()) {
 	            found = true;
-	            p.SetAbsis(random);
-	            p.SetOrdinat(z.GetKolom()-1);
+	            p.setAbsis(random);
+	            p.setOrdinat(z.GetKolom()-1);
 	          }
 	        }
 	      }
 	    }
 	    else {
-	      visited[p.GetAbsis()][p.GetOrdinat()] = true;
-	      boolean b1 = ((p.GetAbsis()>0)&&(!visited[p.GetAbsis()-1][p.GetOrdinat()])&&((z.GetElement(p.GetAbsis()-1,p.GetOrdinat()))).IsRoad());
-	      boolean b2 = ((p.GetOrdinat()<z.GetKolom()-1)&&(!visited[p.GetAbsis()][p.GetOrdinat()+1])&&((z.GetElement(p.GetAbsis(),p.GetOrdinat()+1))).IsRoad());
-	      boolean b3 = ((p.GetAbsis()<z.GetBaris()-1)&&(!visited[p.GetAbsis()+1][p.GetOrdinat()])&&((z.GetElement(p.GetAbsis()+1,p.GetOrdinat()))).IsRoad());
-	      boolean b4 = ((p.GetOrdinat()>0)&&(!visited[p.GetAbsis()][p.GetOrdinat()-1])&&((z.GetElement(p.GetAbsis(),p.GetOrdinat()-1))).IsRoad());
+	      visited[p.getAbsis()][p.getOrdinat()] = true;
+	      boolean b1 = ((p.getAbsis()>0)&&(!visited[p.getAbsis()-1][p.getOrdinat()])&&((z.getElement(p.getAbsis()-1,p.getOrdinat()))).isRoad());
+	      boolean b2 = ((p.getOrdinat()<z.getKolom()-1)&&(!visited[p.getAbsis()][p.getOrdinat()+1])&&((z.getElement(p.getAbsis(),p.getOrdinat()+1))).IsRoad());
+	      boolean b3 = ((p.getAbsis()<z.getBaris()-1)&&(!visited[p.getAbsis()+1][p.getOrdinat()])&&((z.getElement(p.getAbsis()+1,p.getOrdinat()))).IsRoad());
+	      boolean b4 = ((p.getOrdinat()>0)&&(!visited[p.getAbsis()][p.getOrdinat()-1])&&((z.getElement(p.getAbsis(),p.getOrdinat()-1))).isRoad());
 	      if ((!b1)&&(!b2)&&(!b3)&&(!b4)) {
-	        p.SetAbsis(-1);
-	        p.SetOrdinat(-1);
+	        p.setAbsis(-1);
+	        p.setOrdinat(-1);
 	        return;
 	      }
 	      while (!found) {
@@ -130,49 +130,49 @@ public class Driver {
 	        if (random == 0) {
 	          if (b1) {
 	            found = true;
-	            p.SetAbsis(p.GetAbsis()-1);
+	            p.setAbsis(p.getAbsis()-1);
 	          } 
 	        }
 	        else if (random == 1) {
 	          if (b2) {
 	            found = true;
-	            p.SetOrdinat(p.GetOrdinat()+1);
+	            p.setOrdinat(p.getOrdinat()+1);
 	          }
 	        }
 	        else if (random == 2) {
 	          if (b3) {
 	            found = true;
-	            p.SetAbsis(p.GetAbsis()+1);
+	            p.setAbsis(p.getAbsis()+1);
 	          }
 	        }
 	        else if (random == 3) {
 	          if (b4) {
 	            found = true;
-	            p.SetOrdinat(p.GetOrdinat()-1);
+	            p.setOrdinat(p.getOrdinat()-1);
 	          } 
 	        }
 	      }
-	      GetExperience();
-	      if ((z.GetElement(p)).IsExit()) {
-	        System.out.println("Posisi : (" + p.GetAbsis() + "," + p.GetOrdinat() + ")");
+	      getExperience();
+	      if ((z.getElement(p)).isExit()) {
+	        System.out.println("Posisi : (" + p.getAbsis() + "," + p.getOrdinat() + ")");
 	        System.out.println("You've reached the end of this journey.");
-	        p.SetAbsis(-1);
-	        p.SetOrdinat(-1);
+	        p.setAbsis(-1);
+	        p.setOrdinat(-1);
 	      }
 	    }
-	    if (p.GetAbsis()!=-1)
-	      System.out.println("Posisi : (" + p.GetAbsis() + "," + p.GetOrdinat() + ")");
+	    if (p.getAbsis()!=-1)
+	      System.out.println("Posisi : (" + p.getAbsis() + "," + p.getOrdinat() + ")");
 	      System.out.println();
 	  }
 	  /**
 	    * Melakukan perhitungan makanan (sayuran) yang harus disiapkan.
 	    * @return Mengembalikan jumlah makanan (sayuran) yang harus disiapkan.
 	    */
-	  public float FoodCalcVeggie() {
+	  public float foodCalcVeggie() {
 	    float sum = 0;
-	    for(int i = 0; i < z.GetJumlahCage(); i++) {
-	      for(int j = 0; j < (z.GetCage(i)).GetTotalAnimal(); j++) {
-	        sum += ((z.GetCage(i)).GetAnimal(j)).GetFoodVeggie();
+	    for(int i = 0; i < z.getJumlahCage(); i++) {
+	      for(int j = 0; j < (z.getCage(i)).getTotalAnimal(); j++) {
+	        sum += ((z.getCage(i)).getAnimal(j)).getFoodVeggie();
 	      }
 	    }
 	    return sum;
@@ -181,11 +181,11 @@ public class Driver {
 	    * Melakukan perhitungan makanan (daging) yang harus disiapkan.
 	    * @return Mengembalikan jumlah makanan (daging) yang harus disiapkan.
 	    */
-	  public float FoodCalcMeat() {
+	  public float foodCalcMeat() {
 	    float sum = 0;
-	    for(int i = 0; i < z.GetJumlahCage(); i++) {
-	      for(int j = 0; j < (z.GetCage(i)).GetTotalAnimal(); j++) {
-	        sum += ((z.GetCage(i)).GetAnimal(j)).GetFoodMeat();
+	    for(int i = 0; i < z.getJumlahCage(); i++) {
+	      for(int j = 0; j < (z.getCage(i)).getTotalAnimal(); j++) {
+	        sum += ((z.getCage(i)).getAnimal(j)).getFoodMeat();
 	      }
 	    }
 	    return sum;
@@ -194,7 +194,7 @@ public class Driver {
 	    * I.S. sembarang.
 	    * F.S. Menu telah tercetak ke layar.
 	    */
-	  public void DisplayMenu() {
+	  public void displayMenu() {
 	    System.out.println("Main Menu:");
 	    System.out.println("1. Display Zoo");
 	    System.out.println("2. Tour Around Zoo");
@@ -206,14 +206,14 @@ public class Driver {
 	    * Getter Zoo.
 	    * @return Mengembalikan zoo.
 	    */
-	  public Zoo GetZoo() {
+	  public Zoo getZoo() {
 	    return z;
 	  }
 	  /**
 	    * Getter Point.
 	    * @return Mengembalikan point.
 	    */
-	  public Point GetPoint() {
+	  public Point getPoint() {
 	    return p;
 	  }
 }

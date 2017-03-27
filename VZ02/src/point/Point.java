@@ -37,14 +37,14 @@ public class Point {
 	    * Mengembalikan nilai absis point.
 	    * @return nilai absis objek.
 	    */
-	  public int GetAbsis() {
+	  public int getAbsis() {
 	    return absis;
 	  }
 	  /**
 	    * Mengembalikan nilai ordinat point.
 	    * @return nilai ordinat objek.
 	    */
-	  public int GetOrdinat() {
+	  public int getOrdinat() {
 	    return ordinat;
 	  }
 	  /**
@@ -52,7 +52,7 @@ public class Point {
 	    * F.S. nilai absis dari objek point sudah diganti.
 	    * @param abs nilai absis yang akan dimasukkan.
 	    */
-	  public void SetAbsis(int abs) {
+	  public void setAbsis(int abs) {
 	    absis = abs;
 	  }
 	  /**
@@ -60,35 +60,35 @@ public class Point {
 	    * F.S. nilai ordinat dari objek point sudah diganti.
 	    * @param ord nilai ordinat yang akan dimasukkan.
 	    */
-	  public void SetOrdinat(int ord) {
+	  public void setOrdinat(int ord) {
 	    ordinat = ord;
 	  }
 	  /**
 	    * Mengembalikan point di sebelah kanan point.
 	    * @return Objek point dengan absis bertambah 1.
 	    */
-	  public Point NextX() {
+	  public Point nextX() {
 	    return new Point(absis+1,ordinat);
 	  }
 	  /**
 	    * Mengembalikan point di sebelah kiri point.
 	    * @return Objek point dengan absis berkurang 1.
 	    */
-	  public Point PrevX() {
+	  public Point prevX() {
 	    return new Point(absis-1,ordinat);
 	  }
 	  /**
 	    * Mengembalikan point di sebelah atas point.
 	    * @return Objek point dengan ordinat berkurang 1.
 	    */
-	  public Point PrevY() {
+	  public Point prevY() {
 	    return new Point(absis,ordinat-1);
 	  }
 	  /**
 	    * Mengembalikan point di sebelah bawah point.
 	    * @return Objek point dengan ordinat bertambah 1.
 	    */
-	  public Point NextY() {
+	  public Point nextY() {
 	    return new Point(absis,ordinat+1);
 	  }
 	  /**
@@ -96,7 +96,7 @@ public class Point {
 	    * @param p Objek point yang akan diperiksa.
 	    * @return True jika p sama dengan this.
 	    */
-	  public boolean IsSame(Point p) {
+	  public boolean isSame(Point p) {
 	    return (absis == p.absis && ordinat == p.ordinat);
 	  }
 }
