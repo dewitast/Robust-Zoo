@@ -22,6 +22,14 @@ public class Goat extends Mammal {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Goat hasil salinan g.
+   * @param g Goat yang akan disalin.
+   */
+  public Goat(Goat g) {
+    super(g.weight, g.food, g.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Goat.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Goat.
    */

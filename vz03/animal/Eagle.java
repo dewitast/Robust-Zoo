@@ -22,6 +22,14 @@ public class Eagle extends Aves {
   	super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Eagle hasil salinan e.
+   * @param e Eagle yang akan disalin.
+   */
+  public Eagle(Eagle e) {
+    super(e.weight, e.food, e.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Eagle.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Eagle.
    */

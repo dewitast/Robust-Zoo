@@ -22,6 +22,14 @@ public class Cobra extends Reptile {
   	super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Cobra hasil salinan c.
+   * @param c Cobra yang akan disalin.
+   */
+  public Cobra(Cobra c) {
+    super(c.weight, c.food, c.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Cobra.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Cobra.
    */

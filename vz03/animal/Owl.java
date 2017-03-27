@@ -22,6 +22,14 @@ public class Owl extends Aves {
   	super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Owl hasil salinan o.
+   * @param o Owl yang akan disalin.
+   */
+  public Owl(Owl o) {
+    super(o.weight, o.food, o.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Owl.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Owl.
    */

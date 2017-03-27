@@ -22,6 +22,14 @@ public class Duck extends Aves {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Duck hasil salinan d.
+   * @param d Duck yang akan disalin.
+   */
+  public Duck(Duck d) {
+    super(d.weight, d.food, d.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Duck.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Duck.
    */

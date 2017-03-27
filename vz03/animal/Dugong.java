@@ -22,6 +22,14 @@ public class Dugong extends Mammal {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Dugong hasil salinan d.
+   * @param d Dugong yang akan disalin.
+   */
+  public Dugong(Dugong d) {
+    super(d.weight, d.food, d.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Dugong.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Dugong.
    */

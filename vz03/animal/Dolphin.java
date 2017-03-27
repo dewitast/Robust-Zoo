@@ -22,6 +22,14 @@ public class Dolphin extends Mammal {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Dolphin hasil salinan d.
+   * @param d Dolphin yang akan disalin.
+   */
+  public Dolphin(Dolphin d) {
+    super(d.weight, d.food, d.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Dolphin.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Dolphin.
    */

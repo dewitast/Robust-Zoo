@@ -22,6 +22,14 @@ public class Orca extends Mammal {
   	super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Orca hasil salinan o.
+   * @param o Orca yang akan disalin.
+   */
+  public Orca(Orca o) {
+    super(o.weight, o.food, o.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Orca.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Orca.
    */

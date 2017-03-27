@@ -22,6 +22,14 @@ public class Tiger extends Mammal {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Tiger hasil salinan t.
+   * @param t Tiger yang akan disalin.
+   */
+  public Tiger(Tiger t) {
+    super(t.weight, t.food, t.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Tiger.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Tiger.
    */

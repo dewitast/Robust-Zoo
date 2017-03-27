@@ -22,6 +22,14 @@ public class Walrus extends Mammal {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Walrus hasil salinan w.
+   * @param w Walrus yang akan disalin.
+   */
+  public Walrus(Walrus w) {
+    super(w.weight, w.food, w.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Walrus.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Walrus.
    */

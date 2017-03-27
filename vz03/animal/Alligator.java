@@ -22,6 +22,14 @@ public class Alligator extends Reptile {
     super(w, f, t);
   }
   /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Alligator hasil salinan a.
+   * @param a Alligator yang akan disalin.
+   */
+  public Alligator(Alligator a) {
+    super(a.weight, a.food, a.tame);
+  }
+  /**
    * Jenis makanan yang dimakan Alligator.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Alligator.
    */
