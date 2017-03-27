@@ -3,7 +3,7 @@
   * Kelas Goat merupakan kelas untuk real object Goat.
   * @author Catherine Almira - 13515111
   */
-public class Goat extends Animal {
+public class Goat extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Goat.

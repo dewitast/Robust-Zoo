@@ -3,7 +3,7 @@
   * Kelas Lion merupakan kelas untuk real object Lion.
   * @author Kezia Suhendra - 13515063
   */
-public class Lion extends Animal {
+public class Lion extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Lion.

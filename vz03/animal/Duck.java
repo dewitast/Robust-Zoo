@@ -3,7 +3,7 @@
   * Kelas Duck merupakan kelas untuk real object Duck.
   * @author Kezia Suhendra - 13515063
   */
-public class Duck extends Animal {
+public class Duck extends Aves {
   /**
     * Constructor.
     * Menciptakan objek Duck.

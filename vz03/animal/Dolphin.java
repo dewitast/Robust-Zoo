@@ -3,7 +3,7 @@
   * Kelas Dolphin merupakan kelas untuk real object Dolphin.
   * @author Catherine Almira - 13515111
   */
-public class Dolphin extends Animal {
+public class Dolphin extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Dolphin.

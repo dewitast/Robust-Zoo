@@ -3,7 +3,7 @@
   * Kelas Jalak merupakan kelas untuk real object Jalak.
   * @author Sylvia Juliana - 13515070
   */
-public class Jalak extends Animal {
+public class Jalak extends Aves {
   /**
     * Constructor.
     * Menciptakan objek Jalak.

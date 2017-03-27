@@ -3,7 +3,7 @@
   * Kelas Iguana merupakan kelas untuk real object Iguana.
   * @author Catherine Almira - 13515111
   */
-public class Iguana extends Animal {
+public class Iguana extends Reptile {
   /**
     * Constructor.
     * Menciptakan objek Iguana.

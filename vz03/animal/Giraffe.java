@@ -3,7 +3,7 @@
   * Kelas Giraffe merupakan kelas untuk real object Giraffe.
   * @author Kezia Suhendra - 13515063
   */
-public class Giraffe extends Animal {
+public class Giraffe extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Giraffe.

@@ -3,7 +3,7 @@
   * Kelas Tiger merupakan kelas untuk real object Tiger.
   * @author Catherine Almira - 13515111
   */
-public class Tiger extends Animal {
+public class Tiger extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Tiger.

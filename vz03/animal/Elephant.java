@@ -3,7 +3,7 @@
   * Kelas Elephant merupakan kelas untuk real object Elephant.
   * @author Kezia Suhendra - 13515063
   */
-public class Elephant extends Animal {
+public class Elephant extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Elephant.

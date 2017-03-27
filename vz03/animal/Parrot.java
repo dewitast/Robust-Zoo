@@ -3,7 +3,7 @@
   * Kelas Parrot merupakan kelas untuk real object Parrot.
   * @author Catherine Almira - 13515111
   */
-public class Parrot extends Animal {
+public class Parrot extends Aves {
   /**
     * Constructor.
     * Menciptakan objek Parrot.

@@ -3,7 +3,7 @@
   * Kelas Cormorant merupakan kelas untuk real object Cormorant.
   * @author Kezia Suhendra - 13515063
   */
-public class Elephant extends Animal {
+public class Cormorant extends Aves {
   /**
     * Constructor.
     * Menciptakan objek Cormorant.

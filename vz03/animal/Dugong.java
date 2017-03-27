@@ -3,7 +3,7 @@
   * Kelas Dugong merupakan kelas untuk real object Dugong.
   * @author Kezia Suhendra - 13515063
   */
-public class Dugong extends Animal {
+public class Dugong extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Dugong.

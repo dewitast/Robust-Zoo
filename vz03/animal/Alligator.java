@@ -3,7 +3,7 @@
   * Kelas Alligator merupakan kelas untuk real object Alligator.
   * @author Kezia Suhendra - 13515063
   */
-public class Alligator extends Animal {
+public class Alligator extends Reptile {
   /**
     * Constructor.
     * Menciptakan objek Alligator.

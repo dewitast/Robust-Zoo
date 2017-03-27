@@ -3,7 +3,7 @@
   * Kelas Polar_Bear merupakan kelas untuk real object Polar_Bear.
   * @author Catherine Almira - 13515111
   */
-public class Polar_Bear extends Animal {
+public class Polar_Bear extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Polar_Bear.

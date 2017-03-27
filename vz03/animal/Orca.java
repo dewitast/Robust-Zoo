@@ -3,7 +3,7 @@
   * Kelas Orca merupakan kelas untuk real object Orca.
   * @author Sylvia Juliana - 13515070
   */
-public class Orca extends Animal {
+public class Orca extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Orca.

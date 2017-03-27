@@ -3,7 +3,7 @@
   * Kelas Walrus merupakan kelas untuk real object Walrus.
   * @author Catherine Almira - 13515111
   */
-public class Walrus extends Animal {
+public class Walrus extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Walrus.

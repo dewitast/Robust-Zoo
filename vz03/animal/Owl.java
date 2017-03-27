@@ -3,7 +3,7 @@
   * Kelas Owl merupakan kelas untuk real object Owl.
   * @author Sylvia Juliana - 13515070
   */
-public class Owl extends Animal {
+public class Owl extends Aves {
   /**
     * Constructor.
     * Menciptakan objek Owl.

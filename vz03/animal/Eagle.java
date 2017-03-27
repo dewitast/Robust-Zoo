@@ -3,7 +3,7 @@
   * Kelas Eagle merupakan kelas untuk real object Eagle.
   * @author Sylvia Juliana - 13515070
   */
-public class Eagle extends Animal {
+public class Eagle extends Aves {
   /**
     * Constructor.
     * Menciptakan objek Eagle.

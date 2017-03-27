@@ -3,7 +3,7 @@
   * Kelas Cobra merupakan kelas untuk real object Cobra.
   * @author Sylvia Juliana - 13515070
   */
-public class Cobra extends Animal {
+public class Cobra extends Reptile {
   /**
     * Constructor.
     * Menciptakan objek Cobra.

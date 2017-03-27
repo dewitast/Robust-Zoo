@@ -3,7 +3,7 @@
   * Kelas Komodo merupakan kelas untuk real object Komodo.
   * @author Kezia Suhendra - 13515063
   */
-public class Komodo extends Animal {
+public class Komodo extends Reptile {
   /**
     * Constructor.
     * Menciptakan objek Komodo.
