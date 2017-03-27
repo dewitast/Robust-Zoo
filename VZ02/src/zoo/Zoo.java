@@ -130,7 +130,7 @@ public class Zoo {
 	    boolean found = false;
 	    int i = 0;
 	    while (!found && (i < jumlahCage)) {
-	      if (cage[i].IsInCage(p)) {
+	      if (cage[i].isInCage(p)) {
 	        found = true;
 	      }
 	      else {

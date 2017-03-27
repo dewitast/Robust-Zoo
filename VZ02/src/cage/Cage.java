@@ -94,7 +94,7 @@ public class Cage {
 	    * @param a Objek binatang yang akan dimasukkan.
 	    */
 	  public void adoptAnimal(Animal a) {
-	    if (IsFull()) {
+	    if (isFull()) {
 	      System.out.println("Kandang penuh.");
 	    }
 	    else if (!isInCage(a)) {

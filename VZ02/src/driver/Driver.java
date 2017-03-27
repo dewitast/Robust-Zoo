@@ -50,7 +50,7 @@ public class Driver {
 	        (z.searchPoint(p.nextX())).interact();
 	      }
 	    }
-	    if (p.GetOrdinat()>0)
+	    if (p.getOrdinat()>0)
 	    {
 	      if ((z.getElement(p.prevY())).isHabitat()) {
 	        (z.searchPoint(p.prevY())).interact();
@@ -152,7 +152,7 @@ public class Driver {
 	          } 
 	        }
 	      }
-	      GetExperience();
+	      getExperience();
 	      if ((z.getElement(p)).isExit()) {
 	        System.out.println("Posisi : (" + p.getAbsis() + "," + p.getOrdinat() + ")");
 	        System.out.println("You've reached the end of this journey.");
