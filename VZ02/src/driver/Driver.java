@@ -3,9 +3,6 @@ import zoo.*;
 import point.*;
 import java.util.Random;
 
-import cage.Cage;
-import animal.*;
-
 /**
  * File : Driver.java
  * Kelas Driver merupakan kelas sebagai pilihan menu aplikasi.
