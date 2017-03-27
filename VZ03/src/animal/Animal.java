@@ -133,9 +133,17 @@ public abstract class Animal {
    * @return Mengembalikan objek Animal baru.
    */
   public abstract Animal clone();
-  public abstract String getFoodType();
   /**
    * Mengembalikan nilai jumlah makanan binatang.
    * @return nilai jumlah makanan binatang.
    */
+  public abstract String getFoodType();
+  /**
+   * Memeriksa apakah Objek animal a dan this sama.
+   * @param a Objek animal yang akan diperiksa.
+   * @return True jika p sama dengan this.
+   */
+ public boolean isSame(Animal a) {
+   return (pos.isSame(a.pos));
+ }
 }

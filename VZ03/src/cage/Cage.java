@@ -120,7 +120,7 @@ public class Cage {
     boolean found = false;
     int i = 0;
     while (!found && i < totalAnimal) {
-      if ((loc[i]).equals(animal[i].getPos())) {
+      if ((loc[i]).isSame(animal[i].getPos())) {
         found = true;
       }
       ++i;
@@ -137,7 +137,7 @@ public class Cage {
     boolean found = false;
     int i = 0;
     while (!found && i < totalAnimal) {
-      if (p.equals(animal[i].getPos())) {
+      if (p.isSame(animal[i].getPos())) {
         found = true;
       }
       ++i;
@@ -153,7 +153,7 @@ public class Cage {
     boolean found = false;
     int i = 0;
     while (!found && i < totalAnimal) {
-      if (a.equals(animal[i])) {
+      if (a.isSame(animal[i])) {
         found = true;
       }
       ++i;
@@ -169,7 +169,7 @@ public class Cage {
     boolean found = false;
     int i = 0;
     while (!found && i < totalAnimal) {
-      if (p.equals(loc[i])) {
+      if (p.isSame(loc[i])) {
         found = true;
       }
       ++i;
@@ -200,7 +200,7 @@ public class Cage {
    */
   public void addPoint(int posAbs, int posOrd) {
     loc[size] = new Point(posAbs, posOrd);
-    ++size;
+	++size;
   }
   /**
    * Memeriksa apakah animal a dapat dimasukkan ke cage.
