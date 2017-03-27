@@ -3,7 +3,7 @@
   * Kelas Elephant merupakan kelas untuk real object Elephant.
   * @author Kezia Suhendra - 13515063
   */
-public class Elephant extends Animal {
+public class Elephant extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Elephant.
@@ -20,6 +20,34 @@ public class Elephant extends Animal {
     */
   public Elephant(double w, double f, boolean t) {
     super(w, f, t);
+  }
+  /**
+    * Jenis makanan yang dimakan Elephant.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Elephant.
+    */
+  public String GetFoodType() {
+    return "Herbivore";
+  }
+  /**
+    * Memeriksa apakah Elephant adalah hewan darat.
+    * @return Mengembalikan true jika Elephant adalah hewan darat dan false jika Elephant bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Elephant adalah hewan air.
+    * @return Mengembalikan true jika Elephant adalah hewan air dan false jika Elephant bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Elephant adalah hewan udara.
+    * @return Mengembalikan true jika Elephant adalah hewan udara dan false jika Elephant bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
   }
   /**
     * Interaksi yang dilakukan Elephant.

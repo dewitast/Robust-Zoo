@@ -3,7 +3,7 @@
   * Kelas Jalak merupakan kelas untuk real object Jalak.
   * @author Sylvia Juliana - 13515070
   */
-public class Jalak extends Animal {
+public class Jalak extends Aves {
   /**
     * Constructor.
     * Menciptakan objek Jalak.
@@ -20,6 +20,34 @@ public class Jalak extends Animal {
     */
   public Jalak(double w, double f, boolean t) {
   	super(w, f, t);
+  }
+  /**
+    * Jenis makanan yang dimakan Jalak.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Jalak.
+    */
+  public String GetFoodType() {
+    return "Herbivore";
+  }
+  /**
+    * Memeriksa apakah Jalak adalah hewan darat.
+    * @return Mengembalikan true jika Jalak adalah hewan darat dan false jika Jalak bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Jalak adalah hewan air.
+    * @return Mengembalikan true jika Jalak adalah hewan air dan false jika Jalak bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Jalak adalah hewan udara.
+    * @return Mengembalikan true jika Jalak adalah hewan udara dan false jika Jalak bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return true;
   }
   /**
     * Interaksi yang dilakukan Jalak.

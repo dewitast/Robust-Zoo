@@ -3,7 +3,7 @@
   * Kelas Komodo merupakan kelas untuk real object Komodo.
   * @author Kezia Suhendra - 13515063
   */
-public class Komodo extends Animal {
+public class Komodo extends Komodo {
   /**
     * Constructor.
     * Menciptakan objek Komodo.
@@ -20,6 +20,34 @@ public class Komodo extends Animal {
     */
   public Komodo(double w, double f, boolean t) {
     super(w, f, t);
+  }
+  /**
+    * Jenis makanan yang dimakan Komodo.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Komodo.
+    */
+  public String GetFoodType() {
+    return "Carnivore";
+  }
+  /**
+    * Memeriksa apakah Komodo adalah hewan darat.
+    * @return Mengembalikan true jika Komodo adalah hewan darat dan false jika Komodo bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Komodo adalah hewan air.
+    * @return Mengembalikan true jika Komodo adalah hewan air dan false jika Komodo bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Komodo adalah hewan udara.
+    * @return Mengembalikan true jika Komodo adalah hewan udara dan false jika Komodo bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
   }
   /**
     * Interaksi yang dilakukan Komodo.

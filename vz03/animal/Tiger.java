@@ -3,7 +3,7 @@
   * Kelas Tiger merupakan kelas untuk real object Tiger.
   * @author Catherine Almira - 13515111
   */
-public class Tiger extends Animal {
+public class Tiger extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Tiger.
@@ -20,6 +20,34 @@ public class Tiger extends Animal {
     */
   public Tiger(double w, double f, boolean t) {
     super(w, f, t);
+  }
+  /**
+    * Jenis makanan yang dimakan Tiger.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Tiger.
+    */
+  public String GetFoodType() {
+    return "Carnivore";
+  }
+  /**
+    * Memeriksa apakah Tiger adalah hewan darat.
+    * @return Mengembalikan true jika Tiger adalah hewan darat dan false jika Tiger bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Tiger adalah hewan air.
+    * @return Mengembalikan true jika Tiger adalah hewan air dan false jika Tiger bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Tiger adalah hewan udara.
+    * @return Mengembalikan true jika Tiger adalah hewan udara dan false jika Tiger bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
   }
   /**
     * Interaksi yang dilakukan Tiger.

@@ -3,7 +3,7 @@
   * Kelas Dolphin merupakan kelas untuk real object Dolphin.
   * @author Catherine Almira - 13515111
   */
-public class Dolphin extends Animal {
+public class Dolphin extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Dolphin.
@@ -20,6 +20,34 @@ public class Dolphin extends Animal {
     */
   public Dolphin(double w, double f, boolean t) {
     super(w, f, t);
+  }
+  /**
+    * Jenis makanan yang dimakan Dolphin.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Dolphin.
+    */
+  public String GetFoodType() {
+    return "Carnivore";
+  }
+  /**
+    * Memeriksa apakah Dolphin adalah hewan darat.
+    * @return Mengembalikan true jika Dolphin adalah hewan darat dan false jika Dolphin bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Dolphin adalah hewan air.
+    * @return Mengembalikan true jika Dolphin adalah hewan air dan false jika Dolphin bukan hewan air.
+    */
+  public boolean IsWater() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Dolphin adalah hewan udara.
+    * @return Mengembalikan true jika Dolphin adalah hewan udara dan false jika Dolphin bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
   }
   /**
     * Interaksi yang dilakukan Dolphin.

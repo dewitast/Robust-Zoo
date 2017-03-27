@@ -3,7 +3,7 @@
   * Kelas Duck merupakan kelas untuk real object Duck.
   * @author Kezia Suhendra - 13515063
   */
-public class Duck extends Animal {
+public class Duck extends Aves {
   /**
     * Constructor.
     * Menciptakan objek Duck.
@@ -20,6 +20,34 @@ public class Duck extends Animal {
     */
   public Duck(double w, double f, boolean t) {
     super(w, f, t);
+  }
+  /**
+    * Jenis makanan yang dimakan Duck.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Duck.
+    */
+  public String GetFoodType() {
+    return "Omnivore";
+  }
+  /**
+    * Memeriksa apakah Duck adalah hewan darat.
+    * @return Mengembalikan true jika Duck adalah hewan darat dan false jika Duck bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Duck adalah hewan air.
+    * @return Mengembalikan true jika Duck adalah hewan air dan false jika Duck bukan hewan air.
+    */
+  public boolean IsWater() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Duck adalah hewan udara.
+    * @return Mengembalikan true jika Duck adalah hewan udara dan false jika Duck bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
   }
   /**
     * Interaksi yang dilakukan Duck.
