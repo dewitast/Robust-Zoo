@@ -9,9 +9,9 @@ import java.util.Random;
  * @author Catherine Almira - 13515111
  */
 public class Driver {
-	  public Zoo z;
-	  public boolean[][] visited;
-	  public Point p;
+	  private Zoo z;
+	  private boolean[][] visited;
+	  private Point p;
 
 	  /**
 	    * Constructor Driver.
@@ -78,6 +78,7 @@ public class Driver {
 	    boolean found = false;
 	    if ((p.GetAbsis()==-1)&&(p.GetOrdinat()==-1)) {
 	      System.out.println("Welcome to the zoo.");
+	      System.out.println(" ");
 	      while (!found) {
 	        for (int i = 0; i < z.GetBaris(); ++i) {
 	          for (int j = 0; j < z.GetKolom(); ++j) {
@@ -161,6 +162,7 @@ public class Driver {
 	    }
 	    if (p.GetAbsis()!=-1)
 	      System.out.println("Posisi : (" + p.GetAbsis() + "," + p.GetOrdinat() + ")");
+	      System.out.println();
 	  }
 	  /**
 	    * Melakukan perhitungan makanan (sayuran) yang harus disiapkan.

@@ -60,7 +60,7 @@ public class Cell {
 	    * Getter untuk render.
 	    * @return Mengembalikan render dari Cell.
 	    */
-	  public char GetRender() {
+	  public char Render() {
 	    return render;
 	  }
 	  /**
