@@ -1,13 +1,13 @@
 package cage;
 import animal.*;
-import System.*;
+import point.*;
 import java.util.Random;
 
 /**
  * File : Cage.java
  * Kelas cage merupakan kumpulan dari beberapa titik beserta
  * kumpulan binatang yang terdapat di dalamnya.
- * @author Catherine Almira - 13515111
+ * @author Dewita Sonya Tarabunga - 13515021
  */
 public class Cage {
   private final int MAXSIZE = 100;
@@ -15,6 +15,7 @@ public class Cage {
   private int size;
   private Animal[] animal;
   private int totalAnimal;
+
   /**
    * Constructor tanpa parameter.
    */
@@ -53,13 +54,13 @@ public class Cage {
   public Cage(Cage c) {
     this.size = c.size;
     loc = new Point[MAXSIZE];
-    for (int i = 0; i< size; ++i) {
+    for (int i = 0; i < size; ++i) {
       loc[i] = new Point(c.loc[i]);
     }
     totalAnimal = c.totalAnimal;
     animal = new Animal[3*MAXSIZE/10];
-    for (int i = 0; i< totalAnimal; ++i) {
-      animal[i] = (c.animal[i]).clne();
+    for (int i = 0; i < totalAnimal; ++i) {
+      animal[i] = (c.animal[i]).clone();
     }
   }
   /**
@@ -176,6 +177,13 @@ public class Cage {
     return found;
   }
   /**
+   * Memeriksa apakah cage penuh.
+   * @return true jika binatang a terdapat pada cage.
+   */
+  public boolean isFull() {
+    return (totalAnimal == 3*size/100);
+  }
+  /**
    * I.S. sembarang.
    * F.S. semua binatang yang terdapat pada cage berinteraksi.
    */
@@ -214,25 +222,23 @@ public class Cage {
   public void move() {
     Random rand = new Random();
     int random;
-    Point p2;
+    Point p2, p;
     for (int i = 0; i < totalAnimal; ++i) {
       p2 = animal[i].getPos();
       random = rand.nextInt(4) + 1;
       if (random == 1) {
         p = p2.prevX();
-      }
-      else if (random == 2) {
+      } else if (random == 2) {
         p = p2.nextX();
-      }
-      else if (random == 3) {
+      } else if (random == 3) {
         p = p2.prevY();
-      }
-      else if (random == 4) {
+      } else if (random == 4) {
         p = p2.nextY();
-        
+      } else {
+    	p = new Point();
       }
       if ((isInCage(p)) && (!isOccupied(p)))
-          animal[i].setPoint(p);
+        animal[i].setPoint(p);
     }
   }
 }

@@ -68,27 +68,27 @@ public class Point {
    * @return Objek point dengan absis bertambah 1.
    */
   public Point nextX() {
-    return new Point(absis+1,ordinat);
+    return new Point(absis+1, ordinat);
   }
   /**
    * Mengembalikan point di sebelah kiri point.
    * @return Objek point dengan absis berkurang 1.
    */
   public Point prevX() {
-    return new Point(absis-1,ordinat);
+    return new Point(absis-1, ordinat);
   }
   /**
    * Mengembalikan point di sebelah atas point.
    * @return Objek point dengan ordinat berkurang 1.
    */
   public Point prevY() {
-    return new Point(absis,ordinat-1);
+    return new Point(absis, ordinat-1);
   }
   /**
    * Mengembalikan point di sebelah bawah point.
    * @return Objek point dengan ordinat bertambah 1.
    */
   public Point nextY() {
-    return new Point(absis,ordinat+1);
+    return new Point(absis, ordinat+1);
   }
 }
