@@ -11,7 +11,7 @@ import java.util.Random;
  */
 public class Cage {
 	  private final int maxSize = 100;
-	  private Point[] loc;
+	  public Point[] loc;
 	  private int size;
 	  private Animal[] animal;
 	  private int totalAnimal;
@@ -40,7 +40,7 @@ public class Cage {
 	    * @param possOrd posisi ordinat.
 	    * @param possAbs posisi absis.
 	    */
-	  public Cage(int posOrd, int posAbs) {
+	  public Cage(int posAbs, int posOrd) {
 	    size = 1;
 	    loc = new Point[maxSize];
 	    loc[0] = new Point(posAbs, posOrd);
@@ -160,7 +160,7 @@ public class Cage {
 	    boolean found = false;
 	    int i = 0;
 	    while (!found && i < totalAnimal) {
-	      if (a.equals(animal[i])) {
+	      if (a.IsSame(animal[i])) {
 	        found = true;
 	      }
 	      ++i;
@@ -175,8 +175,8 @@ public class Cage {
 	  public boolean IsInCage(Point p) {
 	    boolean found = false;
 	    int i = 0;
-	    while (!found && i < totalAnimal) {
-	      if (p.equals(loc[i])) {
+	    while (!found && i < size) {
+	      if (p.IsSame(loc[i])) {
 	        found = true;
 	      }
 	      ++i;

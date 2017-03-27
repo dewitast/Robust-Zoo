@@ -3,6 +3,7 @@ import cage.*;
 import cell.*;
 import point.*;
 import animal.*;
+
 import java.util.Scanner;
 import java.io.*;
 
@@ -170,9 +171,9 @@ public class Zoo {
 		      if (c=='@') {
 		        cell[i][j] = new Cell("LandHabitat");
 		        if ((i!=0)&&(cell[i-1][j].IsLandHabitat())) {
-		          SearchPoint(i-1,j).AddPoint(i-1,j);
+		          SearchPoint(i-1,j).AddPoint(i,j);
 		        } else if ((j!=0)&&(cell[i][j-1].IsLandHabitat())) {
-		          SearchPoint(i,j-1).AddPoint(i,j-1);
+		          SearchPoint(i,j-1).AddPoint(i,j);
 		        } else {
 		          cg = new Cage(i,j);
 		          AddCage(cg);
@@ -180,19 +181,19 @@ public class Zoo {
 		      } else if (c=='^') {
 		        cell[i][j] = new Cell("AirHabitat");
 		        if ((i!=0)&&(cell[i-1][j].IsAirHabitat())) {
-		          SearchPoint(i-1,j).AddPoint(i-1,j);
+		          SearchPoint(i-1,j).AddPoint(i,j);
 		        } else if ((j!=0)&&(cell[i][j-1].IsAirHabitat())) {
-		          SearchPoint(i,j-1).AddPoint(i,j-1);
+		          SearchPoint(i,j-1).AddPoint(i,j);
 		        } else {
 		          cg = new Cage(i,j);
 		          AddCage(cg);
 		        }
 		      } else if (c=='~') {
-		        cell[i][j] = new Cell("AirHabitat");
+		        cell[i][j] = new Cell("WaterHabitat");
 		        if ((i!=0)&&(cell[i-1][j].IsWaterHabitat())) {
-		          SearchPoint(i-1,j).AddPoint(i-1,j);
+		          SearchPoint(i-1,j).AddPoint(i,j);
 		        } else if ((j!=0)&&(cell[i][j-1].IsWaterHabitat())) {
-		          SearchPoint(i,j-1).AddPoint(i,j-1);
+		          SearchPoint(i,j-1).AddPoint(i,j);
 		        } else {
 		          cg = new Cage(i,j);
 		          AddCage(cg);
@@ -220,103 +221,168 @@ public class Zoo {
 	    * F.S. Zoo sudah terisi binatang dari file eksternal.
 	    */
 	  public void ReadAnimal() {
-		File filename = new File("animal.txt");
-		try {
-		  Scanner sc = new Scanner(filename);
-		  char c;
-		  int abs;
-		  int ord;
-		  while (sc.hasNextLine()) {
-		    c = sc.next().charAt(0);
-		    abs = sc.nextInt();
-		    ord = sc.nextInt();
-		    Animal a;
-		    if (c == 'A') {
-		      a = new Animal();
-		      if ((GetElement(abs-1,ord-1).IsLandHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'C') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'M') {
-		      a = new Animal();
-		      if ((GetElement(abs-1,ord-1).IsAirHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'N') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'D') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'U') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'E') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsAirHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'H') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'F') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'G') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'I') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'J') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsAirHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'K') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'L') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'R') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'O') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsAirHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'P') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsAirHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'B') {
-		      a = new Animal();
-		      if ((GetElement(abs-1,ord-1).IsLandHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'T') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsLandHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
-		    } else if (c == 'W') {
-		      a = new Animal();
-		      if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		        SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		  File filename = new File("animal.txt");
+		    try {
+		      Scanner sc = new Scanner(filename);
+		      char c;
+		      int abs, ord, jh;
+		      Point p;
+		      String[] h;
+		      Animal a;
+		      while (sc.hasNextLine()) {
+		        c = sc.next().charAt(0);
+		        abs = sc.nextInt();
+		        ord = sc.nextInt();
+		        p = new Point(abs, ord);
+		        if (c == 'A') {
+		          h = new String[2];
+		          jh = 2;
+		          h[0] = "Land";
+		          h[1] = "Water";
+		          a = new Animal(p, "Alligator", "Grrrrrr", "Carnivore", h, 125, 6.25, 0, jh, false, c);
+		          if ((GetElement(abs-1,ord-1).IsLandHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'C') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Land";
+		          a = new Animal(p, "Cobra", "Ssshh!", "Carnivore", h, 20, 1, 0, jh, false, c);
+		          if (GetElement(abs-1,ord-1).IsLandHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'M') {
+		          h = new String[2];
+		          jh = 2;
+		          h[0] = "Air";
+		          h[1] = "Water";
+		          a = new Animal(p, "Cormorant", "Ooookkk!", "Carnivore", h, 3.6, 0.18, 0, jh, true, c);
+		          if ((GetElement(abs-1,ord-1).IsAirHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'N') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Water";
+		          a = new Animal(p, "Dolphin", "A a a a a", "Carnivore", h, 75, 3.75, 0, jh, true, c);
+		          if (GetElement(abs-1,ord-1).IsWaterHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'D') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Water";
+		          a = new Animal(p, "Duck", "Quaackk!", "Omnivore", h, 12, 0.6, 0.6, jh, true, c);
+		          if (GetElement(abs-1,ord-1).IsWaterHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'U') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Water";
+		          a = new Animal(p, "Dugong", "Splashh!", "Herbivore", h, 500, 0, 25, jh, true, c);
+		          if (GetElement(abs-1,ord-1).IsWaterHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'E') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Air";
+		          a = new Animal(p, "Eagle", "Nguiikk!", "Carnivore", h, 5.8, 0.29, 0, jh, false, c);
+		          if (GetElement(abs-1,ord-1).IsAirHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'H') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Land";
+		          a = new Animal(p, "Elephant", "Prett!", "Herbivore", h, 5000, 0, 250, jh, true, c);
+		          if (GetElement(abs-1,ord-1).IsLandHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'F') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Land";
+		          a = new Animal(p, "Giraffe", "Hmm!", "Herbivore", h, 1100, 0, 55, jh, true, c);
+		          if (GetElement(abs-1,ord-1).IsLandHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'G') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Land";
+		          a = new Animal(p, "Goat", "Mbeeeee", "Herbivore", h, 90, 0, 4.5, jh, false, c);
+		          if (GetElement(abs-1,ord-1).IsLandHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'I') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Land";
+		          a = new Animal(p, "Iguana", "Purrrr", "Herbivore", h, 6, 0, 0.3, jh, true, c);
+		          if (GetElement(abs-1,ord-1).IsLandHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'J') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Air";
+		          a = new Animal(p, "Jalak", "Tweet!", "Herbivore", h, 0.1, 0, 0.005, jh, true, c);
+		          if (GetElement(abs-1,ord-1).IsAirHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'K') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Land";
+		          a = new Animal(p, "Komodo", "Slpp!", "Carnivore", h, 120, 6, 0, jh, false, c);
+		          if (GetElement(abs-1,ord-1).IsLandHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'L') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Land";
+		          a = new Animal(p, "Lion", "Roaarr!", "Carnivore", h, 150, 7.5, 0, jh, false, c);
+		          if (GetElement(abs-1,ord-1).IsLandHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'R') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Water";
+		          a = new Animal(p, "Orca", "Ngiak!", "Carnivore", h, 4000, 200, 0, jh, false, c);
+		          if (GetElement(abs-1,ord-1).IsWaterHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'O') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Air";
+		          a = new Animal(p, "Owl", "Hoot!", "Carnivore", h, 1.5, 0.075, 0, jh, true, c);
+		          if (GetElement(abs-1,ord-1).IsAirHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'P') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Air";
+		          a = new Animal(p, "Parrot", "Cuiitt", "Omnivore", h, 1.2, 0.06, 0.06, jh, true, c);
+		          if (GetElement(abs-1,ord-1).IsAirHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'B') {
+		          h = new String[2];
+		          jh = 2;
+		          h[0] = "Land";
+		          h[1] = "Water";
+		          a = new Animal(p, "PolarBear", "Auuummm", "Carnivore", h, 300, 15, 0, jh, false, c);
+		          if ((GetElement(abs-1,ord-1).IsLandHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'T') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Land";
+		          a = new Animal(p, "Tiger", "Growl", "Carnivore", h, 200, 10, 0, jh, false, c);
+		          if (GetElement(abs-1,ord-1).IsLandHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        } else if (c == 'W') {
+		          h = new String[1];
+		          jh = 1;
+		          h[0] = "Water";
+		          a = new Animal(p, "Walrus", "Aaarhhh", "Carnivore", h, 1000, 50, 0, jh, false, c);
+		          if (GetElement(abs-1,ord-1).IsWaterHabitat())
+		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		        }
+		      }
+		      sc.close();
+		    } catch (IOException e) {
+		      System.out.println("File not found!");
 		    }
-		  }
-	      sc.close();
-	    } catch (IOException e) {
-		    System.out.println("File not found!");
-	    }
 	  }
 	  /**
 	    * Mengkonversi kelas Zoo menjadi sebuah string untuk dicetak.
@@ -333,9 +399,10 @@ public class Zoo {
 		  }
 		  Point p;
 		  for (int i = 0; i < jumlahCage; ++i) {
-			  for (int j = 0; j < cage[i].GetTotalAnimal(); ++i) {
+			  Cage cg = cage[i];
+			  for (int j = 0; j < cg.GetTotalAnimal(); ++j) {
 				  p = cage[i].GetAnimal(j).GetPos();
-				  s[p.GetAbsis()].setCharAt(p.GetOrdinat(),cage[i].GetAnimal(j).Render()); 
+				  s[p.GetAbsis()].setCharAt(2*p.GetOrdinat(),cage[i].GetAnimal(j).Render()); 
 			  }
 		  }
 		  String out = new String();

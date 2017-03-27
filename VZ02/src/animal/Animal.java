@@ -221,4 +221,12 @@ public class Animal {
 	  public void SetPoint(Point p) {
 	    position = p;
 	  }
+	  /**
+	    * Memeriksa apakah Objek animal a dan this sama.
+	    * @param a Objek animal yang akan diperiksa.
+	    * @return True jika p sama dengan this.
+	    */
+	  public boolean IsSame(Animal a) {
+	    return (position.IsSame(a.position));
+	  }
 }
