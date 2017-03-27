@@ -7,105 +7,105 @@ import java.io.*;
 import java.util.Scanner;
 
 /**
-  * File : Zoo.java
-  * Kelas zoo merepresentasikan kebun binatang dengan matriks cell,
-  * kumpulan cage.
-  * @author Dewita Sonya Tarabunga - 13515021
-  */
+ * File : Zoo.java
+ * Kelas zoo merepresentasikan kebun binatang dengan matriks cell,
+ * kumpulan cage.
+ * @author Dewita Sonya Tarabunga - 13515021
+ */
 public class Zoo {
-  private final int maxBaris = 100;
-  private final int maxKolom = 100;
+  private final int MAXBARIS = 100;
+  private final int MAXKOLOM = 100;
   private int baris;
   private int kolom;
   private Cell[][] cell;
-  private final int maxJumlahCage = 100;
+  private final int MAXJUMLAHCAGE = 100;
   private int jumlahCage;
   private Cage[] cage;
   /**
-    * Constructor tanpa parameter.
-    */
+   * Constructor tanpa parameter.
+   */
   public Zoo() {
     baris = 0;
     kolom = 0;
-    cell = new Cell[maxBaris][maxKolom];
+    cell = new Cell[MAXBARIS][MAXKOLOM];
     jumlahCage = 0;
-    cage = new Cage[maxJumlahCage];
+    cage = new Cage[MAXJUMLAHCAGE];
   }
   /**
-    * Constructor dengan parameter.
-    * @param brs nilai ukuran baris kebun binatang.
-    * @param kol nilai ukuran kolom kebun binatang.
-    */
+   * Constructor dengan parameter.
+   * @param brs nilai ukuran baris kebun binatang.
+   * @param kol nilai ukuran kolom kebun binatang.
+   */
   public Zoo(int brs, int kol) {
     baris = brs;
     kolom = kol;
-    cell = new Cell[maxBaris][maxKolom];
+    cell = new Cell[MAXBARIS][MAXKOLOM];
     jumlahCage = 0;
-    cage = new Cage[maxJumlahCage];
+    cage = new Cage[MAXJUMLAHCAGE];
   }
   /**
-    * Getter elemen pada cell.
-    * Mengembalikan cell zoo pada posisi p.
-    * @param p Objek point yang akan dikembalikan.
-    * @return elemen cell pada matriks dengan koordinat p.
-    */
-  public Cell GetElement(Point p) {
-    int brs = p.GetAbsis();
-    int kol = p.GetOrdinat();
+   * Getter elemen pada cell.
+   * Mengembalikan cell zoo pada posisi p.
+   * @param p Objek point yang akan dikembalikan.
+   * @return elemen cell pada matriks dengan koordinat p.
+   */
+  public Cell getElement(Point p) {
+    int brs = p.getAbsis();
+    int kol = p.getOrdinat();
     return (cell[brs][kol]);
   }
   /**
-    * Getter elemen pada cell.
-    * Mengembalikan cell zoo pada baris brs dan kolom kol.
-    * @param brs nilai baris matriks yang akan dikembalikan.
-    * @param kol nilai kolom matriks yang akan dikembalikan.
-    * @return elemen cell pada matriks dengan baris brs dan kolom kol.
-    */
-  public Cell GetElement(int brs, int kol) {
+   * Getter elemen pada cell.
+   * Mengembalikan cell zoo pada baris brs dan kolom kol.
+   * @param brs nilai baris matriks yang akan dikembalikan.
+   * @param kol nilai kolom matriks yang akan dikembalikan.
+   * @return elemen cell pada matriks dengan baris brs dan kolom kol.
+   */
+  public Cell getElement(int brs, int kol) {
     return (cell[brs][kol]);
   }
   /**
-    * Getter ukuran baris pada kebun binatang.
-    * @return ukuran baris pada kebun binatang.
-    */
-  public int GetBaris() {
+   * Getter ukuran baris pada kebun binatang.
+   * @return ukuran baris pada kebun binatang.
+   */
+  public int getBaris() {
     return baris;
   }
   /**
-    * Getter ukuran kolom pada kebun binatang.
-    * @return ukuran kolom pada kebun binatang.
-    */
-  public int GetKolom() {
+   * Getter ukuran kolom pada kebun binatang.
+   * @return ukuran kolom pada kebun binatang.
+   */
+  public int getKolom() {
     return kolom;
   }
   /**
-    * Getter jumlah cage pada kebun binatang.
-    * @return jumlah cage pada kebun binatang.
-    */
-  public int GetJumlahCage() {
+   * Getter jumlah cage pada kebun binatang.
+   * @return jumlah cage pada kebun binatang.
+   */
+  public int getJumlahCage() {
     return jumlahCage;
   }
   /**
-    * Getter cage.
-    * Mengembalikan cage sesuai indeks pada kebun binatang.
-    * @param indeks nilai indeks yang akan di kembalikan.
-    * @return Objek cage sesuai indeks pada kebun binatang.
-    */
-  public Cage GetCage(int indeks) {
+   * Getter cage.
+   * Mengembalikan cage sesuai indeks pada kebun binatang.
+   * @param indeks nilai indeks yang akan di kembalikan.
+   * @return Objek cage sesuai indeks pada kebun binatang.
+   */
+  public Cage getCage(int indeks) {
     return cage[indeks];
   }
   /**
-    * Mencari point p berada pada cage mana.
-    * @param abs nilai absis yang akan dicari.
-    * @param ord nilai ordinat yang akan dicari.
-    * @return Objek cage yang mengandung point yang dicari.
-    */
-  public Cage SearchPoint(int abs, int ord) {
+   * Mencari point p berada pada cage mana.
+   * @param abs nilai absis yang akan dicari.
+   * @param ord nilai ordinat yang akan dicari.
+   * @return Objek cage yang mengandung point yang dicari.
+   */
+  public Cage searchPoint(int abs, int ord) {
     boolean found = false;
     int i = 0;
     Point p = new Point(abs, ord);
     while (!found && (i < jumlahCage)) {
-      if (cage[i].IsInCage(p)) {
+      if (cage[i].isInCage(p)) {
         found = true;
       }
       else {
@@ -120,15 +120,15 @@ public class Zoo {
     }
   }
   /**
-    * Mencari point p berada pada cage mana.
-    * @param p Objek point yang akan dicari.
-    * @return Objek cage yang mengandung point yang dicari.
-    */
-  public Cage SearchPoint(Point p) {
+   * Mencari point p berada pada cage mana.
+   * @param p Objek point yang akan dicari.
+   * @return Objek cage yang mengandung point yang dicari.
+   */
+  public Cage searchPoint(Point p) {
     boolean found = false;
     int i = 0;
     while (!found && (i < jumlahCage)) {
-      if (cage[i].IsInCage(p)) {
+      if (cage[i].isInCage(p)) {
         found = true;
       }
       else {
@@ -143,15 +143,19 @@ public class Zoo {
     }
   }
   /**
-    * I.S. Zoo sembarang dan c terdefinisi.
-    * F.S. Zoo baru dengan tambahan cage c.
-    * @param c Cage yang akan ditambahkan pada zoo.
-    */
-  public void AddCage(Cage c) {
+   * I.S. Zoo sembarang dan c terdefinisi.
+   * F.S. Zoo baru dengan tambahan cage c.
+   * @param c Cage yang akan ditambahkan pada zoo.
+   */
+  public void addCage(Cage c) {
     cage[jumlahCage] = new Cage(c);
     ++jumlahCage;
   }
-  public void ReadMap() {
+  /**
+   * I.S. Cell sembarang.
+   * F.S. Cell terdefinisi sesuai dengan file eksternal "map.txt".
+   */
+  public void readMap() {
     File filename = new File("map.txt");
     try {
       Scanner sc = new Scanner(filename);
@@ -164,32 +168,32 @@ public class Zoo {
           if (c=='@') {
             cell[i][j] = new LandHabitat();
             if ((i!=0)&&(cell[i-1][j] instanceof Land_Habitat)) {
-              SearchPoint(i-1,j).AddPoint(P);
+              searchPoint(i-1,j).addPoint(P);
             } else if ((j!=0)&&(cell[i][j-1] instanceof Land_Habitat)) {
-              SearchPoint(i,j-1).AddPoint(P);
+              searchPoint(i,j-1).addPoint(P);
             } else {
               Cage c(i,j);
-              AddCage(c);
+              addCage(c);
             }
           } else if (c=='^') {
             cell[i][j] = new AirHabitat();
             if ((i!=0)&&(cell[i-1][j] instanceof Air_Habitat)) {
-              SearchPoint(i-1,j).AddPoint(P);
+              searchPoint(i-1,j).addPoint(P);
             } else if ((j!=0)&&(cell[i][j-1] instanceof Air_Habitat)) {
-              SearchPoint(i,j-1).AddPoint(P);
+              searchPoint(i,j-1).addPoint(P);
             } else {
               Cage c(i,j);
-              AddCage(c);
+              addCage(c);
             }
           } else if (c=='~') {
             cell[i][j] = new WaterHabitat();
             if ((i!=0)&&(cell[i-1][j] instanceof Water_Habitat)) {
-              SearchPoint(i-1,j).AddPoint(P);
+              searchPoint(i-1,j).addPoint(P);
             } else if ((j!=0)&&(cell[i][j-1] instanceof Water_Habitat)) {
-              SearchPoint(i,j-1).AddPoint(P);
+              searchPoint(i,j-1).addPoint(P);
             } else {
               Cage c(i,j);
-              AddCage(c);
+              addCage(c);
             }
           } else if (c=='S') {
             cell[i][j] = new Restaurant();
@@ -209,7 +213,11 @@ public class Zoo {
       System.out.println("File not found!");
     }
   }
-  public void ReadAnimal() {
+  /**
+   * I.S. Animal sembarang.
+   * F.S. Animal terdefinisi sesuai dengan file eksternal "animal.txt".
+   */
+  public void readAnimal() {
     File filename = new File("animal.txt");
     try {
       Scanner sc = new Scanner(filename);
@@ -222,84 +230,84 @@ public class Zoo {
         ord = sc.nextInt();
         if (c == 'A') {
           Alligator A;
-          if ((GetElement(abs-1,ord-1) instanceof Land_Habitat)||(GetElement(abs-1,ord-1) instanceof Water_Habitat))
-            SearchPoint(abs-1, ord-1).AdoptAnimal(A);
+          if ((getElement(abs-1,ord-1) instanceof Land_Habitat)||(getElement(abs-1,ord-1) instanceof Water_Habitat))
+            searchPoint(abs-1, ord-1).adoptAnimal(A);
         } else if (c == 'C') {
           Cobra C;
-          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(C);
+          if (getElement(abs-1,ord-1) instanceof Land_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(C);
         } else if (c == 'M') {
           Cormorant M;
-          if ((GetElement(abs-1,ord-1) instanceof Air_Habitat)||(GetElement(abs-1,ord-1) instanceof Water_Habitat))
-            SearchPoint(abs-1, ord-1).AdoptAnimal(M);
+          if ((getElement(abs-1,ord-1) instanceof Air_Habitat)||(getElement(abs-1,ord-1) instanceof Water_Habitat))
+            searchPoint(abs-1, ord-1).adoptAnimal(M);
         } else if (c == 'N') {
           Dolphin N;
-          if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(N);
+          if (getElement(abs-1,ord-1) instanceof Water_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(N);
         } else if (c == 'D') {
           Duck D;
-          if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(D);
+          if (getElement(abs-1,ord-1) instanceof Water_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(D);
         } else if (c == 'U') {
           Dugong U;
-          if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(U);
+          if (getElement(abs-1,ord-1) instanceof Water_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(U);
         } else if (c == 'E') {
           Eagle E;
-          if (GetElement(abs-1,ord-1) instanceof Air_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(E);
+          if (getElement(abs-1,ord-1) instanceof Air_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(E);
         } else if (c == 'H') {
           Elephant H;
-          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(H);
+          if (getElement(abs-1,ord-1) instanceof Land_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(H);
         } else if (c == 'F') {
           Giraffe F;
-          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(F);
+          if (getElement(abs-1,ord-1) instanceof Land_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(F);
         } else if (c == 'G') {
           Goat G;
-          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(G);
+          if (getElement(abs-1,ord-1) instanceof Land_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(G);
         } else if (c == 'I') {
           Iguana I;
-          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(I);
+          if (getElement(abs-1,ord-1) instanceof Land_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(I);
         } else if (c == 'J') {
           Jalak J;
-          if (GetElement(abs-1,ord-1) instanceof Air_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(J);
+          if (getElement(abs-1,ord-1) instanceof Air_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(J);
         } else if (c == 'K') {
           Komodo K;
-          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(K);
+          if (getElement(abs-1,ord-1) instanceof Land_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(K);
         } else if (c == 'L') {
           Lion L;
-          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(L);
+          if (getElement(abs-1,ord-1) instanceof Land_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(L);
         } else if (c == 'R') {
           Orca R;
-          if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(R);
+          if (getElement(abs-1,ord-1) instanceof Water_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(R);
         } else if (c == 'O') {
           Owl O;
-          if (GetElement(abs-1,ord-1) instanceof Air_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(O);
+          if (getElement(abs-1,ord-1) instanceof Air_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(O);
         } else if (c == 'P') {
           Parrot P;
-          if (GetElement(abs-1,ord-1) instanceof Air_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(P);
+          if (getElement(abs-1,ord-1) instanceof Air_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(P);
         } else if (c == 'B') {
           PolarBear B;
-          if ((GetElement(abs-1,ord-1) instanceof Land_Habitat)||(GetElement(abs-1,ord-1) instanceof Water_Habitat))
-            SearchPoint(abs-1, ord-1).AdoptAnimal(B);
+          if ((getElement(abs-1,ord-1) instanceof Land_Habitat)||(GetElement(abs-1,ord-1) instanceof Water_Habitat))
+            searchPoint(abs-1, ord-1).adoptAnimal(B);
         } else if (c == 'T') {
           Tiger T;
-          if (GetElement(abs-1,ord-1) instanceof Land_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(T);
+          if (getElement(abs-1,ord-1) instanceof Land_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(T);
         } else if (c == 'W') {
           Walrus W;
-          if (GetElement(abs-1,ord-1) instanceof Water_Habitat)
-            SearchPoint(abs-1, ord-1).AdoptAnimal(W);
+          if (getElement(abs-1,ord-1) instanceof Water_Habitat)
+            searchPoint(abs-1, ord-1).adoptAnimal(W);
         }
       }
       sc.close();
