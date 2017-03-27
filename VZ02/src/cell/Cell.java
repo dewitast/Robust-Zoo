@@ -6,7 +6,7 @@ package cell;
  * @author Catherine Almira - 13515111
  */
 public class Cell {
-	  private String object_type;
+	  private String objectType;
 	  private char render;
 	  
 	  /**
@@ -14,7 +14,7 @@ public class Cell {
 	    * Menciptakan Cell kosong.
 	    */
 	  public Cell() {
-	    object_type = "Road";
+	    objectType = "Road";
 	    render = '+';
 	  }
 	  /** 
@@ -23,29 +23,29 @@ public class Cell {
 	    * @param ot Object type dari Cell.
 	    */
 	  public Cell(String ot) {
-	    object_type = ot;
-	    if (object_type == "LandHabitat") {
+	    objectType = ot;
+	    if (objectType == "LandHabitat") {
 	      render = '@';
 	    }
-	    else if (object_type == "AirHabitat") {
+	    else if (objectType == "AirHabitat") {
 	      render = '^';
 	    }
-	    else if (object_type == "WaterHabitat") {
+	    else if (objectType == "WaterHabitat") {
 	      render = '~';
 	    }
-	    else if (object_type == "Restaurant") {
+	    else if (objectType == "Restaurant") {
 	      render = 'S';
 	    }
-	    else if (object_type == "Park") {
+	    else if (objectType == "Park") {
 	      render = '#';
 	    }
-	    else if (object_type == "Road") {
+	    else if (objectType == "Road") {
 	      render = '+';
 	    }
-	    else if (object_type == "Exit") {
+	    else if (objectType == "Exit") {
 	      render = 'X';
 	    }
-	    else if (object_type == "Entrance") {
+	    else if (objectType == "Entrance") {
 	      render = 'Z';
 	    }
 	  }
@@ -53,44 +53,44 @@ public class Cell {
 	    * Getter untuk object type.
 	    * @return Mengembalikan object type dari Cell.
 	    */
-	  public String GetObjectType() {
-	    return object_type;
+	  public String getObjectType() {
+	    return objectType;
 	  }
 	  /**
 	    * Getter untuk render.
 	    * @return Mengembalikan render dari Cell.
 	    */
-	  public char Render() {
+	  public char render() {
 	    return render;
 	  }
 	  /**
 	    * Setter untuk object type dari Cell.
 	    * @param ot Nilai object type yang akan di-set pada Cell.
 	    */
-	  public void SetObjectType(String ot) {
-	    object_type = ot;
-	    if (object_type == "LandHabitat") {
+	  public void setObjectType(String ot) {
+	    objectType = ot;
+	    if (objectType == "LandHabitat") {
 	      render = '@';
 	    }
-	    else if (object_type == "AirHabitat") {
+	    else if (objectType == "AirHabitat") {
 	      render = '^';
 	    }
-	    else if (object_type == "WaterHabitat") {
+	    else if (objectType == "WaterHabitat") {
 	      render = '~';
 	    }
-	    else if (object_type == "Restaurant") {
+	    else if (objectType == "Restaurant") {
 	      render = 'S';
 	    }
-	    else if (object_type == "Park") {
+	    else if (objectType == "Park") {
 	      render = '#';
 	    }
-	    else if (object_type == "Road") {
+	    else if (objectType == "Road") {
 	      render = '+';
 	    }
-	    else if (object_type == "Exit") {
+	    else if (objectType == "Exit") {
 	      render = 'X';
 	    }
-	    else if (object_type == "Entrance") {
+	    else if (objectType == "Entrance") {
 	      render = 'Z';
 	    }
 	  }
@@ -98,49 +98,49 @@ public class Cell {
 	    * Mengecek apakah cell berisi Habitat.
 		  * @return Menghasilkan true jika code pada layar merupakan kode Land, Air, atau Water Habitat.
 		  */
-	  public boolean IsHabitat() {
+	  public boolean isHabitat() {
 	    return ((render == '@') || (render == '^') || (render == '~'));
 	  }
 	  /**
 	    * Mengecek apakah cell berisi LandHabitat.
 	    * @return Menghasilkan true jika code pada layar merupakan kode Land Habitat.
 	    */
-	  public boolean IsLandHabitat() {
+	  public boolean isLandHabitat() {
 	    return (render == '@');
 	  }
 	  /**
 	    * Mengecek apakah cell berisi AirHabitat.
 	    * @return Menghasilkan true jika code pada layar merupakan kode Air Habitat.
 	    */
-	  public boolean IsAirHabitat() {
+	  public boolean isAirHabitat() {
 	    return (render == '^');
 	  }
 	  /**
 	    * Mengecek apakah cell berisi WaterHabitat.
 	    * @return Menghasilkan true jika code pada layar merupakan kode Water Habitat.
 	    */
-	  public boolean IsWaterHabitat() {
+	  public boolean isWaterHabitat() {
 	    return (render == '~');
 	  }
 	  /** 
 	    * Mengecek apakah cell berisi Exit.
 	    * @return Menghasilkan true jika code pada layar merupakan kode Exit.
 	    */
-	  public boolean IsExit() {
+	  public boolean isExit() {
 	    return (render == 'X');
 	  }
 	  /**
 	    * Mengecek apakah cell berisi Road.
 	    * @return Menghasilkan true jika code pada layar merupakan kode Road.
 	    */
-	  public boolean IsRoad() {
+	  public boolean isRoad() {
 	    return ((render == '+') || (render == 'X') || (render == 'Z'));
 	  }
 	  /**
 	    * Mengecek apakah cell berisi Entrance.
 	    * @return Menghasilkan true jika code pada layar merupakan kode Entrance.
 	    */
-	  public boolean IsEntrance() {
+	  public boolean isEntrance() {
 	    return (render == 'Z');
 	  }
 }
