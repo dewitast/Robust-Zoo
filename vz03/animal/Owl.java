@@ -22,6 +22,34 @@ public class Owl extends Aves {
   	super(w, f, t);
   }
   /**
+    * Jenis makanan yang dimakan Owl.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Owl.
+    */
+  public String GetFoodType() {
+    return "Carnivore";
+  }
+  /**
+    * Memeriksa apakah Owl adalah hewan darat.
+    * @return Mengembalikan true jika Owl adalah hewan darat dan false jika Owl bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Owl adalah hewan air.
+    * @return Mengembalikan true jika Owl adalah hewan air dan false jika Owl bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Owl adalah hewan udara.
+    * @return Mengembalikan true jika Owl adalah hewan udara dan false jika Owl bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return true;
+  }
+  /**
     * Interaksi yang dilakukan Owl.
     * @return Mengembalikan string yang merepresentasikan suara Owl.
     */

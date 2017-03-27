@@ -22,6 +22,34 @@ public class Orca extends Mammal {
   	super(w, f, t);
   }
   /**
+    * Jenis makanan yang dimakan Orca.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Orca.
+    */
+  public String GetFoodType() {
+    return "Carnivore";
+  }
+  /**
+    * Memeriksa apakah Orca adalah hewan darat.
+    * @return Mengembalikan true jika Orca adalah hewan darat dan false jika Orca bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Orca adalah hewan air.
+    * @return Mengembalikan true jika Orca adalah hewan air dan false jika Orca bukan hewan air.
+    */
+  public boolean IsWater() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Orca adalah hewan udara.
+    * @return Mengembalikan true jika Orca adalah hewan udara dan false jika Orca bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
+  }
+  /**
     * Interaksi yang dilakukan Orca.
     * @return Mengembalikan string yang merepresentasikan suara Orca.
     */
