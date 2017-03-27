@@ -108,7 +108,7 @@ public class Driver {
 	          else if ((z.getElement(random,z.getKolom()-1)).isEntrance()) {
 	            found = true;
 	            p.setAbsis(random);
-	            p.setOrdinat(z.GetKolom()-1);
+	            p.setOrdinat(z.getKolom()-1);
 	          }
 	        }
 	      }
@@ -116,8 +116,8 @@ public class Driver {
 	    else {
 	      visited[p.getAbsis()][p.getOrdinat()] = true;
 	      boolean b1 = ((p.getAbsis()>0)&&(!visited[p.getAbsis()-1][p.getOrdinat()])&&((z.getElement(p.getAbsis()-1,p.getOrdinat()))).isRoad());
-	      boolean b2 = ((p.getOrdinat()<z.getKolom()-1)&&(!visited[p.getAbsis()][p.getOrdinat()+1])&&((z.getElement(p.getAbsis(),p.getOrdinat()+1))).IsRoad());
-	      boolean b3 = ((p.getAbsis()<z.getBaris()-1)&&(!visited[p.getAbsis()+1][p.getOrdinat()])&&((z.getElement(p.getAbsis()+1,p.getOrdinat()))).IsRoad());
+	      boolean b2 = ((p.getOrdinat()<z.getKolom()-1)&&(!visited[p.getAbsis()][p.getOrdinat()+1])&&((z.getElement(p.getAbsis(),p.getOrdinat()+1))).isRoad());
+	      boolean b3 = ((p.getAbsis()<z.getBaris()-1)&&(!visited[p.getAbsis()+1][p.getOrdinat()])&&((z.getElement(p.getAbsis()+1,p.getOrdinat()))).isRoad());
 	      boolean b4 = ((p.getOrdinat()>0)&&(!visited[p.getAbsis()][p.getOrdinat()-1])&&((z.getElement(p.getAbsis(),p.getOrdinat()-1))).isRoad());
 	      if ((!b1)&&(!b2)&&(!b3)&&(!b4)) {
 	        p.setAbsis(-1);
