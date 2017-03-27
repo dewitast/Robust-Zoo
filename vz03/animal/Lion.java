@@ -22,6 +22,34 @@ public class Lion extends Mammal {
     super(w, f, t);
   }
   /**
+    * Jenis makanan yang dimakan Lion.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Lion.
+    */
+  public String GetFoodType() {
+    return "Carnivore";
+  }
+  /**
+    * Memeriksa apakah Lion adalah hewan darat.
+    * @return Mengembalikan true jika Lion adalah hewan darat dan false jika Lion bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Lion adalah hewan air.
+    * @return Mengembalikan true jika Lion adalah hewan air dan false jika Lion bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Lion adalah hewan udara.
+    * @return Mengembalikan true jika Lion adalah hewan udara dan false jika Lion bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
+  }
+  /**
     * Interaksi yang dilakukan Lion.
     * @return Mengembalikan string yang merepresentasikan suara Lion.
     */

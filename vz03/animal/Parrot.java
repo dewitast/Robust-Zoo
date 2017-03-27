@@ -22,6 +22,34 @@ public class Parrot extends Aves {
     super(w, f, t);
   }
   /**
+    * Jenis makanan yang dimakan Parrot.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Parrot.
+    */
+  public String GetFoodType() {
+    return "Omnivore";
+  }
+  /**
+    * Memeriksa apakah Parrot adalah hewan darat.
+    * @return Mengembalikan true jika Parrot adalah hewan darat dan false jika Parrot bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Parrot adalah hewan air.
+    * @return Mengembalikan true jika Parrot adalah hewan air dan false jika Parrot bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Parrot adalah hewan udara.
+    * @return Mengembalikan true jika Parrot adalah hewan udara dan false jika Parrot bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return true;
+  }
+  /**
     * Interaksi yang dilakukan Parrot.
     * @return Mengembalikan string yang merepresentasikan suara Parrot.
     */
