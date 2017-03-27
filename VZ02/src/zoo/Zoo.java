@@ -14,12 +14,12 @@ import java.io.*;
  * @author Dewita Sonya Tarabunga - 13515021
  */
 public class Zoo {
-	  private final int maxBaris = 100;
-	  private final int maxKolom = 100;
+	  private final int MAXBARIS = 100;
+	  private final int MAXKOLOM = 100;
 	  private int baris;
 	  private int kolom;
 	  private Cell[][] cell;
-	  private final int maxJumlahCage = 100;
+	  private final int MAXJUMLAHCAGE = 100;
 	  private int jumlahCage;
 	  private Cage[] cage;
 	  
@@ -29,9 +29,9 @@ public class Zoo {
 	  public Zoo() {
 	    baris = 0;
 	    kolom = 0;
-	    cell = new Cell[maxBaris][maxKolom];
+	    cell = new Cell[MAXBARIS][MAXKOLOM];
 	    jumlahCage = 0;
-	    cage = new Cage[maxJumlahCage];
+	    cage = new Cage[MAXJUMLAHCAGE];
 	  }
 	  /**
 	    * Constructor dengan parameter.
@@ -41,9 +41,9 @@ public class Zoo {
 	  public Zoo(int brs, int kol) {
 	    baris = brs;
 	    kolom = kol;
-	    cell = new Cell[maxBaris][maxKolom];
+	    cell = new Cell[MAXBARIS][MAXKOLOM];
 	    jumlahCage = 0;
-	    cage = new Cage[maxJumlahCage];
+	    cage = new Cage[MAXJUMLAHCAGE];
 	  }
 	  /**
 	    * Getter elemen pada cell.
@@ -51,9 +51,9 @@ public class Zoo {
 	    * @param p Objek point yang akan dikembalikan.
 	    * @return elemen cell pada matriks dengan koordinat p.
 	    */
-	  public Cell GetElement(Point p) {
-	    int brs = p.GetAbsis();
-	    int kol = p.GetOrdinat();
+	  public Cell getElement(Point p) {
+	    int brs = p.getAbsis();
+	    int kol = p.getOrdinat();
 	    return (cell[brs][kol]);
 	  }
 	  /**
@@ -63,28 +63,28 @@ public class Zoo {
 	    * @param kol nilai kolom matriks yang akan dikembalikan.
 	    * @return elemen cell pada matriks dengan baris brs dan kolom kol.
 	    */
-	  public Cell GetElement(int brs, int kol) {
+	  public Cell getElement(int brs, int kol) {
 	    return (cell[brs][kol]);
 	  }
 	  /**
 	    * Getter ukuran baris pada kebun binatang.
 	    * @return ukuran baris pada kebun binatang.
 	    */
-	  public int GetBaris() {
+	  public int getBaris() {
 	    return baris;
 	  }
 	  /**
 	    * Getter ukuran kolom pada kebun binatang.
 	    * @return ukuran kolom pada kebun binatang.
 	    */
-	  public int GetKolom() {
+	  public int getKolom() {
 	    return kolom;
 	  }
 	  /**
 	    * Getter jumlah cage pada kebun binatang.
 	    * @return jumlah cage pada kebun binatang.
 	    */
-	  public int GetJumlahCage() {
+	  public int getJumlahCage() {
 	    return jumlahCage;
 	  }
 	  /**
@@ -93,7 +93,7 @@ public class Zoo {
 	    * @param indeks nilai indeks yang akan di kembalikan.
 	    * @return Objek cage sesuai indeks pada kebun binatang.
 	    */
-	  public Cage GetCage(int indeks) {
+	  public Cage getCage(int indeks) {
 	    return cage[indeks];
 	  }
 	  /**
@@ -102,22 +102,20 @@ public class Zoo {
 	    * @param ord nilai ordinat yang akan dicari.
 	    * @return Objek cage yang mengandung point yang dicari.
 	    */
-	  public Cage SearchPoint(int abs, int ord) {
+	  public Cage searchPoint(int abs, int ord) {
 	    boolean found = false;
 	    int i = 0;
 	    Point p = new Point(abs, ord);
 	    while (!found && (i < jumlahCage)) {
-	      if (cage[i].IsInCage(p)) {
+	      if (cage[i].isInCage(p)) {
 	        found = true;
-	      }
-	      else {
+	      } else {
 	        ++i;
 	      }
 	    }
 	    if (found) {
 	      return cage[i];
-	    }
-	    else {
+	    } else {
 	      return cage[0];
 	    }
 	  }
@@ -126,21 +124,19 @@ public class Zoo {
 	    * @param p Objek point yang akan dicari.
 	    * @return Objek cage yang mengandung point yang dicari.
 	    */
-	  public Cage SearchPoint(Point p) {
+	  public Cage searchPoint(Point p) {
 	    boolean found = false;
 	    int i = 0;
 	    while (!found && (i < jumlahCage)) {
-	      if (cage[i].IsInCage(p)) {
+	      if (cage[i].isInCage(p)) {
 	        found = true;
-	      }
-	      else {
+	      } else {
 	        ++i;
 	      }
 	    }
 	    if (found) {
 	      return cage[i];
-	    }
-	    else {
+	    } else {
 	      return cage[0];
 	    }
 	  }
@@ -149,7 +145,7 @@ public class Zoo {
 	    * F.S. Zoo baru dengan tambahan cage c.
 	    * @param c Cage yang akan ditambahkan pada zoo.
 	    */
-	  public void AddCage(Cage c) {
+	  public void addCage(Cage c) {
 	    cage[jumlahCage] = new Cage(c);
 	    ++jumlahCage;
 	  }
@@ -157,10 +153,10 @@ public class Zoo {
 	    * I.S. File eksternal "map.txt" sudah tersedia.
 	    * F.S. Zoo terkonfigurasi dari file eksternal.
 	    */
-	  public void ReadMap() {
-		File filename = new File("map.txt");
+	  public void readMap() {
+		File fileName = new File("map.txt");
 		try {
-		  Scanner sc = new Scanner(filename);
+		  Scanner sc = new Scanner(fileName);
 		  baris = sc.nextInt();
 		  kolom = sc.nextInt();
 		  Cage cg;
@@ -168,45 +164,45 @@ public class Zoo {
 		  for (int i = 0; i < baris; i++) {
 		    for (int j = 0; j < kolom; j++) {
 		      c = sc.next().charAt(0);
-		      if (c=='@') {
+		      if (c == '@') {
 		        cell[i][j] = new Cell("LandHabitat");
-		        if ((i!=0)&&(cell[i-1][j].IsLandHabitat())) {
-		          SearchPoint(i-1,j).AddPoint(i,j);
-		        } else if ((j!=0)&&(cell[i][j-1].IsLandHabitat())) {
-		          SearchPoint(i,j-1).AddPoint(i,j);
+		        if ((i != 0) && (cell[i-1][j].isLandHabitat())) {
+		          searchPoint(i-1, j).addPoint(i, j);
+		        } else if ((j != 0) && (cell[i][j-1].isLandHabitat())) {
+		          searchPoint(i, j-1).addPoint(i, j);
 		        } else {
-		          cg = new Cage(i,j);
-		          AddCage(cg);
+		          cg = new Cage(i, j);
+		          addCage(cg);
 		        }
-		      } else if (c=='^') {
+		      } else if (c == '^') {
 		        cell[i][j] = new Cell("AirHabitat");
-		        if ((i!=0)&&(cell[i-1][j].IsAirHabitat())) {
-		          SearchPoint(i-1,j).AddPoint(i,j);
-		        } else if ((j!=0)&&(cell[i][j-1].IsAirHabitat())) {
-		          SearchPoint(i,j-1).AddPoint(i,j);
+		        if ((i != 0) && (cell[i-1][j].isAirHabitat())) {
+		          searchPoint(i-1, j).addPoint(i, j);
+		        } else if ((j != 0) && (cell[i][j-1].isAirHabitat())) {
+		          searchPoint(i, j-1).addPoint(i, j);
 		        } else {
-		          cg = new Cage(i,j);
-		          AddCage(cg);
+		          cg = new Cage(i, j);
+		          addCage(cg);
 		        }
-		      } else if (c=='~') {
+		      } else if (c == '~') {
 		        cell[i][j] = new Cell("WaterHabitat");
-		        if ((i!=0)&&(cell[i-1][j].IsWaterHabitat())) {
-		          SearchPoint(i-1,j).AddPoint(i,j);
-		        } else if ((j!=0)&&(cell[i][j-1].IsWaterHabitat())) {
-		          SearchPoint(i,j-1).AddPoint(i,j);
+		        if ((i != 0) && (cell[i-1][j].isWaterHabitat())) {
+		          searchPoint(i-1, j).addPoint(i, j);
+		        } else if ((j != 0) && (cell[i][j-1].isWaterHabitat())) {
+		          searchPoint(i, j-1).addPoint(i, j);
 		        } else {
-		          cg = new Cage(i,j);
-		          AddCage(cg);
+		          cg = new Cage(i, j);
+		          addCage(cg);
 		        }
-		      } else if (c=='S') {
+		      } else if (c == 'S') {
 		        cell[i][j] = new Cell("Restaurant");
-		      } else if (c=='#') {
+		      } else if (c == '#') {
 		        cell[i][j] = new Cell("Park");
-		      } else if (c=='+') {
+		      } else if (c == '+') {
 		        cell[i][j] = new Cell("Road");
-		      } else if (c=='X') {
+		      } else if (c == 'X') {
 		        cell[i][j] = new Cell("Exit");
-		      } else if (c=='Z') {
+		      } else if (c == 'Z') {
 		        cell[i][j] = new Cell("Entrance");
 		      }
 		    }
@@ -220,10 +216,10 @@ public class Zoo {
 	    * I.S. File eksternal "animal.txt" sudah tersedia, peta zoo sudah ada.
 	    * F.S. Zoo sudah terisi binatang dari file eksternal.
 	    */
-	  public void ReadAnimal() {
-		  File filename = new File("animal.txt");
+	  public void readAnimal() {
+		  File fileName = new File("animal.txt");
 		    try {
-		      Scanner sc = new Scanner(filename);
+		      Scanner sc = new Scanner(fileName);
 		      char c;
 		      int abs, ord, jh;
 		      Point p;
@@ -240,121 +236,121 @@ public class Zoo {
 		          h[0] = "Land";
 		          h[1] = "Water";
 		          a = new Animal(p, "Alligator", "Grrrrrr", "Carnivore", h, 125, 6.25, 0, jh, false, c);
-		          if ((GetElement(abs-1,ord-1).IsLandHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if ((getElement(abs-1, ord-1).isLandHabitat())||(getElement(abs-1, ord-1).isWaterHabitat()))
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'C') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Land";
 		          a = new Animal(p, "Cobra", "Ssshh!", "Carnivore", h, 20, 1, 0, jh, false, c);
-		          if (GetElement(abs-1,ord-1).IsLandHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1, ord-1).isLandHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'M') {
 		          h = new String[2];
 		          jh = 2;
 		          h[0] = "Air";
 		          h[1] = "Water";
 		          a = new Animal(p, "Cormorant", "Ooookkk!", "Carnivore", h, 3.6, 0.18, 0, jh, true, c);
-		          if ((GetElement(abs-1,ord-1).IsAirHabitat())||(GetElement(abs-1,ord-1).IsWaterHabitat()))
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if ((getElement(abs-1,ord-1).isAirHabitat())||(getElement(abs-1, ord-1).isWaterHabitat()))
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'N') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Water";
 		          a = new Animal(p, "Dolphin", "A a a a a", "Carnivore", h, 75, 3.75, 0, jh, true, c);
-		          if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1, ord-1).isWaterHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'D') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Water";
 		          a = new Animal(p, "Duck", "Quaackk!", "Omnivore", h, 12, 0.6, 0.6, jh, true, c);
-		          if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1, ord-1).isWaterHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'U') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Water";
 		          a = new Animal(p, "Dugong", "Splashh!", "Herbivore", h, 500, 0, 25, jh, true, c);
-		          if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1, ord-1).isWaterHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'E') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Air";
 		          a = new Animal(p, "Eagle", "Nguiikk!", "Carnivore", h, 5.8, 0.29, 0, jh, false, c);
-		          if (GetElement(abs-1,ord-1).IsAirHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1, ord-1).isAirHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'H') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Land";
 		          a = new Animal(p, "Elephant", "Prett!", "Herbivore", h, 5000, 0, 250, jh, true, c);
-		          if (GetElement(abs-1,ord-1).IsLandHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1, ord-1).isLandHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'F') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Land";
 		          a = new Animal(p, "Giraffe", "Hmm!", "Herbivore", h, 1100, 0, 55, jh, true, c);
-		          if (GetElement(abs-1,ord-1).IsLandHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1, ord-1).isLandHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'G') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Land";
 		          a = new Animal(p, "Goat", "Mbeeeee", "Herbivore", h, 90, 0, 4.5, jh, false, c);
-		          if (GetElement(abs-1,ord-1).IsLandHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1, ord-1).isLandHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'I') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Land";
 		          a = new Animal(p, "Iguana", "Purrrr", "Herbivore", h, 6, 0, 0.3, jh, true, c);
-		          if (GetElement(abs-1,ord-1).IsLandHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1, ord-1).isLandHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'J') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Air";
 		          a = new Animal(p, "Jalak", "Tweet!", "Herbivore", h, 0.1, 0, 0.005, jh, true, c);
-		          if (GetElement(abs-1,ord-1).IsAirHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1, ord-1).isAirHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'K') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Land";
 		          a = new Animal(p, "Komodo", "Slpp!", "Carnivore", h, 120, 6, 0, jh, false, c);
-		          if (GetElement(abs-1,ord-1).IsLandHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1, ord-1).isLandHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'L') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Land";
 		          a = new Animal(p, "Lion", "Roaarr!", "Carnivore", h, 150, 7.5, 0, jh, false, c);
-		          if (GetElement(abs-1,ord-1).IsLandHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1, ord-1).isLandHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'R') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Water";
 		          a = new Animal(p, "Orca", "Ngiak!", "Carnivore", h, 4000, 200, 0, jh, false, c);
-		          if (GetElement(abs-1,ord-1).IsWaterHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1, ord-1).isWaterHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'O') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Air";
 		          a = new Animal(p, "Owl", "Hoot!", "Carnivore", h, 1.5, 0.075, 0, jh, true, c);
-		          if (GetElement(abs-1,ord-1).IsAirHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1,ord-1).isAirHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'P') {
 		          h = new String[1];
 		          jh = 1;
 		          h[0] = "Air";
 		          a = new Animal(p, "Parrot", "Cuiitt", "Omnivore", h, 1.2, 0.06, 0.06, jh, true, c);
-		          if (GetElement(abs-1,ord-1).IsAirHabitat())
-		            SearchPoint(abs-1, ord-1).AdoptAnimal(a);
+		          if (getElement(abs-1,ord-1).isAirHabitat())
+		            searchPoint(abs-1, ord-1).adoptAnimal(a);
 		        } else if (c == 'B') {
 		          h = new String[2];
 		          jh = 2;
