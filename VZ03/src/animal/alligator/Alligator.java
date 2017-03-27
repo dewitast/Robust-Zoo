@@ -1,4 +1,5 @@
-package animal;
+package animal.alligator;
+import animal.reptile.*;
 
 /**
  * File : Alligator.java
@@ -22,6 +23,14 @@ public class Alligator extends Reptile {
    */
   public Alligator(double w, double f, boolean t) {
     super(w, f, t);
+  }
+  /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Alligator hasil salinan a.
+   * @param a Alligator yang akan disalin.
+   */
+  public Alligator(Alligator a) {
+    super(a.weight, a.food, a.tame);
   }
   /**
    * Jenis makanan yang dimakan Alligator.
