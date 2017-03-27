@@ -11,7 +11,7 @@ import java.util.Random;
  */
 public class Cage {
   private final int MAXSIZE = 100;
-  private Point[] loc;
+  public Point[] loc;
   private int size;
   private Animal[] animal;
   private int totalAnimal;
@@ -37,10 +37,10 @@ public class Cage {
   }
   /**
    * Constructor dengan parameter.
-   * @param possOrd posisi ordinat.
-   * @param possAbs posisi absis.
+   * @param posOrd posisi ordinat.
+   * @param posAbs posisi absis.
    */
-  public Cage(int posOrd, int posAbs) {
+  public Cage(int posAbs, int posOrd) {
     size = 1;
     loc = new Point[MAXSIZE];
     loc[0] = new Point(posAbs, posOrd);
@@ -60,7 +60,7 @@ public class Cage {
     totalAnimal = c.totalAnimal;
     animal = new Animal[3*MAXSIZE/10];
     for (int i = 0; i < totalAnimal; ++i) {
-      animal[i] = (c.animal[i]).clone();
+      animal[i] = (c.animal[i]).deepCopy();
     }
   }
   /**
@@ -106,7 +106,7 @@ public class Cage {
           random = rand.nextInt(size);
         }
         a.setPoint(loc[random]);
-        animal[totalAnimal] = a.clone();
+        animal[totalAnimal] = a.deepCopy();
         ++totalAnimal;
       }
     }
@@ -120,7 +120,7 @@ public class Cage {
     boolean found = false;
     int i = 0;
     while (!found && i < totalAnimal) {
-      if ((loc[i]).equals(animal[i].getPos())) {
+      if ((loc[i]).isSame(animal[i].getPos())) {
         found = true;
       }
       ++i;
@@ -137,7 +137,7 @@ public class Cage {
     boolean found = false;
     int i = 0;
     while (!found && i < totalAnimal) {
-      if (p.equals(animal[i].getPos())) {
+      if (p.isSame(animal[i].getPos())) {
         found = true;
       }
       ++i;
@@ -153,7 +153,7 @@ public class Cage {
     boolean found = false;
     int i = 0;
     while (!found && i < totalAnimal) {
-      if (a.equals(animal[i])) {
+      if (a.isSame(animal[i])) {
         found = true;
       }
       ++i;
@@ -168,8 +168,8 @@ public class Cage {
   public boolean isInCage(Point p) {
     boolean found = false;
     int i = 0;
-    while (!found && i < totalAnimal) {
-      if (p.equals(loc[i])) {
+    while (!found && i < size) {
+      if (p.isSame(loc[i])) {
         found = true;
       }
       ++i;
@@ -181,7 +181,7 @@ public class Cage {
    * @return true jika binatang a terdapat pada cage.
    */
   public boolean isFull() {
-    return (totalAnimal == 3*size/100);
+    return (totalAnimal == 3*size/10);
   }
   /**
    * I.S. sembarang.
@@ -200,7 +200,7 @@ public class Cage {
    */
   public void addPoint(int posAbs, int posOrd) {
     loc[size] = new Point(posAbs, posOrd);
-    ++size;
+	++size;
   }
   /**
    * Memeriksa apakah animal a dapat dimasukkan ke cage.

@@ -10,12 +10,12 @@ public class Animal {
 	  private Point position;
 	  private String species;
 	  private String sound;
-	  private String food_type;
+	  private String foodType;
 	  private String[] habitat;
 	  private double weight;
-	  private double food_meat;
-	  private double food_veggie;
-	  private int number_habitat;
+	  private double foodMeat;
+	  private double foodVeggie;
+	  private int numberHabitat;
 	  private boolean tame;
 	  private char render;
 
@@ -27,14 +27,14 @@ public class Animal {
 	    position = new Point(-1,-1);
 	    species = "Dugong";
 	    sound = "Splashh!";
-	    food_type = "Herbivore";
-	    number_habitat = 1;
+	    foodType = "Herbivore";
+	    numberHabitat = 1;
 	    tame = true;
 	    render = 'U';
 	    weight = 500;
-	    food_meat = 0;
-	    food_veggie = 25;
-	    habitat = new String[number_habitat];
+	    foodMeat = 0;
+	    foodVeggie = 25;
+	    habitat = new String[numberHabitat];
 	    habitat[0] = "Water";
 	  }
 	  /**
@@ -66,15 +66,15 @@ public class Animal {
 	    position = posisi;
 	    species = spesies;
 	    sound = suara;
-	    food_type = jenis_makanan;
-	    number_habitat = jumlah_habitat;
-	    habitat = new String[number_habitat];
-	    for (int i = 0; i < number_habitat; i++) {
+	    foodType = jenis_makanan;
+	    numberHabitat = jumlah_habitat;
+	    habitat = new String[numberHabitat];
+	    for (int i = 0; i < numberHabitat; i++) {
 	      habitat[i] = tempat_hidup[i];
 	    }
 	    weight = berat;
-	    food_meat = daging;
-	    food_veggie = sayur;
+	    foodMeat = daging;
+	    foodVeggie = sayur;
 	    tame = jinak;
 	    render = cetak;
 	  }
@@ -87,15 +87,15 @@ public class Animal {
 	    position = a.position;
 	    species = a.species;
 	    sound = a.sound;
-	    food_type = a.food_type;
-	    number_habitat = a.number_habitat;
-	    habitat = new String[number_habitat];
-	    for (int i = 0; i < number_habitat; i++) {
+	    foodType = a.foodType;
+	    numberHabitat = a.numberHabitat;
+	    habitat = new String[numberHabitat];
+	    for (int i = 0; i < numberHabitat; i++) {
 	      habitat[i] = a.habitat[i];
 	    }
 	    weight = a.weight;
-	    food_meat = a.food_meat;
-	    food_veggie = a.food_veggie;
+	    foodMeat = a.foodMeat;
+	    foodVeggie = a.foodVeggie;
 	    tame = a.tame;
 	    render = a.render;
 	  }
@@ -104,21 +104,21 @@ public class Animal {
 	    * @return true jika binatang adalah karnivor.
 	    */
 	  public boolean isCarnivore() {
-	    return (food_type=="Carnivore");
+	    return (foodType=="Carnivore");
 	  }
 	  /**
 	    * Mengecek apakah binatang merupakan omnivor.
 	    * @return true jika binatang adalah omnivor.
 	    */
 	  public boolean isOmnivore() {
-	    return (food_type=="Omnivore");
+	    return (foodType=="Omnivore");
 	  }
 	  /**
 	    * Mengecek apakah binatang merupakan herbivor.
 	    * @return true jika binatang adalah herbivor.
 	    */
 	  public boolean isHerbivore() {
-	    return (food_type=="Herbivore");
+	    return (foodType=="Herbivore");
 	  }
 	  /**
 	    * Mengeluarkan point yang merupakan posisi binatang.
@@ -146,7 +146,7 @@ public class Animal {
 	    * @return jenis makanan binatang.
 	    */
 	  public String getFoodType() {
-	    return food_type;
+	    return foodType;
 	  }
 	  /**
 	    * Mengembalikan jinak tidaknya binatang.
@@ -187,7 +187,7 @@ public class Animal {
 	    * @return nilai jumlah habitat yang dapat ditinggali.
 	    */
 	  public int getNumberOfHabitat() {
-	    return number_habitat;
+	    return numberHabitat;
 	  }
 	  /**
 	    * Mengembalikan jinak tidaknya binatang.

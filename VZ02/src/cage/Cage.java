@@ -10,8 +10,8 @@ import java.util.Random;
  * @author Catherine Almira - 13515111
  */
 public class Cage {
-	  private final int maxSize = 100;
-	  private Point[] loc;
+	  private final int MAXSIZE = 100;
+	  public Point[] loc;
 	  private int size;
 	  private Animal[] animal;
 	  private int totalAnimal;
@@ -21,9 +21,9 @@ public class Cage {
 	    */
 	  public Cage() {
 	    size = 0;
-	    loc = new Point[maxSize];
+	    loc = new Point[MAXSIZE];
 	    totalAnimal = 0;
-	    animal = new Animal[3*maxSize/10];
+	    animal = new Animal[3 * MAXSIZE / 10];
 	  }
 	  /**
 	    * Constructor dengan parameter.
@@ -31,9 +31,9 @@ public class Cage {
 	    */
 	  public Cage(int size) {
 	    this.size = size;
-	    loc = new Point[maxSize];
+	    loc = new Point[MAXSIZE];
 	    totalAnimal = 0;
-	    animal = new Animal[3*maxSize/10];
+	    animal = new Animal[3 * MAXSIZE / 10];
 	  }
 	  /**
 	    * Constructor dengan parameter.
@@ -42,10 +42,10 @@ public class Cage {
 	    */
 	  public Cage(int posAbs, int posOrd) {
 	    size = 1;
-	    loc = new Point[maxSize];
+	    loc = new Point[MAXSIZE];
 	    loc[0] = new Point(posAbs, posOrd);
 	    totalAnimal = 0;
-	    animal = new Animal[3*maxSize/10];
+	    animal = new Animal[3*MAXSIZE/10];
 	  }
 	  /**
 	    * Constructor dengan parameter.
@@ -53,14 +53,14 @@ public class Cage {
 	    */
 	  public Cage(Cage c) {
 	    this.size = c.size;
-	    loc = new Point[maxSize];
-	    for (int i = 0; i< size; ++i) {
+	    loc = new Point[MAXSIZE];
+	    for (int i = 0; i < size; ++i) {
 	      loc[i] = new Point(c.loc[i]);
 	    }
 	    totalAnimal = c.totalAnimal;
-	    animal = new Animal[3*maxSize/10];
-	    for (int i = 0; i< totalAnimal; ++i) {
-	      animal[i] = new Animal (c.animal[i]);
+	    animal = new Animal[3*MAXSIZE/10];
+	    for (int i = 0; i < totalAnimal; ++i) {
+	      animal[i] = new Animal(c.animal[i]);
 	    }
 	  }
 	  /**
@@ -96,8 +96,7 @@ public class Cage {
 	  public void adoptAnimal(Animal a) {
 	    if (isFull()) {
 	      System.out.println("Kandang penuh.");
-	    }
-	    else if (!isInCage(a)) {
+	    } else if (!isInCage(a)) {
 	      if (canPut(a)) {
 	        Random rand = new Random();
 	        int random = rand.nextInt(size);
@@ -212,7 +211,7 @@ public class Cage {
 	      return true;
 	    }
 	    else {
-	      return (animal[0].getTame()==a.getTame());
+	      return (animal[0].getTame() == a.getTame());
 	    }
 	  }
 	  /**
@@ -222,7 +221,7 @@ public class Cage {
 	  public void move() {
 	    Random rand = new Random();
 	    int random;
-	    Point p2,p;
+	    Point p2, p;
 	    for (int i = 0; i < totalAnimal; ++i) {
 	      p2 = animal[i].getPos();
 	      random = rand.nextInt(4) + 1;
@@ -234,8 +233,7 @@ public class Cage {
 	        p = p2.prevY();
 	      } else if (random == 4) {
 	        p = p2.nextY();
-	      }
-	      else {
+	      } else {
 	    	p = new Point(-1,-1);
 	      }
 	      if ((isInCage(p)) && (!isOccupied(p)))

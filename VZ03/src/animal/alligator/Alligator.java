@@ -1,4 +1,6 @@
-package animal;
+package animal.alligator;
+import animal.reptile.*;
+import animal.*;
 
 /**
  * File : Alligator.java
@@ -22,6 +24,15 @@ public class Alligator extends Reptile {
    */
   public Alligator(double w, double f, boolean t) {
     super(w, f, t);
+  }
+  /**
+   * Constructor dengan parameter.
+   * Menciptakan objek Alligator hasil salinan a.
+   * @param a Alligator yang akan disalin.
+   */
+  public Alligator(Alligator a) {
+    super(a.weight, a.food, a.tame);
+    setPoint(a.pos);
   }
   /**
    * Jenis makanan yang dimakan Alligator.
@@ -69,7 +80,7 @@ public class Alligator extends Reptile {
    * Melakukan cloning untuk menciptakan objek Alligator baru.
    * @return Mengembalikan objek Alligator baru.
    */
-  public Alligator clone() {
+  public Animal deepCopy() {
     return new Alligator(this);
   }
 }
