@@ -3,7 +3,7 @@
   * Kelas Iguana merupakan kelas untuk real object Iguana.
   * @author Catherine Almira - 13515111
   */
-public class Iguana extends Animal {
+public class Iguana extends Iguana {
   /**
     * Constructor.
     * Menciptakan objek Iguana.
@@ -20,6 +20,34 @@ public class Iguana extends Animal {
     */
   public Iguana(double w, double f, boolean t) {
     super(w, f, t);
+  }
+  /**
+    * Jenis makanan yang dimakan Iguana.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Iguana.
+    */
+  public String GetFoodType() {
+    return "Herbivore";
+  }
+  /**
+    * Memeriksa apakah Iguana adalah hewan darat.
+    * @return Mengembalikan true jika Iguana adalah hewan darat dan false jika Iguana bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Iguana adalah hewan air.
+    * @return Mengembalikan true jika Iguana adalah hewan air dan false jika Iguana bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Iguana adalah hewan udara.
+    * @return Mengembalikan true jika Iguana adalah hewan udara dan false jika Iguana bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
   }
   /**
     * Interaksi yang dilakukan Iguana.

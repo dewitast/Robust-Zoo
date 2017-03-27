@@ -3,7 +3,7 @@
   * Kelas Walrus merupakan kelas untuk real object Walrus.
   * @author Catherine Almira - 13515111
   */
-public class Walrus extends Animal {
+public class Walrus extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Walrus.
@@ -20,6 +20,34 @@ public class Walrus extends Animal {
     */
   public Walrus(double w, double f, boolean t) {
     super(w, f, t);
+  }
+  /**
+    * Jenis makanan yang dimakan Walrus.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Walrus.
+    */
+  public String GetFoodType() {
+    return "Carnivore";
+  }
+  /**
+    * Memeriksa apakah Walrus adalah hewan darat.
+    * @return Mengembalikan true jika Walrus adalah hewan darat dan false jika Walrus bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Walrus adalah hewan air.
+    * @return Mengembalikan true jika Walrus adalah hewan air dan false jika Walrus bukan hewan air.
+    */
+  public boolean IsWater() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Walrus adalah hewan udara.
+    * @return Mengembalikan true jika Walrus adalah hewan udara dan false jika Walrus bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
   }
   /**
     * Interaksi yang dilakukan Walrus.

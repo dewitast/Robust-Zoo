@@ -26,9 +26,9 @@ public class Driver {
     * I.S. Zoo sudah ada.
     * F.S. Zoo sudah tercetak pada layar dengan ukuran sesuai input pengunjung.
     */
-  public void DisplayZoo() {
-    for (int i = 0; i < z.GetJumlahCage(); ++i) {
-      z.GetCage(i).Move();
+  public void displayZoo() {
+    for (int i = 0; i < z.getJumlahCage(); ++i) {
+      z.getCage(i).Move();
     }
     System.out.println(z);
   }

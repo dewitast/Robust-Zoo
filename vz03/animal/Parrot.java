@@ -3,7 +3,7 @@
   * Kelas Parrot merupakan kelas untuk real object Parrot.
   * @author Catherine Almira - 13515111
   */
-public class Parrot extends Animal {
+public class Parrot extends Aves {
   /**
     * Constructor.
     * Menciptakan objek Parrot.
@@ -20,6 +20,34 @@ public class Parrot extends Animal {
     */
   public Parrot(double w, double f, boolean t) {
     super(w, f, t);
+  }
+  /**
+    * Jenis makanan yang dimakan Parrot.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Parrot.
+    */
+  public String GetFoodType() {
+    return "Omnivore";
+  }
+  /**
+    * Memeriksa apakah Parrot adalah hewan darat.
+    * @return Mengembalikan true jika Parrot adalah hewan darat dan false jika Parrot bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Parrot adalah hewan air.
+    * @return Mengembalikan true jika Parrot adalah hewan air dan false jika Parrot bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Parrot adalah hewan udara.
+    * @return Mengembalikan true jika Parrot adalah hewan udara dan false jika Parrot bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return true;
   }
   /**
     * Interaksi yang dilakukan Parrot.

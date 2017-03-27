@@ -3,7 +3,7 @@
   * Kelas Lion merupakan kelas untuk real object Lion.
   * @author Kezia Suhendra - 13515063
   */
-public class Lion extends Animal {
+public class Lion extends Mammal {
   /**
     * Constructor.
     * Menciptakan objek Lion.
@@ -20,6 +20,34 @@ public class Lion extends Animal {
     */
   public Lion(double w, double f, boolean t) {
     super(w, f, t);
+  }
+  /**
+    * Jenis makanan yang dimakan Lion.
+    * @return Mengembalikan string yang merepresentasikan jenis makanan Lion.
+    */
+  public String GetFoodType() {
+    return "Carnivore";
+  }
+  /**
+    * Memeriksa apakah Lion adalah hewan darat.
+    * @return Mengembalikan true jika Lion adalah hewan darat dan false jika Lion bukan hewan darat.
+    */
+  public boolean IsLand() {
+    return true;
+  }
+  /**
+    * Memeriksa apakah Lion adalah hewan air.
+    * @return Mengembalikan true jika Lion adalah hewan air dan false jika Lion bukan hewan air.
+    */
+  public boolean IsWater() {
+    return false;
+  }
+  /**
+    * Memeriksa apakah Lion adalah hewan udara.
+    * @return Mengembalikan true jika Lion adalah hewan udara dan false jika Lion bukan hewan udara.
+    */
+  public boolean IsFlying() {
+    return false;
   }
   /**
     * Interaksi yang dilakukan Lion.
