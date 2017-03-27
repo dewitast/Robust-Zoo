@@ -103,71 +103,71 @@ public class Animal {
 	    * Mengecek apakah binatang merupakan karnivor.
 	    * @return true jika binatang adalah karnivor.
 	    */
-	  public boolean IsCarnivore() {
+	  public boolean isCarnivore() {
 	    return (food_type=="Carnivore");
 	  }
 	  /**
 	    * Mengecek apakah binatang merupakan omnivor.
 	    * @return true jika binatang adalah omnivor.
 	    */
-	  public boolean IsOmnivore() {
+	  public boolean isOmnivore() {
 	    return (food_type=="Omnivore");
 	  }
 	  /**
 	    * Mengecek apakah binatang merupakan herbivor.
 	    * @return true jika binatang adalah herbivor.
 	    */
-	  public boolean IsHerbivore() {
+	  public boolean isHerbivore() {
 	    return (food_type=="Herbivore");
 	  }
 	  /**
 	    * Mengeluarkan point yang merupakan posisi binatang.
 	    * @return posisi binatang.
 	    */
-	  public Point GetPos() {
+	  public Point getPos() {
 	    return position;
 	  }
 	  /**
 	    * Mengeluarkan string yang merupakan nama spesies binatang.
 	    * @return String yang merupakan nama spesies binatang.
 	    */
-	  public String GetSpecies() {
+	  public String getSpecies() {
 	    return species;
 	  }
 	  /**
 	    * Mengeluarkan string yang merupakan bentuk interaksi dari binatang.
 	    * @return String yang merupakan suara binatang.
 	    */
-	  public String Interact() {
+	  public String interact() {
 	    return sound;
 	  }
 	  /**
 	    * Mengembalikan jenis makanan binatang.
 	    * @return jenis makanan binatang.
 	    */
-	  public String GetFoodType() {
+	  public String getFoodType() {
 	    return food_type;
 	  }
 	  /**
 	    * Mengembalikan jinak tidaknya binatang.
 	    * @return jinak tidaknya binatang.
 	    */
-	  public String[] GetHabitat() {
+	  public String[] getHabitat() {
 	    return habitat;
 	  }
 	  /**
 	    * Mengembalikan nilai berat binatang.
 	    * @return nilai berat binatang.
 	    */
-	  public double GetWeight() {
+	  public double getWeight() {
 	    return weight;
 	  }
 	  /**
 	    * Mengembalikan nilai jumlah makanan (daging) binatang.
 	    * @return nilai jumlah makanan (daging) binatang.
 	    */
-	  public double GetFoodMeat() {
-	    if (IsCarnivore() || IsOmnivore())
+	  public double getFoodMeat() {
+	    if (isCarnivore() || isOmnivore())
 	      return (weight * 0.05);
 	    else
 	      return 0;
@@ -176,8 +176,8 @@ public class Animal {
 	    * Mengembalikan nilai jumlah makanan (sayur) binatang.
 	    * @return nilai jumlah makanan (sayur) binatang.
 	    */
-	  public double GetFoodVeggie() {
-	    if (IsHerbivore() || IsOmnivore())
+	  public double getFoodVeggie() {
+	    if (isHerbivore() || isOmnivore())
 	      return (weight * 0.05);
 	    else
 	      return 0;
@@ -186,21 +186,21 @@ public class Animal {
 	    * Mengembalikan nilai jumlah habitat yang dapat ditinggali.
 	    * @return nilai jumlah habitat yang dapat ditinggali.
 	    */
-	  public int GetNumberOfHabitat() {
+	  public int getNumberOfHabitat() {
 	    return number_habitat;
 	  }
 	  /**
 	    * Mengembalikan jinak tidaknya binatang.
 	    * @return jinak tidaknya binatang.
 	    */
-	  public boolean GetTame() {
+	  public boolean getTame() {
 	    return tame;
 	  }
 	  /**
 	    * Mengembalikan karakter yang akan dicetak.
 	    * @return karakter yang akan dicetak.
 	    */
-	  public char Render() {
+	  public char render() {
 	    return render;
 	  }
 	  /**
@@ -209,16 +209,16 @@ public class Animal {
 	    * @param absis Absis point.
 	    * @param ordinat Ordinat point.
 	    */
-	  public void SetPoint(int absis, int ordinat) {
-	    position.SetAbsis(absis);
-	    position.SetOrdinat(ordinat);
+	  public void setPoint(int absis, int ordinat) {
+	    position.setAbsis(absis);
+	    position.setOrdinat(ordinat);
 	  }
 	  /**
 	    * I.S. Point sembarang
 	    * F.S. Point bernilai sama dengan p.
 	    * @param p Point yang akan disalin.
 	    */
-	  public void SetPoint(Point p) {
+	  public void setPoint(Point p) {
 	    position = p;
 	  }
 	  /**
@@ -226,7 +226,7 @@ public class Animal {
 	    * @param a Objek animal yang akan diperiksa.
 	    * @return True jika p sama dengan this.
 	    */
-	  public boolean IsSame(Animal a) {
-	    return (position.IsSame(a.position));
+	  public boolean isSame(Animal a) {
+	    return (position.isSame(a.position));
 	  }
 }
