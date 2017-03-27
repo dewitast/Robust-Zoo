@@ -1,25 +1,25 @@
 /** 
-  * File : Cell.java
-  * Kelas Cell merupakan simulasi dari petak-petak yang terdapat dalam kebun binatang.
-  * @author Catherine Almira - 13515111
-  */
+ * File : Cell.java
+ * Kelas Cell merupakan simulasi dari petak-petak yang terdapat dalam kebun binatang.
+ * @author Catherine Almira - 13515111
+ */
 package cell;
 class Cell {
   private String objectType;
   private char render;
   /**
-    * Constructor.
-    * Menciptakan Cell kosong.
-    */
+   * Constructor.
+   * Menciptakan Cell kosong.
+   */
   public Cell() {
     objectType = "Road";
     render = '+';
   }
   /** 
-    * Constructor dengan parameter.
-    * Menciptakan Cell kosong dengan tipe objek ot dan render r.
-    * @param ot Object type dari Cell.
-    */
+   * Constructor dengan parameter.
+   * Menciptakan Cell kosong dengan tipe objek ot dan render r.
+   * @param ot Object type dari Cell.
+   */
   Cell(String ot) {
     objectType = ot;
     if (objectType == "LandHabitat")
@@ -40,23 +40,23 @@ class Cell {
       render = 'Z';
   }
   /**
-    * Getter untuk object type.
-    * @return Mengembalikan object type dari Cell.
-    */
+   * Getter untuk object type.
+   * @return Mengembalikan object type dari Cell.
+   */
   String getObjectType() {
     return objectType;
   }
   /**
-    * Getter untuk render.
-    * @return Mengembalikan render dari Cell.
-    */
+   * Getter untuk render.
+   * @return Mengembalikan render dari Cell.
+   */
   char getRender() {
     return render;
   }
   /**
-    * Setter untuk object type dari Cell.
-    * @param ot Nilai object type yang akan di-set pada Cell.
-    */
+   * Setter untuk object type dari Cell.
+   * @param ot Nilai object type yang akan di-set pada Cell.
+   */
   void setObjectType(String ot) {
     objectType = ot;
     if (objectType == "LandHabitat")
@@ -77,51 +77,51 @@ class Cell {
       render = 'Z';
   }
   /**
-    * Mengecek apakah cell berisi Habitat.
-	  * @return Menghasilkan true jika code pada layar merupakan kode Land, Air, atau Water Habitat.
-	  */
+   * Mengecek apakah cell berisi Habitat.
+	 * @return Menghasilkan true jika code pada layar merupakan kode Land, Air, atau Water Habitat.
+	 */
   boolean isHabitat() {
     return ((render == '@') || (render == '^') || (render == '~'));
   }
   /**
-    * Mengecek apakah cell berisi LandHabitat.
-    * @return Menghasilkan true jika code pada layar merupakan kode Land Habitat.
-    */
+   * Mengecek apakah cell berisi LandHabitat.
+   * @return Menghasilkan true jika code pada layar merupakan kode Land Habitat.
+   */
   boolean isLandHabitat() {
     return (render == '@');
   }
   /**
-    * Mengecek apakah cell berisi AirHabitat.
-    * @return Menghasilkan true jika code pada layar merupakan kode Air Habitat.
-    */
+   * Mengecek apakah cell berisi AirHabitat.
+   * @return Menghasilkan true jika code pada layar merupakan kode Air Habitat.
+   */
   boolean isAirHabitat() {
     return (render == '^');
   }
   /**
-    * Mengecek apakah cell berisi WaterHabitat.
-    * @return Menghasilkan true jika code pada layar merupakan kode Water Habitat.
-    */
+   * Mengecek apakah cell berisi WaterHabitat.
+   * @return Menghasilkan true jika code pada layar merupakan kode Water Habitat.
+   */
   boolean isWaterHabitat() {
     return (render == '~');
   }
   /** 
-    * Mengecek apakah cell berisi Exit.
-    * @return Menghasilkan true jika code pada layar merupakan kode Exit.
-    */
+   * Mengecek apakah cell berisi Exit.
+   * @return Menghasilkan true jika code pada layar merupakan kode Exit.
+   */
   boolean isExit() {
     return (render == 'X');
   }
   /**
-    * Mengecek apakah cell berisi Road.
-    * @return Menghasilkan true jika code pada layar merupakan kode Road.
-    */
+   * Mengecek apakah cell berisi Road.
+   * @return Menghasilkan true jika code pada layar merupakan kode Road.
+   */
   boolean isRoad() {
     return ((render == '+') || (render == 'X') || (render == 'Z'));
   }
   /**
-    * Mengecek apakah cell berisi Entrance.
-    * @return Menghasilkan true jika code pada layar merupakan kode Entrance.
-    */
+   * Mengecek apakah cell berisi Entrance.
+   * @return Menghasilkan true jika code pada layar merupakan kode Entrance.
+   */
   boolean isEntrance() {
     return (render == 'Z');
   }
