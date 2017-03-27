@@ -11,7 +11,7 @@ import java.util.Random;
  */
 public class Cage {
 	  private final int maxSize = 100;
-	  public Point[] loc;
+	  private Point[] loc;
 	  private int size;
 	  private Animal[] animal;
 	  private int totalAnimal;
@@ -37,8 +37,8 @@ public class Cage {
 	  }
 	  /**
 	    * Constructor dengan parameter.
-	    * @param possOrd posisi ordinat.
-	    * @param possAbs posisi absis.
+	    * @param posOrd posisi ordinat.
+	    * @param posAbs posisi absis.
 	    */
 	  public Cage(int posAbs, int posOrd) {
 	    size = 1;
