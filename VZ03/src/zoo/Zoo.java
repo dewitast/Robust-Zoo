@@ -344,12 +344,15 @@ public class Zoo {
       System.out.println("File not found!");
     }
   }
-
   /**
     * Mengkonversi kelas Zoo menjadi sebuah string untuk dicetak.
-    * @return String yang merupakan hasil konversi zoo.
+    * @param absAwal absis titik yang menjadi titik awal pencetakan.
+    * @param ordAwal ordinat titik yang menjadi titik awal pencetakan.
+    * @param absAkhir absis titik yang menjadi titik akhir pencetakan.
+    * @param ordAkhir ordinat titik yang menjadi titik akhir pencetakan.
+    * @return String yang merupakan hasil konversi zoo dimulai dari (absAwal, ordAwal) sampai (ordAwal, ordAkhir).
     */
-  public String toString() {
+  public String toString(int absAwal, int ordAwal, int absAkhir, int ordAkhir) {
 	  StringBuffer[] s = new StringBuffer[baris];
 	  for (int i = 0; i < baris; ++i) {
 		  s[i] = new StringBuffer();
@@ -362,14 +365,13 @@ public class Zoo {
 	  for (int i = 0; i < jumlahCage; ++i) {
 		  Cage cg = cage[i];
 		  for (int j = 0; j < cg.getTotalAnimal(); ++j) {
-			  System.out.println(""+i+" "+j+" 2");
 			  p = cage[i].getAnimal(j).getPos();
 			  s[p.getAbsis()].setCharAt(2*p.getOrdinat(),cage[i].getAnimal(j).render()); 
 		  }
 	  }
 	  String out = new String();
-	  for (int i = 0; i < baris; ++i) {
-		  out = out + s[i] + "\n";
+	  for (int i = absAwal; i <= absAkhir; ++i) {
+		  out = out + s[i].substring(2*ordAwal, 2*ordAkhir+1) + "\n";
 	  }
 	  return out;
   }

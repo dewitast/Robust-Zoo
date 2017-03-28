@@ -7,14 +7,22 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int x;
+		int x, abs1, ord1, abs2, ord2;
 		Driver d = new Driver();
 		d.displayMenu();
 		Scanner sc = new Scanner(System.in);
 		x = sc.nextInt();
 		while (x != 4) {
 			if (x == 1) {
-				d.displayZoo();
+				System.out.print("Absis kiri atas : ");
+			    abs1 = sc.nextInt();
+			    System.out.print("Ordinat kiri atas : ");
+			    ord1 = sc.nextInt();
+			    System.out.print("Absis kanan bawah : ");
+			    abs2 = sc.nextInt();
+			    System.out.print("Ordinat kanan bawah : ");
+			    ord2 = sc.nextInt();
+				d.displayZoo(abs1, ord1, abs2, ord2);
 			} else if (x == 2) {
 				d.tourZoo();
 				while (d.getPoint().getAbsis() != -1) {
