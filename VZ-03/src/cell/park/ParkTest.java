@@ -1,6 +1,8 @@
 package cell.park;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import static org.junit.Assert.assertFalse;
 
 import cell.Cell;
 
@@ -18,8 +20,8 @@ public class ParkTest {
 
   @Test
   public void testIsHabitat() {
-	  Cell c = new Park();
-	  assertFalse(c.isHabitat());
+    Cell c = new Park();
+    assertFalse(c.isHabitat());
   }
   /**
    * Test method for {@link cell.park.Park#render()}.
@@ -27,7 +29,7 @@ public class ParkTest {
 
   @Test
   public void testRender() {
-	  Cell c = new Park();
-	  assertEquals('#', c.render());
+    Cell c = new Park();
+    assertEquals('#', c.render());
   }
 }
