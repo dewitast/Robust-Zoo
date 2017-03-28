@@ -23,6 +23,6 @@ public class AirHabitat extends Cell {
    */
   
   public char render() {
-  	return '^';
+    return '^';
   }
 }

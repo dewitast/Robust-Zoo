@@ -39,7 +39,7 @@ public class Cage {
     this.size = size;
     loc = new Point[MAXSIZE];
     for (int i = 0; i < size; ++i) {
-    	loc[i] = new Point();
+      loc[i] = new Point();
     }
     totalAnimal = 0;
     animal = new Animal[3 * MAXSIZE / 10];
@@ -111,8 +111,7 @@ public class Cage {
   public void adoptAnimal(Animal a) {
     if (isFull()) {
       System.out.println("Kandang penuh.");
-    }
-    else if (!isInCage(a)) {
+    } else if (!isInCage(a)) {
       if (canPut(a)) {
         Random rand = new Random();
         int random = rand.nextInt(size);
@@ -222,7 +221,7 @@ public class Cage {
 
   public void addPoint(int posAbs, int posOrd) {
     loc[size] = new Point(posAbs, posOrd);
-	  ++size;
+    ++size;
   }
   /**
    * Memeriksa apakah animal a dapat dimasukkan ke cage.
@@ -233,8 +232,7 @@ public class Cage {
   public boolean canPut(Animal a) {
     if (totalAnimal == 0) {
       return true;
-    }
-    else {
+    } else {
       return (animal[0].getTame() == a.getTame());
     }
   }
@@ -246,7 +244,8 @@ public class Cage {
   public void move() {
     Random rand = new Random();
     int random;
-    Point p2, p;
+    Point p;
+    Point p2;
     for (int i = 0; i < totalAnimal; ++i) {
       p2 = animal[i].getPos();
       random = rand.nextInt(4) + 1;
@@ -259,10 +258,11 @@ public class Cage {
       } else if (random == 4) {
         p = p2.nextY();
       } else {
-    	p = new Point();
+        p = new Point();
       }
-      if ((isInCage(p)) && (!isOccupied(p)))
+      if ((isInCage(p)) && (!isOccupied(p))) {
         animal[i].setPoint(p);
+      }
     }
   }
 }
