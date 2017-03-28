@@ -19,7 +19,7 @@ public class Giraffe extends Mammal {
    * Constructor dengan parameter.
    * Menciptakan objek Giraffe dengan berat w, jumlah makanan f, dan status jinak t.
    * @param w Berat Giraffe.
-   * @param k Jumlah makanan Giraffe.
+   * @param f Jumlah makanan Giraffe.
    * @param t Status jinak Giraffe.
    */
   public Giraffe(double w, double f, boolean t) {

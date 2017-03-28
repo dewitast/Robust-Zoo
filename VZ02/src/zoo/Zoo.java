@@ -382,8 +382,13 @@ public class Zoo {
 	  }
 	  /**
 	    * Mengkonversi kelas Zoo menjadi sebuah string untuk dicetak.
-	    * @return String yang merupakan hasil konversi zoo.
+	    * @param absAwal absis titik yang menjadi titik awal pencetakan.
+	    * @param ordAwal ordinat titik yang menjadi titik awal pencetakan.
+	    * @param absAkhir absis titik yang menjadi titik akhir pencetakan.
+	    * @param ordAkhir ordinat titik yang menjadi titik akhir pencetakan.
+	    * @return String yang merupakan hasil konversi zoo dimulai dari (absAwal, ordAwal) sampai (ordAwal, ordAkhir).
 	    */
+<<<<<<< HEAD
 	  public String toString() {
 		  Scanner input = new Scanner(System.in);
 		  boolean check = false;
@@ -412,6 +417,9 @@ public class Zoo {
 			else
 			  check = true;
 		  }
+=======
+	  public String toString(int absAwal, int ordAwal, int absAkhir, int ordAkhir) {
+>>>>>>> c6449928dc1aa98f29be32ee501e26a4f2d1cddd
 		  StringBuffer[] s = new StringBuffer[baris];
 		  for (int i = abs1; i <= abs2; ++i) {
 			  s[i] = new StringBuffer();
@@ -430,8 +438,13 @@ public class Zoo {
 			  }
 		  }
 		  String out = new String();
+<<<<<<< HEAD
 		  for (int i = abs1; i <= abs2; ++i) {
 			  out = out + s[i] + "\n";
+=======
+		  for (int i = absAwal; i <= absAkhir; ++i) {
+			  out = out + s[i].substring(2*ordAwal, 2*ordAkhir+1) + "\n";
+>>>>>>> c6449928dc1aa98f29be32ee501e26a4f2d1cddd
 		  }
 		  input.close();
 		  return out;

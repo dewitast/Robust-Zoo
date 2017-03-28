@@ -32,6 +32,9 @@ public class Cage {
   public Cage(int size) {
     this.size = size;
     loc = new Point[MAXSIZE];
+    for (int i = 0; i < size; ++i) {
+    	loc[i] = new Point();
+    }
     totalAnimal = 0;
     animal = new Animal[3*MAXSIZE/10];
   }

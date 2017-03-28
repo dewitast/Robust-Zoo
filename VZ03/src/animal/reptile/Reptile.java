@@ -17,7 +17,7 @@ public abstract class Reptile extends Animal {
    * Constructor dengan parameter.
    * Menciptakan objek Reptile dengan berat w, jumlah makanan f, dan status jinak t.
    * @param w Berat Reptile.
-   * @param k Jumlah makanan Reptile.
+   * @param f Jumlah makanan Reptile.
    * @param t Status jinak Reptile.
    */
   public Reptile(double w, double f, boolean t) {
