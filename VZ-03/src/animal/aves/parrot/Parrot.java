@@ -1,17 +1,20 @@
 package animal.aves.parrot;
-import animal.aves.*;
-import animal.*;
 
+import animal.Animal;
+
+import animal.aves.Aves;
 /** 
  * File : Parrot.java
  * Kelas Parrot merupakan kelas untuk real object Parrot.
  * @author Catherine Almira - 13515111
  */
+
 public class Parrot extends Aves {
   /**
    * Constructor.
    * Menciptakan objek Parrot.
    */
+
   public Parrot() {
     super(1.2, 0.06, true);
   }
@@ -22,6 +25,7 @@ public class Parrot extends Aves {
    * @param f Jumlah makanan Parrot.
    * @param t Status jinak Parrot.
    */
+
   public Parrot(double w, double f, boolean t) {
     super(w, f, t);
   }
@@ -30,6 +34,7 @@ public class Parrot extends Aves {
    * Menciptakan objek Parrot hasil salinan p.
    * @param p Parrot yang akan disalin.
    */
+
   public Parrot(Parrot p) {
     super(p.weight, p.food, p.tame);
     setPoint(p.pos);
@@ -38,27 +43,31 @@ public class Parrot extends Aves {
    * Jenis makanan yang dimakan Parrot.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Parrot.
    */
+
   public String getFoodType() {
     return "Omnivore";
   }
   /**
    * Memeriksa apakah Parrot adalah hewan darat.
-   * @return Mengembalikan true jika Parrot adalah hewan darat dan false jika Parrot bukan hewan darat.
+   * @return Mengembalikan true jika Parrot adalah hewan darat.
    */
+
   public boolean isLandAnimal() {
     return false;
   }
   /**
    * Memeriksa apakah Parrot adalah hewan air.
-   * @return Mengembalikan true jika Parrot adalah hewan air dan false jika Parrot bukan hewan air.
+   * @return Mengembalikan true jika Parrot adalah hewan air.
    */
+
   public boolean isWaterAnimal() {
     return false;
   }
   /**
    * Memeriksa apakah Parrot adalah hewan udara.
-   * @return Mengembalikan true jika Parrot adalah hewan udara dan false jika Parrot bukan hewan udara.
+   * @return Mengembalikan true jika Parrot adalah hewan udara.
    */
+
   public boolean isFlyingAnimal() {
     return true;
   }
@@ -66,6 +75,7 @@ public class Parrot extends Aves {
    * Interaksi yang dilakukan Parrot.
    * @return Mengembalikan string yang merepresentasikan suara Parrot.
    */
+
   public String interact() {
     return "Cuiitt";
   }
@@ -73,6 +83,7 @@ public class Parrot extends Aves {
    * Render dari Parrot.
    * @return Mengembalikan char yang merupakan representasi kode Parrot.
    */
+
   public char render() {
     return 'P';
   }
@@ -80,6 +91,7 @@ public class Parrot extends Aves {
    * Melakukan cloning untuk menciptakan objek Parrot baru.
    * @return Mengembalikan objek Parrot baru.
    */
+
   public Animal deepCopy() {
     return new Parrot(this);
   }

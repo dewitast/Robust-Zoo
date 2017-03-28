@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3221933b-09e8-427f-8579-18761991cd86" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/VZ02/src/zoo/ZooTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ-03/src/animal/Animal.java" afterPath="$PROJECT_DIR$/VZ-03/src/animal/Animal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ-03/src/animal/reptile/Reptile.java" afterPath="$PROJECT_DIR$/VZ-03/src/animal/reptile/Reptile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ-03/src/animal/reptile/komodo/Komodo.java" afterPath="$PROJECT_DIR$/VZ-03/src/animal/reptile/komodo/Komodo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ-03/src/zoo/Zoo.java" afterPath="$PROJECT_DIR$/VZ-03/src/zoo/Zoo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ-03/src/zoo/ZooTest.java" afterPath="$PROJECT_DIR$/VZ-03/src/zoo/ZooTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VZ-03/src/animal/reptile/komodo/KomodoTest.java" afterPath="$PROJECT_DIR$/VZ-03/src/animal/reptile/komodo/KomodoTest.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -107,7 +101,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Komodo.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Komodo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VZ-03/src/animal/reptile/komodo/Komodo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="32">
@@ -131,6 +125,18 @@
                 <element signature="e#1959#1960#0" expanded="true" />
                 <element signature="e#2107#2108#0" expanded="true" />
                 <element signature="e#2140#2141#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KomodoTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/VZ-03/src/animal/reptile/komodo/KomodoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="768">
+              <caret line="48" column="35" lean-forward="true" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -195,6 +201,7 @@
         <option value="$PROJECT_DIR$/VZ-03/src/animal/Animal.java" />
         <option value="$PROJECT_DIR$/VZ-03/src/animal/reptile/Reptile.java" />
         <option value="$PROJECT_DIR$/VZ-03/src/animal/reptile/komodo/Komodo.java" />
+        <option value="$PROJECT_DIR$/VZ-03/src/animal/reptile/komodo/KomodoTest.java" />
       </list>
     </option>
   </component>
@@ -1426,6 +1433,16 @@
             <element signature="e#1959#1960#0" expanded="true" />
             <element signature="e#2107#2108#0" expanded="true" />
             <element signature="e#2140#2141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VZ-03/src/animal/reptile/komodo/KomodoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="48" column="35" lean-forward="true" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
