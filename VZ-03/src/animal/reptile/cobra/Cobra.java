@@ -1,6 +1,8 @@
 package animal.reptile.cobra;
-import animal.reptile.*;
-import animal.*;
+
+import animal.Animal;
+
+import animal.reptile.Reptile;
 
 /**
  * File : Cobra.java
@@ -12,8 +14,9 @@ public class Cobra extends Reptile {
    * Constructor.
    * Menciptakan objek Cobra.
    */
+
   public Cobra() {
-  	super(20, 1, false);
+    super(20, 1, false);
   }
   /**
    * Constructor dengan parameter.
@@ -22,14 +25,16 @@ public class Cobra extends Reptile {
    * @param f Jumlah makanan Cobra.
    * @param t Status jinak Cobra.
    */
+
   public Cobra(double w, double f, boolean t) {
-  	super(w, f, t);
+    super(w, f, t);
   }
   /**
    * Constructor dengan parameter.
    * Menciptakan objek Cobra hasil salinan c.
    * @param c Cobra yang akan disalin.
    */
+
   public Cobra(Cobra c) {
     super(c.weight, c.food, c.tame);
     setPoint(c.pos);
@@ -38,27 +43,31 @@ public class Cobra extends Reptile {
    * Jenis makanan yang dimakan Cobra.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Cobra.
    */
+
   public String getFoodType() {
     return "Carnivore";
   }
   /**
    * Memeriksa apakah Cobra adalah hewan darat.
-   * @return Mengembalikan true jika Cobra adalah hewan darat dan false jika Cobra bukan hewan darat.
+   * @return Mengembalikan true jika Cobra adalah hewan darat.
    */
+
   public boolean isLandAnimal() {
     return true;
   }
   /**
    * Memeriksa apakah Cobra adalah hewan air.
-   * @return Mengembalikan true jika Cobra adalah hewan air dan false jika Cobra bukan hewan air.
+   * @return Mengembalikan true jika Cobra adalah hewan air.
    */
+
   public boolean isWaterAnimal() {
     return false;
   }
   /**
    * Memeriksa apakah Cobra adalah hewan udara.
-   * @return Mengembalikan true jika Cobra adalah hewan udara dan false jika Cobra bukan hewan udara.
+   * @return Mengembalikan true jika Cobra adalah hewan udara.
    */
+
   public boolean isFlyingAnimal() {
     return false;
   }
@@ -66,20 +75,23 @@ public class Cobra extends Reptile {
    * Interaksi yang dilakukan Cobra.
    * @return Mengembalikan string yang merepresentasikan suara Cobra.
    */
+
   public String interact() {
-  	return "Ssshh!";
+    return "Ssshh!";
   }
   /**
    * Render dari Cobra.
    * @return Mengembalikan char yang merupakan representasi kode Cobra.
    */
+
   public char render() {
-  	return 'C';
+    return 'C';
   }
   /**
    * Melakukan cloning untuk menciptakan objek Cobra baru.
    * @return Mengembalikan objek Cobra baru.
    */
+
   public Animal deepCopy() {
     return new Cobra(this);
   }

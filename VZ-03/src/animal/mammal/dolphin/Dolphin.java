@@ -1,6 +1,8 @@
 package animal.mammal.dolphin;
-import animal.mammal.*;
-import animal.*;
+
+import animal.Animal;
+
+import animal.mammal.Mammal;
 
 /** 
  * File : Dolphin.java
@@ -12,6 +14,7 @@ public class Dolphin extends Mammal {
    * Constructor.
    * Menciptakan objek Dolphin.
    */
+
   public Dolphin() {
     super(75, 3.75, true);
   }
@@ -22,6 +25,7 @@ public class Dolphin extends Mammal {
    * @param f Jumlah makanan Dolphin.
    * @param t Status jinak Dolphin.
    */
+
   public Dolphin(double w, double f, boolean t) {
     super(w, f, t);
   }
@@ -30,6 +34,7 @@ public class Dolphin extends Mammal {
    * Menciptakan objek Dolphin hasil salinan d.
    * @param d Dolphin yang akan disalin.
    */
+
   public Dolphin(Dolphin d) {
     super(d.weight, d.food, d.tame);
     setPoint(d.pos);
@@ -38,27 +43,31 @@ public class Dolphin extends Mammal {
    * Jenis makanan yang dimakan Dolphin.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Dolphin.
    */
+
   public String getFoodType() {
     return "Carnivore";
   }
   /**
    * Memeriksa apakah Dolphin adalah hewan darat.
-   * @return Mengembalikan true jika Dolphin adalah hewan darat dan false jika Dolphin bukan hewan darat.
+   * @return Mengembalikan true jika Dolphin adalah hewan darat.
    */
+
   public boolean isLandAnimal() {
     return false;
   }
   /**
    * Memeriksa apakah Dolphin adalah hewan air.
-   * @return Mengembalikan true jika Dolphin adalah hewan air dan false jika Dolphin bukan hewan air.
+   * @return Mengembalikan true jika Dolphin adalah hewan air.
    */
+
   public boolean isWaterAnimal() {
     return true;
   }
   /**
    * Memeriksa apakah Dolphin adalah hewan udara.
-   * @return Mengembalikan true jika Dolphin adalah hewan udara dan false jika Dolphin bukan hewan udara.
+   * @return Mengembalikan true jika Dolphin adalah hewan udara.
    */
+
   public boolean isFlyingAnimal() {
     return false;
   }
@@ -66,6 +75,7 @@ public class Dolphin extends Mammal {
    * Interaksi yang dilakukan Dolphin.
    * @return Mengembalikan string yang merepresentasikan suara Dolphin.
    */
+
   public String interact() {
     return "A a a a a";
   }
@@ -73,6 +83,7 @@ public class Dolphin extends Mammal {
    * Render dari Dolphin.
    * @return Mengembalikan char yang merupakan representasi kode Dolphin.
    */
+
   public char render() {
     return 'N';
   }
@@ -80,6 +91,7 @@ public class Dolphin extends Mammal {
    * Melakukan cloning untuk menciptakan objek Dolphin baru.
    * @return Mengembalikan objek Dolphin baru.
    */
+
   public Animal deepCopy() {
     return new Dolphin(this);
   }

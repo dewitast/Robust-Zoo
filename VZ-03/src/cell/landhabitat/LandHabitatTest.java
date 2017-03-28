@@ -1,6 +1,8 @@
 package cell.landhabitat;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import static org.junit.Assert.assertTrue;
 
 import cell.Cell;
 
@@ -18,8 +20,8 @@ public class LandHabitatTest {
 
   @Test
   public void testIsHabitat() {
-	  Cell c = new LandHabitat();
-	  assertTrue(c.isHabitat());
+    Cell c = new LandHabitat();
+    assertTrue(c.isHabitat());
   }
   /**
    * Test method for {@link cell.landhabitat.LandHabitat#render()}.
@@ -27,7 +29,7 @@ public class LandHabitatTest {
 
   @Test
   public void testRender() {
-	  Cell c = new LandHabitat();
-	  assertEquals('@', c.render());
+    Cell c = new LandHabitat();
+    assertEquals('@', c.render());
   }
 }

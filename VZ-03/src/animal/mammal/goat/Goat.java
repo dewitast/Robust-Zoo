@@ -1,6 +1,8 @@
 package animal.mammal.goat;
-import animal.mammal.*;
-import animal.*;
+
+import animal.Animal;
+
+import animal.mammal.Mammal;
 
 /**
  * File : Goat.java
@@ -12,6 +14,7 @@ public class Goat extends Mammal {
    * Constructor.
    * Menciptakan objek Goat.
    */
+
   public Goat() {
     super(90, 4.5, false);
   }
@@ -22,6 +25,7 @@ public class Goat extends Mammal {
    * @param f Jumlah makanan Goat.
    * @param t Status jinak Goat.
    */
+
   public Goat(double w, double f, boolean t) {
     super(w, f, t);
   }
@@ -30,6 +34,7 @@ public class Goat extends Mammal {
    * Menciptakan objek Goat hasil salinan g.
    * @param g Goat yang akan disalin.
    */
+
   public Goat(Goat g) {
     super(g.weight, g.food, g.tame);
     setPoint(g.pos);
@@ -38,27 +43,31 @@ public class Goat extends Mammal {
    * Jenis makanan yang dimakan Goat.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Goat.
    */
+
   public String getFoodType() {
     return "Herbivore";
   }
   /**
    * Memeriksa apakah Goat adalah hewan darat.
-   * @return Mengembalikan true jika Goat adalah hewan darat dan false jika Goat bukan hewan darat.
+   * @return Mengembalikan true jika Goat adalah hewan darat.
    */
+
   public boolean isLandAnimal() {
     return true;
   }
   /**
    * Memeriksa apakah Goat adalah hewan air.
-   * @return Mengembalikan true jika Goat adalah hewan air dan false jika Goat bukan hewan air.
+   * @return Mengembalikan true jika Goat adalah hewan air.
    */
+
   public boolean isWaterAnimal() {
     return false;
   }
   /**
    * Memeriksa apakah Goat adalah hewan udara.
-   * @return Mengembalikan true jika Goat adalah hewan udara dan false jika Goat bukan hewan udara.
+   * @return Mengembalikan true jika Goat adalah hewan udara.
    */
+
   public boolean isFlyingAnimal() {
     return false;
   }
@@ -66,6 +75,7 @@ public class Goat extends Mammal {
    * Interaksi yang dilakukan Goat.
    * @return Mengembalikan string yang merepresentasikan suara Goat.
    */
+
   public String interact() {
     return "Mbeeeee!";
   }
@@ -73,6 +83,7 @@ public class Goat extends Mammal {
    * Render dari Goat.
    * @return Mengembalikan char yang merupakan representasi kode Goat.
    */
+
   public char render() {
     return 'G';
   }
@@ -80,6 +91,7 @@ public class Goat extends Mammal {
    * Melakukan cloning untuk menciptakan objek Goat baru.
    * @return Mengembalikan objek Goat baru.
    */
+
   public Animal deepCopy() {
     return new Goat(this);
   }

@@ -1,6 +1,8 @@
 package animal.mammal.orca;
-import animal.mammal.*;
-import animal.*;
+
+import animal.Animal;
+
+import animal.mammal.Mammal;
 
 /**
  * File : Orca.java
@@ -12,8 +14,9 @@ public class Orca extends Mammal {
    * Constructor.
    * Menciptakan objek Orca.
    */
+
   public Orca() {
-  	super(4000, 200, false);
+    super(4000, 200, false);
   }
   /**
    * Constructor dengan parameter.
@@ -22,14 +25,16 @@ public class Orca extends Mammal {
    * @param f Jumlah makanan Orca.
    * @param t Status jinak Orca.
    */
+
   public Orca(double w, double f, boolean t) {
-  	super(w, f, t);
+    super(w, f, t);
   }
   /**
    * Constructor dengan parameter.
    * Menciptakan objek Orca hasil salinan o.
    * @param o Orca yang akan disalin.
    */
+
   public Orca(Orca o) {
     super(o.weight, o.food, o.tame);
     setPoint(o.pos);
@@ -38,27 +43,31 @@ public class Orca extends Mammal {
    * Jenis makanan yang dimakan Orca.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Orca.
    */
+
   public String getFoodType() {
     return "Carnivore";
   }
   /**
    * Memeriksa apakah Orca adalah hewan darat.
-   * @return Mengembalikan true jika Orca adalah hewan darat dan false jika Orca bukan hewan darat.
+   * @return Mengembalikan true jika Orca adalah hewan darat.
    */
+
   public boolean isLandAnimal() {
     return false;
   }
   /**
    * Memeriksa apakah Orca adalah hewan air.
-   * @return Mengembalikan true jika Orca adalah hewan air dan false jika Orca bukan hewan air.
+   * @return Mengembalikan true jika Orca adalah hewan air.
    */
+
   public boolean isWaterAnimal() {
     return true;
   }
   /**
    * Memeriksa apakah Orca adalah hewan udara.
-   * @return Mengembalikan true jika Orca adalah hewan udara dan false jika Orca bukan hewan udara.
+   * @return Mengembalikan true jika Orca adalah hewan udara.
    */
+
   public boolean isFlyingAnimal() {
     return false;
   }
@@ -66,20 +75,23 @@ public class Orca extends Mammal {
    * Interaksi yang dilakukan Orca.
    * @return Mengembalikan string yang merepresentasikan suara Orca.
    */
+
   public String interact() {
-  	return "Ngiak!";
+    return "Ngiak!";
   }
   /**
    * Render dari Orca.
    * @return Mengembalikan char yang merupakan representasi kode Orca.
    */
+
   public char render() {
-  	return 'R';
+    return 'R';
   }
   /**
    * Melakukan cloning untuk menciptakan objek Orca baru.
    * @return Mengembalikan objek Orca baru.
    */
+
   public Animal deepCopy() {
     return new Orca(this);
   }

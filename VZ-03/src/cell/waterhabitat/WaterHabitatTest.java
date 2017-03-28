@@ -1,6 +1,8 @@
 package cell.waterhabitat;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import static org.junit.Assert.assertTrue;
 
 import cell.Cell;
 
@@ -18,8 +20,8 @@ public class WaterHabitatTest {
 
   @Test
   public void testIsHabitat() {
-	  Cell c = new WaterHabitat();
-	  assertTrue(c.isHabitat());
+    Cell c = new WaterHabitat();
+    assertTrue(c.isHabitat());
   }
   /**
    * Test method for {@link cell.waterhabitat.WaterHabitat#render()}.
@@ -27,7 +29,7 @@ public class WaterHabitatTest {
 
   @Test
   public void testRender() {
-	  Cell c = new WaterHabitat();
-	  assertEquals('~', c.render());
+    Cell c = new WaterHabitat();
+    assertEquals('~', c.render());
   }
 }

@@ -1,6 +1,8 @@
 package animal.reptile.iguana;
-import animal.reptile.*;
-import animal.*;
+
+import animal.Animal;
+
+import animal.reptile.Reptile;
 
 /** 
  * File : Iguana.java
@@ -12,6 +14,7 @@ public class Iguana extends Reptile {
    * Constructor.
    * Menciptakan objek Iguana.
    */
+
   public Iguana() {
     super(6, 0.3, true);
   }
@@ -22,6 +25,7 @@ public class Iguana extends Reptile {
    * @param f Jumlah makanan Iguana.
    * @param t Status jinak Iguana.
    */
+
   public Iguana(double w, double f, boolean t) {
     super(w, f, t);
   }
@@ -30,6 +34,7 @@ public class Iguana extends Reptile {
    * Menciptakan objek Iguana hasil salinan i.
    * @param i Iguana yang akan disalin.
    */
+
   public Iguana(Iguana i) {
     super(i.weight, i.food, i.tame);
     setPoint(i.pos);
@@ -38,27 +43,31 @@ public class Iguana extends Reptile {
    * Jenis makanan yang dimakan Iguana.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Iguana.
    */
+
   public String getFoodType() {
     return "Herbivore";
   }
   /**
    * Memeriksa apakah Iguana adalah hewan darat.
-   * @return Mengembalikan true jika Iguana adalah hewan darat dan false jika Iguana bukan hewan darat.
+   * @return Mengembalikan true jika Iguana adalah hewan darat.
    */
+
   public boolean isLandAnimal() {
     return true;
   }
   /**
    * Memeriksa apakah Iguana adalah hewan air.
-   * @return Mengembalikan true jika Iguana adalah hewan air dan false jika Iguana bukan hewan air.
+   * @return Mengembalikan true jika Iguana adalah hewan air.
    */
+
   public boolean isWaterAnimal() {
     return false;
   }
   /**
    * Memeriksa apakah Iguana adalah hewan udara.
-   * @return Mengembalikan true jika Iguana adalah hewan udara dan false jika Iguana bukan hewan udara.
+   * @return Mengembalikan true jika Iguana adalah hewan udara.
    */
+
   public boolean isFlyingAnimal() {
     return false;
   }
@@ -66,6 +75,7 @@ public class Iguana extends Reptile {
    * Interaksi yang dilakukan Iguana.
    * @return Mengembalikan string yang merepresentasikan suara Iguana.
    */
+
   public String interact() {
     return "Purrrr";
   }
@@ -73,6 +83,7 @@ public class Iguana extends Reptile {
    * Render dari Iguana.
    * @return Mengembalikan char yang merupakan representasi kode Iguana.
    */
+
   public char render() {
     return 'I';
   }
@@ -80,6 +91,7 @@ public class Iguana extends Reptile {
    * Melakukan cloning untuk menciptakan objek Iguana baru.
    * @return Mengembalikan objek Iguana baru.
    */
+
   public Animal deepCopy() {
     return new Iguana(this);
   }

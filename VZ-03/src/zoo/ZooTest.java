@@ -1,8 +1,13 @@
 package zoo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+/**
+ * Testing zoo.
+ * @author nim_13515063
+ */
 
 public class ZooTest {
   /**

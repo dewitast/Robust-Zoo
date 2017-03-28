@@ -1,13 +1,15 @@
 package cell.restaurant;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import static org.junit.Assert.assertFalse;
 
 import cell.Cell;
 
 import org.junit.Test;
 
 /**
- * 
+ * Testing Restaurant.
  * @author nim_13515111
  *
  */
@@ -18,8 +20,8 @@ public class RestaurantTest {
 
   @Test
   public void testIsHabitat() {
-	Cell c = new Restaurant();
-	assertFalse(c.isHabitat());
+    Cell c = new Restaurant();
+    assertFalse(c.isHabitat());
   }
 
   /**
@@ -28,7 +30,7 @@ public class RestaurantTest {
 
   @Test
   public void testRender() {
-	Cell c = new Restaurant();
-	assertEquals('S', c.render());
+    Cell c = new Restaurant();
+    assertEquals('S', c.render());
   }
 }

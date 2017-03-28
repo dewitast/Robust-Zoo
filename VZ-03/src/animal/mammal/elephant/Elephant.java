@@ -1,6 +1,8 @@
 package animal.mammal.elephant;
-import animal.mammal.*;
-import animal.*;
+
+import animal.Animal;
+
+import animal.mammal.Mammal;
 
 /**
  * File : Elephant.java
@@ -9,9 +11,10 @@ import animal.*;
  */
 public class Elephant extends Mammal {
   /**
-   * Constructor.
+   * Constructor
    * Menciptakan objek Elephant.
    */
+
   public Elephant() {
     super(5000, 250, true);
   }
@@ -22,6 +25,7 @@ public class Elephant extends Mammal {
    * @param f Jumlah makanan Elephant.
    * @param t Status jinak Elephant.
    */
+
   public Elephant(double w, double f, boolean t) {
     super(w, f, t);
   }
@@ -30,6 +34,7 @@ public class Elephant extends Mammal {
    * Menciptakan objek Elephant hasil salinan e.
    * @param e Elephant yang akan disalin.
    */
+
   public Elephant(Elephant e) {
     super(e.weight, e.food, e.tame);
     setPoint(e.pos);
@@ -38,27 +43,31 @@ public class Elephant extends Mammal {
    * Jenis makanan yang dimakan Elephant.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Elephant.
    */
+
   public String getFoodType() {
     return "Herbivore";
   }
   /**
    * Memeriksa apakah Elephant adalah hewan darat.
-   * @return Mengembalikan true jika Elephant adalah hewan darat dan false jika Elephant bukan hewan darat.
+   * @return Mengembalikan true jika Elephant adalah hewan darat.
    */
+
   public boolean isLandAnimal() {
     return true;
   }
   /**
    * Memeriksa apakah Elephant adalah hewan air.
-   * @return Mengembalikan true jika Elephant adalah hewan air dan false jika Elephant bukan hewan air.
+   * @return Mengembalikan true jika Elephant adalah hewan air.
    */
+
   public boolean isWaterAnimal() {
     return false;
   }
   /**
    * Memeriksa apakah Elephant adalah hewan udara.
-   * @return Mengembalikan true jika Elephant adalah hewan udara dan false jika Elephant bukan hewan udara.
+   * @return Mengembalikan true jika Elephant adalah hewan udara.
    */
+
   public boolean isFlyingAnimal() {
     return false;
   }
@@ -66,6 +75,7 @@ public class Elephant extends Mammal {
    * Interaksi yang dilakukan Elephant.
    * @return Mengembalikan string yang merepresentasikan suara Elephant.
    */
+
   public String interact() {
     return ("Prett!");
   }
@@ -73,6 +83,7 @@ public class Elephant extends Mammal {
    * Render dari Elephant.
    * @return Mengembalikan char yang merupakan representasi kode Elephant.
    */
+
   public char render() {
     return 'H';
   }
@@ -80,6 +91,7 @@ public class Elephant extends Mammal {
    * Melakukan cloning untuk menciptakan objek Elephant baru.
    * @return Mengembalikan objek Elephant baru.
    */
+
   public Animal deepCopy() {
     return new Elephant(this);
   }

@@ -1,6 +1,8 @@
 package animal.mammal.giraffe;
-import animal.mammal.*;
-import animal.*;
+
+import animal.Animal;
+
+import animal.mammal.Mammal;
 
 /**
  * File : Giraffe.java
@@ -12,6 +14,7 @@ public class Giraffe extends Mammal {
    * Constructor.
    * Menciptakan objek Giraffe.
    */
+
   public Giraffe() {
     super(1100, 55, true);
   }
@@ -22,6 +25,7 @@ public class Giraffe extends Mammal {
    * @param f Jumlah makanan Giraffe.
    * @param t Status jinak Giraffe.
    */
+
   public Giraffe(double w, double f, boolean t) {
     super(w, f, t);
   }
@@ -30,6 +34,7 @@ public class Giraffe extends Mammal {
    * Menciptakan objek Giraffe hasil salinan g.
    * @param g Giraffe yang akan disalin.
    */
+
   public Giraffe(Giraffe g) {
     super(g.weight, g.food, g.tame);
     setPoint(g.pos);
@@ -38,27 +43,31 @@ public class Giraffe extends Mammal {
    * Jenis makanan yang dimakan Giraffe.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Giraffe.
    */
+
   public String getFoodType() {
     return "Herbivore";
   }
   /**
    * Memeriksa apakah Giraffe adalah hewan darat.
-   * @return Mengembalikan true jika Giraffe adalah hewan darat dan false jika Giraffe bukan hewan darat.
+   * @return Mengembalikan true jika Giraffe adalah hewan darat.
    */
+
   public boolean isLandAnimal() {
     return true;
   }
   /**
    * Memeriksa apakah Giraffe adalah hewan air.
-   * @return Mengembalikan true jika Giraffe adalah hewan air dan false jika Giraffe bukan hewan air.
+   * @return Mengembalikan true jika Giraffe adalah hewan air.
    */
+
   public boolean isWaterAnimal() {
     return false;
   }
   /**
    * Memeriksa apakah Giraffe adalah hewan udara.
-   * @return Mengembalikan true jika Giraffe adalah hewan udara dan false jika Giraffe bukan hewan udara.
+   * @return Mengembalikan true jika Giraffe adalah hewan udara.
    */
+
   public boolean isFlyingAnimal() {
     return false;
   }
@@ -66,6 +75,7 @@ public class Giraffe extends Mammal {
    * Interaksi yang dilakukan Giraffe.
    * @return Mengembalikan string yang merepresentasikan suara Giraffe.
    */
+
   public String interact() {
     return ("Hmm!");
   }
@@ -73,6 +83,7 @@ public class Giraffe extends Mammal {
    * Render dari Giraffe.
    * @return Mengembalikan char yang merupakan representasi kode Giraffe.
    */
+
   public char render() {
     return 'F';
   }
@@ -80,6 +91,7 @@ public class Giraffe extends Mammal {
    * Melakukan cloning untuk menciptakan objek Girrafe baru.
    * @return Mengembalikan objek Girrafe baru.
    */
+
   public Animal deepCopy() {
     return new Giraffe(this);
   }
