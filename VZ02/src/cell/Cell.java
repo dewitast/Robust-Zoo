@@ -5,25 +5,26 @@ package cell;
  * Kelas Cell merupakan simulasi dari petak-petak yang terdapat dalam kebun binatang.
  * @author Catherine Almira - 13515111
  */
+
 public class Cell {
   private String objectType;
   private char render;
- 
+
   /**
     * Constructor.
     * Menciptakan Cell kosong.
     */
-  
+
   public Cell() {
     objectType = "Road";
     render = '+';
   }
-  /** 
+  /**
     * Constructor dengan parameter.
     * Menciptakan Cell kosong dengan tipe objek ot dan render r.
     * @param ot Object type dari Cell.
     */
-  
+
   public Cell(String ot) {
     objectType = ot;
     if (objectType == "LandHabitat") {
@@ -87,8 +88,8 @@ public class Cell {
   }
   /**
     * Mengecek apakah cell berisi Habitat.
-  * @return Menghasilkan true jika code pada layar merupakan kode Land, Air, atau Water Habitat.
-  */
+    * @return Menghasilkan true jika code pada layar merupakan kode Land, Air, atau Water Habitat.
+    */
 
   public boolean isHabitat() {
     return ((render == '@') || (render == '^') || (render == '~'));
@@ -137,7 +138,7 @@ public class Cell {
     * Mengecek apakah cell berisi Entrance.
     * @return Menghasilkan true jika code pada layar merupakan kode Entrance.
     */
-  
+
   public boolean isEntrance() {
     return (render == 'Z');
   }

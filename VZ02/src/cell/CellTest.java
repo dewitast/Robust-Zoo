@@ -1,6 +1,3 @@
-/**
- * 
- */
 
 package cell;
 
@@ -11,7 +8,6 @@ import org.junit.*;
 /**
  * Testing cell.
  * @author nim_13515111
- *
  */
 public class CellTest {
   /**
