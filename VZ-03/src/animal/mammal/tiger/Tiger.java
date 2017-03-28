@@ -1,6 +1,8 @@
 package animal.mammal.tiger;
-import animal.mammal.*;
-import animal.*;
+
+import animal.Animal;
+
+import animal.mammal.Mammal;
 
 /**
  * File : Tiger.java
@@ -12,6 +14,7 @@ public class Tiger extends Mammal {
    * Constructor.
    * Menciptakan objek Tiger.
    */
+
   public Tiger() {
     super(200, 10, false);
   }
@@ -22,6 +25,7 @@ public class Tiger extends Mammal {
    * @param f Jumlah makanan Tiger.
    * @param t Status jinak Tiger.
    */
+
   public Tiger(double w, double f, boolean t) {
     super(w, f, t);
   }
@@ -30,6 +34,7 @@ public class Tiger extends Mammal {
    * Menciptakan objek Tiger hasil salinan t.
    * @param t Tiger yang akan disalin.
    */
+
   public Tiger(Tiger t) {
     super(t.weight, t.food, t.tame);
     setPoint(t.pos);
@@ -38,27 +43,31 @@ public class Tiger extends Mammal {
    * Jenis makanan yang dimakan Tiger.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Tiger.
    */
+
   public String getFoodType() {
     return "Carnivore";
   }
   /**
    * Memeriksa apakah Tiger adalah hewan darat.
-   * @return Mengembalikan true jika Tiger adalah hewan darat dan false jika Tiger bukan hewan darat.
+   * @return Mengembalikan true jika Tiger adalah hewan darat.
    */
+
   public boolean isLandAnimal() {
     return true;
   }
   /**
    * Memeriksa apakah Tiger adalah hewan air.
-   * @return Mengembalikan true jika Tiger adalah hewan air dan false jika Tiger bukan hewan air.
+   * @return Mengembalikan true jika Tiger adalah hewan air.
    */
+
   public boolean isWaterAnimal() {
     return false;
   }
   /**
    * Memeriksa apakah Tiger adalah hewan udara.
-   * @return Mengembalikan true jika Tiger adalah hewan udara dan false jika Tiger bukan hewan udara.
+   * @return Mengembalikan true jika Tiger adalah hewan udara.
    */
+
   public boolean isFlyingAnimal() {
     return false;
   }
@@ -66,6 +75,7 @@ public class Tiger extends Mammal {
    * Interaksi yang dilakukan Tiger.
    * @return Mengembalikan string yang merepresentasikan suara Tiger.
    */
+
   public String interact() {
     return "Growl";
   }
@@ -73,6 +83,7 @@ public class Tiger extends Mammal {
    * Render dari Tiger.
    * @return Mengembalikan char yang merupakan representasi kode Tiger.
    */
+
   public char render() {
     return 'T';
   }
@@ -80,6 +91,7 @@ public class Tiger extends Mammal {
    * Melakukan cloning untuk menciptakan objek Tiger baru.
    * @return Mengembalikan objek Tiger baru.
    */
+
   public Animal deepCopy() {
     return new Tiger(this);
   }

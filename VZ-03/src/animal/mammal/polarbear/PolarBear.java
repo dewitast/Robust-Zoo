@@ -1,6 +1,8 @@
 package animal.mammal.polarbear;
-import animal.mammal.*;
-import animal.*;
+
+import animal.Animal;
+
+import animal.mammal.Mammal;
 
 /** 
  * File : PolarBear.java
@@ -12,6 +14,7 @@ public class PolarBear extends Mammal {
    * Constructor.
    * Menciptakan objek PolarBear.
    */
+
   public PolarBear() {
     super(300, 15, false);
   }
@@ -22,6 +25,7 @@ public class PolarBear extends Mammal {
    * @param f Jumlah makanan PolarBear.
    * @param t Status jinak PolarBear.
    */
+
   public PolarBear(double w, double f, boolean t) {
     super(w, f, t);
   }
@@ -30,6 +34,7 @@ public class PolarBear extends Mammal {
    * Menciptakan objek PolarBear hasil salinan p.
    * @param p PolarBear yang akan disalin.
    */
+
   public PolarBear(PolarBear p) {
     super(p.weight, p.food, p.tame);
     setPoint(p.pos);
@@ -38,27 +43,31 @@ public class PolarBear extends Mammal {
    * Jenis makanan yang dimakan PolarBear.
    * @return Mengembalikan string yang merepresentasikan jenis makanan PolarBear.
    */
+
   public String getFoodType() {
     return "Carnivore";
   }
   /**
    * Memeriksa apakah PolarBear adalah hewan darat.
-   * @return Mengembalikan true jika PolarBear adalah hewan darat dan false jika PolarBear bukan hewan darat.
+   * @return Mengembalikan true jika PolarBear adalah hewan darat.
    */
+
   public boolean isLandAnimal() {
     return true;
   }
   /**
    * Memeriksa apakah PolarBear adalah hewan air.
-   * @return Mengembalikan true jika PolarBear adalah hewan air dan false jika PolarBear bukan hewan air.
+   * @return Mengembalikan true jika PolarBear adalah hewan air.
    */
+
   public boolean isWaterAnimal() {
     return true;
   }
   /**
    * Memeriksa apakah PolarBear adalah hewan udara.
-   * @return Mengembalikan true jika PolarBear adalah hewan udara dan false jika PolarBear bukan hewan udara.
+   * @return Mengembalikan true jika PolarBear adalah hewan udara.
    */
+
   public boolean isFlyingAnimal() {
     return false;
   }
@@ -66,6 +75,7 @@ public class PolarBear extends Mammal {
    * Interaksi yang dilakukan PolarBear.
    * @return Mengembalikan string yang merepresentasikan suara PolarBear.
    */
+
   public String interact() {
     return "Auuummm";
   }
@@ -73,6 +83,7 @@ public class PolarBear extends Mammal {
    * Render dari PolarBear.
    * @return Mengembalikan char yang merupakan representasi kode PolarBear.
    */
+
   public char render() {
     return 'B';
   }
@@ -80,6 +91,7 @@ public class PolarBear extends Mammal {
    * Melakukan cloning untuk menciptakan objek PolarBear baru.
    * @return Mengembalikan objek PolarBear baru.
    */
+
   public Animal deepCopy() {
     return new PolarBear(this);
   }
