@@ -19,7 +19,7 @@ public class Komodo extends Reptile {
    * Constructor dengan parameter.
    * Menciptakan objek Komodo dengan berat w, jumlah makanan f, dan status jinak t.
    * @param w Berat Komodo.
-   * @param k Jumlah makanan Komodo.
+   * @param f Jumlah makanan Komodo.
    * @param t Status jinak Komodo.
    */
   public Komodo(double w, double f, boolean t) {

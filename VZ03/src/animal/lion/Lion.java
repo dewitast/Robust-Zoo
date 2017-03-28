@@ -19,7 +19,7 @@ public class Lion extends Mammal {
    * Constructor dengan parameter.
    * Menciptakan objek Lion dengan berat w, jumlah makanan f, dan status jinak t.
    * @param w Berat Lion.
-   * @param k Jumlah makanan Lion.
+   * @param f Jumlah makanan Lion.
    * @param t Status jinak Lion.
    */
   public Lion(double w, double f, boolean t) {

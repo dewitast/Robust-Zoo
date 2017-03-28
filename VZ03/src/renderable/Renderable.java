@@ -11,5 +11,5 @@ public interface Renderable {
    * objek pada Zoo.
    * @return Mengembalikan char yang merupakan representasi kode objek.
    */
-  abstract public char render();
+  public char render();
 }

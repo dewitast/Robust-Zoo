@@ -19,7 +19,7 @@ public class Cormorant extends Aves {
    * Constructor dengan parameter.
    * Menciptakan objek Cormorant dengan berat w, jumlah makanan f, dan status jinak t.
    * @param w Berat Cormorant.
-   * @param k Jumlah makanan Cormorant.
+   * @param f Jumlah makanan Cormorant.
    * @param t Status jinak Cormorant.
  */
   public Cormorant(double w, double f, boolean t) {
