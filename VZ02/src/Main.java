@@ -31,6 +31,7 @@ public class Main {
 			} else if (x == 3) {
 				System.out.println("Total meat calculation : " + d.foodCalcMeat());
 				System.out.println("Total veggie calculation : " + d.foodCalcVeggie());
+				System.out.println();
 			} else {
 				System.out.println("Your input is invalid. Please choose a number from 1 to 4.");
 			}
