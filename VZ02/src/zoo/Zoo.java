@@ -385,10 +385,37 @@ public class Zoo {
 	    * @return String yang merupakan hasil konversi zoo.
 	    */
 	  public String toString() {
+		  Scanner input = new Scanner(System.in);
+		  boolean check = false;
+		  int abs1 = -99;
+		  int ord1 = -99;
+		  int abs2 = -99;
+		  int ord2 = -99;
+		  while (!check) {
+			System.out.print("Absis kiri atas : ");
+			abs1 = input.nextInt();
+			System.out.print("Ordinat kiri atas : ");
+		    ord1 = input.nextInt();
+		    if ((abs1 < 0) || (abs1 > getBaris()) || (ord1 < 0) || (ord1 > getKolom()))
+		      System.out.println("Input salah");
+		    else 
+		    	check = true;
+		  }
+		  check = false;
+		  while (!check) {
+			System.out.print("Absis kanan bawah : ");
+			abs2 = input.nextInt();
+			System.out.print("Ordinat kanan bawah : ");
+			ord2 = input.nextInt();
+			if ((abs2 < 0) || (abs2 > getBaris()) || (ord2 < 0) || (ord2 > getKolom()))
+			  System.out.println("Input salah");
+			else
+			  check = true;
+		  }
 		  StringBuffer[] s = new StringBuffer[baris];
-		  for (int i = 0; i < baris; ++i) {
+		  for (int i = abs1; i <= abs2; ++i) {
 			  s[i] = new StringBuffer();
-			  for (int j = 0; j < kolom; ++j) {
+			  for (int j = ord1; j <= ord2; ++j) {
 				  s[i] = s[i].append(getElement(i,j).render());
 				  s[i] = s[i].append(' ');
 			  }
@@ -398,13 +425,15 @@ public class Zoo {
 			  Cage cg = cage[i];
 			  for (int j = 0; j < cg.getTotalAnimal(); ++j) {
 				  p = cage[i].getAnimal(j).getPos();
-				  s[p.getAbsis()].setCharAt(2*p.getOrdinat(),cage[i].getAnimal(j).render()); 
+				  if ((p.getAbsis() >= abs1) && (p.getAbsis() <= abs2) && (p.getOrdinat() >= ord1) && (p.getOrdinat() <= ord2))
+				    s[p.getAbsis()].setCharAt(2*p.getOrdinat(),cage[i].getAnimal(j).render()); 
 			  }
 		  }
 		  String out = new String();
-		  for (int i = 0; i < baris; ++i) {
+		  for (int i = abs1; i <= abs2; ++i) {
 			  out = out + s[i] + "\n";
 		  }
+		  input.close();
 		  return out;
 	  }
 }
