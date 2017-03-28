@@ -20,11 +20,16 @@ public class Main {
       x = sc.nextInt();
       System.out.println("");
       if (x == 1) {
-        System.out.print("Absis kiri atas : "); abs1 = sc.nextInt();
-        System.out.print("Ordinat kiri atas : "); ord1 = sc.nextInt();
-        System.out.print("Absis kanan bawah : "); abs2 = sc.nextInt();
-        System.out.print("Ordinat kanan bawah : "); ord2 = sc.nextInt();
-        if (abs1 < 0 || abs1 > abs2 || ord1 < 0 || ord1 > ord2 || abs2 > d.getZoo().getBaris() || ord2 > d.getZoo().getKolom()) {
+        System.out.print("Absis kiri atas : ");
+        abs1 = sc.nextInt();
+        System.out.print("Ordinat kiri atas : ");
+        ord1 = sc.nextInt();
+        System.out.print("Absis kanan bawah : ");
+        abs2 = sc.nextInt();
+        System.out.print("Ordinat kanan bawah : ");
+        ord2 = sc.nextInt();
+        if (abs1 < 0 || abs1 > abs2 || ord1 < 0 || ord1 > ord2 || abs2 > d.getZoo().getBaris()
+            || ord2 > d.getZoo().getKolom()) {
           System.out.println("Input Salah!");
         } else {
           d.displayZoo(abs1, ord1, abs2, ord2);
