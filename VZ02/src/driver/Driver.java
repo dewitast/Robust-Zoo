@@ -25,14 +25,18 @@ public class Driver {
 	    p = new Point(-1,-1);
 	  }
 	  /**
-	    * I.S. Zoo sudah ada.
-	    * F.S. Zoo sudah tercetak pada layar dengan ukuran sesuai input pengunjung.
-	    */
-	  public void displayZoo() {
+	   * I.S. Zoo sudah ada.
+	   * F.S. Zoo sudah tercetak pada layar dengan ukuran sesuai input pengunjung
+	   * @param absAwal absis titik yang menjadi titik awal pencetakan.
+	   * @param ordAwal ordinat titik yang menjadi titik awal pencetakan.
+	   * @param absAkhir absis titik yang menjadi titik akhir pencetakan.
+	   * @param ordAkhir ordinat titik yang menjadi titik akhir pencetakan..
+	   */
+	  public void displayZoo(int absAwal, int ordAwal, int absAkhir, int ordAkhir) {
 	    for (int i = 0; i < z.getJumlahCage(); ++i) {
 	      z.getCage(i).move();
 	    }
-	    System.out.println(z);
+	    System.out.println(z.toString(absAwal, ordAwal, absAkhir, ordAkhir));
 	  }
 	  /**
 	    * I.S. Pengunjung sudah memasuki zoo dan melakukan tour.

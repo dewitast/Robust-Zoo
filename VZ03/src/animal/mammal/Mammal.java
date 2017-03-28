@@ -17,7 +17,7 @@ public abstract class Mammal extends Animal {
    * Constructor dengan parameter.
    * Menciptakan objek Mammal dengan berat w, jumlah makanan f, dan status jinak t.
    * @param w Berat Mammal.
-   * @param k Jumlah makanan Mammal.
+   * @param f Jumlah makanan Mammal.
    * @param t Status jinak Mammal.
    */
   public Mammal(double w, double f, boolean t) {

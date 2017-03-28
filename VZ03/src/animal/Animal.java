@@ -1,12 +1,13 @@
 package animal;
 import point.*;
+import renderable.*;
 
 /**
  * File : Animal.java
  * Kelas animal merepresentasikan binatang beserta perilakunya.
  * @author Dewita Sonya Tarabunga - 13515021
  */
-public abstract class Animal {
+public abstract class Animal implements Renderable {
   protected double weight;
   protected double food;
   protected boolean tame;

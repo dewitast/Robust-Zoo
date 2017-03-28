@@ -17,7 +17,7 @@ public abstract class Aves extends Animal {
    * Constructor dengan parameter.
    * Menciptakan objek Aves dengan berat w, jumlah makanan f, dan status jinak t.
    * @param w Berat Aves.
-   * @param k Jumlah makanan Aves.
+   * @param f Jumlah makanan Aves.
    * @param t Status jinak Aves.
    */
   public Aves(double w, double f, boolean t) {

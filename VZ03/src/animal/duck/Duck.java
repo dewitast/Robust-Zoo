@@ -19,7 +19,7 @@ public class Duck extends Aves {
    * Constructor dengan parameter.
    * Menciptakan objek Duck dengan berat w, jumlah makanan f, dan status jinak t.
    * @param w Berat Duck.
-   * @param k Jumlah makanan Duck.
+   * @param f Jumlah makanan Duck.
    * @param t Status jinak Duck.
    */
   public Duck(double w, double f, boolean t) {

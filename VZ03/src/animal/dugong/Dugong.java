@@ -19,7 +19,7 @@ public class Dugong extends Mammal {
    * Constructor dengan parameter.
    * Menciptakan objek Dugong dengan berat w, jumlah makanan f, dan status jinak t.
    * @param w Berat Dugong.
-   * @param k Jumlah makanan Dugong.
+   * @param f Jumlah makanan Dugong.
    * @param t Status jinak Dugong.
    */
   public Dugong(double w, double f, boolean t) {
