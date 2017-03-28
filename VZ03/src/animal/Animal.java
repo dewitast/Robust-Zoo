@@ -110,8 +110,7 @@ public abstract class Animal {
    * @param p lokasi yang akan dimasukkan.
    */
   public void setPoint(Point p) {
-    pos.setAbsis(p.getAbsis());
-    pos.setOrdinat(p.getOrdinat());
+    pos = new Point(p);
   }
   /**
    * I.S. Lokasi binatang sembarang dan abs serta ord terdefinisi.
@@ -120,8 +119,7 @@ public abstract class Animal {
    * @param ord nilai ordinat lokasi yang akan dimasukkan.
    */
   public void setPoint(int abs, int ord) {
-    pos.setAbsis(abs);
-    pos.setOrdinat(ord);
+    pos = new Point(abs, ord);
   }
   /**
    * Mengeluarkan string yang merupakan bentuk interaksi dari binatang.
@@ -132,10 +130,23 @@ public abstract class Animal {
    * Melakukan cloning untuk menciptakan objek Animal baru.
    * @return Mengembalikan objek Animal baru.
    */
-  public abstract Animal clone();
-  public abstract String getFoodType();
+  public abstract Animal deepCopy();
   /**
    * Mengembalikan nilai jumlah makanan binatang.
    * @return nilai jumlah makanan binatang.
    */
+  public abstract String getFoodType();
+  /**
+   * Memeriksa apakah Objek animal a dan this sama.
+   * @param a Objek animal yang akan diperiksa.
+   * @return True jika p sama dengan this.
+   */
+ public boolean isSame(Animal a) {
+   return (pos.isSame(a.pos));
+ }
+ /**
+  * Mengembalikan karakter yang akan dicetak.
+  * @return karakter yang akan dicetak.
+  */
+  public abstract char render();
 }

@@ -1,5 +1,6 @@
 package animal.tiger;
 import animal.mammal.*;
+import animal.*;
 
 /**
  * File : Tiger.java
@@ -31,6 +32,7 @@ public class Tiger extends Mammal {
    */
   public Tiger(Tiger t) {
     super(t.weight, t.food, t.tame);
+    setPoint(t.pos);
   }
   /**
    * Jenis makanan yang dimakan Tiger.
@@ -78,7 +80,7 @@ public class Tiger extends Mammal {
    * Melakukan cloning untuk menciptakan objek Tiger baru.
    * @return Mengembalikan objek Tiger baru.
    */
-  public Tiger clone() {
+  public Animal deepCopy() {
     return new Tiger(this);
   }
 }

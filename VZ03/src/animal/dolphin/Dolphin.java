@@ -1,5 +1,6 @@
 package animal.dolphin;
 import animal.mammal.*;
+import animal.*;
 
 /** 
  * File : Dolphin.java
@@ -31,6 +32,7 @@ public class Dolphin extends Mammal {
    */
   public Dolphin(Dolphin d) {
     super(d.weight, d.food, d.tame);
+    setPoint(d.pos);
   }
   /**
    * Jenis makanan yang dimakan Dolphin.
@@ -78,7 +80,7 @@ public class Dolphin extends Mammal {
    * Melakukan cloning untuk menciptakan objek Dolphin baru.
    * @return Mengembalikan objek Dolphin baru.
    */
-  public Dolphin clone() {
+  public Animal deepCopy() {
     return new Dolphin(this);
   }
 }

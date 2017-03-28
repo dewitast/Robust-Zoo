@@ -37,8 +37,8 @@ public class Cage {
 	  }
 	  /**
 	    * Constructor dengan parameter.
-	    * @param possOrd posisi ordinat.
-	    * @param possAbs posisi absis.
+	    * @param posOrd posisi ordinat.
+	    * @param posAbs posisi absis.
 	    */
 	  public Cage(int posAbs, int posOrd) {
 	    size = 1;

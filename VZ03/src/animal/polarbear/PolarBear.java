@@ -1,5 +1,6 @@
 package animal.polarbear;
 import animal.mammal.*;
+import animal.*;
 
 /** 
  * File : PolarBear.java
@@ -31,6 +32,7 @@ public class PolarBear extends Mammal {
    */
   public PolarBear(PolarBear p) {
     super(p.weight, p.food, p.tame);
+    setPoint(p.pos);
   }
   /**
    * Jenis makanan yang dimakan PolarBear.
@@ -78,7 +80,7 @@ public class PolarBear extends Mammal {
    * Melakukan cloning untuk menciptakan objek PolarBear baru.
    * @return Mengembalikan objek PolarBear baru.
    */
-  public PolarBear clone() {
+  public Animal deepCopy() {
     return new PolarBear(this);
   }
 }

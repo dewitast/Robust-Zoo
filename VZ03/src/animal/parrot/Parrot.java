@@ -1,5 +1,6 @@
 package animal.parrot;
 import animal.aves.*;
+import animal.*;
 
 /** 
  * File : Parrot.java
@@ -31,6 +32,7 @@ public class Parrot extends Aves {
    */
   public Parrot(Parrot p) {
     super(p.weight, p.food, p.tame);
+    setPoint(p.pos);
   }
   /**
    * Jenis makanan yang dimakan Parrot.
@@ -78,7 +80,7 @@ public class Parrot extends Aves {
    * Melakukan cloning untuk menciptakan objek Parrot baru.
    * @return Mengembalikan objek Parrot baru.
    */
-  public Parrot clone() {
+  public Animal deepCopy() {
     return new Parrot(this);
   }
 }

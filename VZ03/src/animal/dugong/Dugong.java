@@ -1,5 +1,6 @@
 package animal.dugong;
 import animal.mammal.*;
+import animal.*;
 
 /**
  * File : Dugong.java
@@ -31,6 +32,7 @@ public class Dugong extends Mammal {
    */
   public Dugong(Dugong d) {
     super(d.weight, d.food, d.tame);
+    setPoint(d.pos);
   }
   /**
    * Jenis makanan yang dimakan Dugong.
@@ -71,14 +73,14 @@ public class Dugong extends Mammal {
    * Render dari Dugong.
    * @return Mengembalikan char yang merupakan representasi kode Dugong.
    */
-  public char Render() {
+  public char render() {
     return 'U';
   }
   /**
    * Melakukan cloning untuk menciptakan objek Dugong baru.
    * @return Mengembalikan objek Dugong baru.
    */
-  public Dugong clone() {
+  public Animal deepCopy() {
     return new Dugong(this);
   }
 }

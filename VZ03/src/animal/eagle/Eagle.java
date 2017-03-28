@@ -1,5 +1,6 @@
 package animal.eagle;
 import animal.aves.*;
+import animal.*;
 
 /**
  * File : Eagle.java
@@ -31,6 +32,7 @@ public class Eagle extends Aves {
    */
   public Eagle(Eagle e) {
     super(e.weight, e.food, e.tame);
+    setPoint(e.pos);
   }
   /**
    * Jenis makanan yang dimakan Eagle.
@@ -78,7 +80,7 @@ public class Eagle extends Aves {
    * Melakukan cloning untuk menciptakan objek Eagle baru.
    * @return Mengembalikan objek Eagle baru.
    */
-  public Eagle clone() {
+  public Animal deepCopy() {
     return new Eagle(this);
   }
 }

@@ -1,5 +1,6 @@
 package animal.walrus;
 import animal.mammal.*;
+import animal.*;
 
 /**
  * File : Walrus.java
@@ -31,6 +32,7 @@ public class Walrus extends Mammal {
    */
   public Walrus(Walrus w) {
     super(w.weight, w.food, w.tame);
+    setPoint(w.pos);
   }
   /**
    * Jenis makanan yang dimakan Walrus.
@@ -78,7 +80,7 @@ public class Walrus extends Mammal {
    * Melakukan cloning untuk menciptakan objek Walrus baru.
    * @return Mengembalikan objek Walrus baru.
    */
-  public Walrus clone() {
+  public Animal deepCopy() {
     return new Walrus(this);
   }
 }

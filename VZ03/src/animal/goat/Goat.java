@@ -1,5 +1,6 @@
 package animal.goat;
 import animal.mammal.*;
+import animal.*;
 
 /**
  * File : Goat.java
@@ -31,6 +32,7 @@ public class Goat extends Mammal {
    */
   public Goat(Goat g) {
     super(g.weight, g.food, g.tame);
+    setPoint(g.pos);
   }
   /**
    * Jenis makanan yang dimakan Goat.
@@ -78,7 +80,7 @@ public class Goat extends Mammal {
    * Melakukan cloning untuk menciptakan objek Goat baru.
    * @return Mengembalikan objek Goat baru.
    */
-  public Goat clone() {
+  public Animal deepCopy() {
     return new Goat(this);
   }
 }

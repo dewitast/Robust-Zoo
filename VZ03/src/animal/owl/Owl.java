@@ -1,5 +1,6 @@
 package animal.owl;
 import animal.aves.*;
+import animal.*;
 
 /**
  * File : Owl.java
@@ -31,6 +32,7 @@ public class Owl extends Aves {
    */
   public Owl(Owl o) {
     super(o.weight, o.food, o.tame);
+    setPoint(o.pos);
   }
   /**
    * Jenis makanan yang dimakan Owl.
@@ -78,7 +80,7 @@ public class Owl extends Aves {
    * Melakukan cloning untuk menciptakan objek Owl baru.
    * @return Mengembalikan objek Owl baru.
    */
-  public Owl clone() {
+  public Animal deepCopy() {
     return new Owl(this);
   }
 }
