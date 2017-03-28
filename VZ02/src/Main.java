@@ -14,20 +14,21 @@ public class Main {
     int abs2;
     int ord2;
     Driver d = new Driver();
-    d.displayMenu();
     Scanner sc = new Scanner(System.in);
-    x = sc.nextInt();
-    while (x != 4) {
+    do {
+      d.displayMenu();;
+      x = sc.nextInt();
+      System.out.println("");
       if (x == 1) {
-        System.out.print("Absis kiri atas : ");
-        abs1 = sc.nextInt();
-        System.out.print("Ordinat kiri atas : ");
-        ord1 = sc.nextInt();
-        System.out.print("Absis kanan bawah : ");
-        abs2 = sc.nextInt();
-        System.out.print("Ordinat kanan bawah : ");
-        ord2 = sc.nextInt();
-        d.displayZoo(abs1, ord1, abs2, ord2);
+        System.out.print("Absis kiri atas : "); abs1 = sc.nextInt();
+        System.out.print("Ordinat kiri atas : "); ord1 = sc.nextInt();
+        System.out.print("Absis kanan bawah : "); abs2 = sc.nextInt();
+        System.out.print("Ordinat kanan bawah : "); ord2 = sc.nextInt();
+        if (abs1 < 0 || abs1 > abs2 || ord1 < 0 || ord1 > ord2 || abs2 > d.getZoo().getBaris() || ord2 > d.getZoo().getKolom()) {
+          System.out.println("Input Salah!");
+        } else {
+          d.displayZoo(abs1, ord1, abs2, ord2);
+        }
       } else if (x == 2) {
         d.tourZoo();
         while (d.getPoint().getAbsis() != -1) {
@@ -37,13 +38,10 @@ public class Main {
         System.out.println("Total meat calculation : " + d.foodCalcMeat());
         System.out.println("Total veggie calculation : " + d.foodCalcVeggie());
         System.out.println();
-      } else {
+      } else if (x != 4) {
         System.out.println("Your input is invalid. Please choose a number from 1 to 4.");
       }
-      d.displayMenu();
-      x = sc.nextInt();
-      System.out.println("");
-    }
+    } while (x != 4);
     sc.close();
   }
 }
