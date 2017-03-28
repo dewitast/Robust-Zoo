@@ -23,6 +23,6 @@ public class Park extends Cell {
    */
   
   public char render() {
-  	return '#';
+    return '#';
   }  
 }

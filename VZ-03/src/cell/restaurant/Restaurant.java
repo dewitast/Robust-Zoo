@@ -23,6 +23,6 @@ public class Restaurant extends Cell {
    */
   
   public char render() {
-  	return 'S';
+    return 'S';
   }
 }

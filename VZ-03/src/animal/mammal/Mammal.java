@@ -33,30 +33,30 @@ public abstract class Mammal extends Animal {
    */
 
   public String getFoodType() {
-  	return " ";
+    return " ";
   }
   /**
    * Memeriksa apakah Mammal adalah hewan darat.
-   * @return Mengembalikan true jika Mammal adalah hewan darat dan false jika Mammal bukan hewan darat.
+   * @return Mengembalikan true jika Mammal adalah hewan darat.
    */
 
   public boolean isLandAnimal() {
-  	return true;
+    return true;
   }
   /**
    * Memeriksa apakah Mammal adalah hewan air.
-   * @return Mengembalikan true jika Mammal adalah hewan air dan false jika Mammal bukan hewan air.
+   * @return Mengembalikan true jika Mammal adalah hewan air.
    */
 
   public boolean isWaterAnimal() {
-  	return false;
+    return false;
   }
   /**
    * Memeriksa apakah Mammal adalah hewan udara.
-   * @return Mengembalikan true jika Mammal adalah hewan udara dan false jika Mammal bukan hewan udara.
+   * @return Mengembalikan true jika Mammal adalah hewan udara.
    */
   
   public boolean isFlyingAnimal() {
-  	return false;
+    return false;
   }
 }
