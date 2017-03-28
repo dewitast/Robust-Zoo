@@ -1,32 +1,37 @@
 package driver;
-import zoo.*;
+
+import cell.road.Road;
+
+import cell.road.entrance.Entrance;
+
+import cell.road.exit.Exit;
+
 import java.util.Random;
 
 import point.Point;
-import cell.road.*;
-import cell.road.entrance.*;
-import cell.road.exit.*;
 
+import zoo.Zoo;
 /**
  * File : Driver.java
  * Kelas Driver merupakan kelas sebagai pilihan menu aplikasi.
  * @author Catherine Almira - 13515111
  */
-public class Driver {
-  public Zoo z;
-  public boolean visited[][];
-  public Point p;
 
+public class Driver {
+  public Zoo zoo;
+  public boolean[][] visited;
+  public Point point;
   /**
    * Constructor Driver.
    * Menciptakan Zoo dengan konfigurasi dari file eksternal.
    */
+
   public Driver() {
-    z = new Zoo();
-	z.readMap();
-	visited = new boolean[z.getBaris()][z.getKolom()];
-	z.readAnimal();
-	p = new Point(-1,-1);
+    zoo = new Zoo();
+    zoo.readMap();
+    visited = new boolean[zoo.getBaris()][zoo.getKolom()];
+    zoo.readAnimal();
+    point = new Point(-1,-1);
   }
   /**
    * I.S. Zoo sudah ada.
@@ -36,36 +41,38 @@ public class Driver {
    * @param absAkhir absis titik yang menjadi titik akhir pencetakan.
    * @param ordAkhir ordinat titik yang menjadi titik akhir pencetakan..
    */
+  
   public void displayZoo(int absAwal, int ordAwal, int absAkhir, int ordAkhir) {
-    for (int i = 0; i < z.getJumlahCage(); ++i) {
-      z.getCage(i).move();
+    for (int i = 0; i < zoo.getJumlahCage(); ++i) {
+      zoo.getCage(i).move();
     }
-    System.out.println(z.toString(absAwal, ordAwal, absAkhir, ordAkhir));
+    System.out.println(zoo.toString(absAwal, ordAwal, absAkhir, ordAkhir));
   }
   /**
    * I.S. Pengunjung sudah memasuki zoo dan melakukan tour.
    * F.S. Experience berupa interaksi dari seluruh binatang di cage
    * sekitar tercetak pada layar.
    */
+
   public void getExperience() {
-    if (p.getAbsis() > 0) {
-      if (z.getElement(p.prevX()).isHabitat()) {
-        (z.searchPoint(p.prevX())).interact();
+    if (point.getAbsis() > 0) {
+      if (zoo.getElement(point.prevX()).isHabitat()) {
+        (zoo.searchPoint(point.prevX())).interact();
       }
     }
-    if (p.getAbsis() < z.getBaris() - 1) {
-      if ((z.getElement(p.nextX())).isHabitat()) {
-        (z.searchPoint(p.nextX())).interact();
+    if (point.getAbsis() < zoo.getBaris() - 1) {
+      if ((zoo.getElement(point.nextX())).isHabitat()) {
+        (zoo.searchPoint(point.nextX())).interact();
       }
     }
-    if (p.getOrdinat() > 0) {
-      if ((z.getElement(p.prevY())).isHabitat()) {
-        (z.searchPoint(p.prevY())).interact();
+    if (point.getOrdinat() > 0) {
+      if ((zoo.getElement(point.prevY())).isHabitat()) {
+        (zoo.searchPoint(point.prevY())).interact();
       }
     }
-    if (p.getAbsis() < z.getKolom() - 1) {
-      if ((z.getElement(p.nextY())).isHabitat()) {
-        (z.searchPoint(p.nextY())).interact();
+    if (point.getAbsis() < zoo.getKolom() - 1) {
+      if ((zoo.getElement(point.nextY())).isHabitat()) {
+        (zoo.searchPoint(point.nextY())).interact();
       }
     }
   }
@@ -75,59 +82,63 @@ public class Driver {
    * antara mencapai exit atau tidak ada pilihan jalan lain.
    * Selagi perjalanan, semua experience tercetak di layar.
    */
+
   public void tourZoo() {
-    for (int i = 0; i < z.getJumlahCage(); ++i) {
-      z.getCage(i).move();
+    for (int i = 0; i < zoo.getJumlahCage(); ++i) {
+      zoo.getCage(i).move();
     }
     Random rand = new Random();
     int random;
     boolean found = false;
-    if ((p.getAbsis() == -1) && (p.getOrdinat() == -1)) {
+    if ((point.getAbsis() == -1) && (point.getOrdinat() == -1)) {
       System.out.println("Welcome to the zoo.");
       while (!found) {
-        for (int i = 0; i < z.getBaris(); ++i) {
-          for (int j = 0; j < z.getKolom(); ++j) {
+        for (int i = 0; i < zoo.getBaris(); ++i) {
+          for (int j = 0; j < zoo.getKolom(); ++j) {
             visited[i][j] = false;
           }
         }
         rand = new Random();
-        random = rand.nextInt(z.getBaris());
-        if ((z.getElement(0, random)) instanceof Entrance) {
+        random = rand.nextInt(zoo.getBaris());
+        if ((zoo.getElement(0, random)) instanceof Entrance) {
           found = true;
-          p.setAbsis(0);
-          p.setOrdinat(random);
-        } else if ((z.getElement(z.getBaris() - 1, random)) instanceof Entrance) {
+          point.setAbsis(0);
+          point.setOrdinat(random);
+        } else if ((zoo.getElement(zoo.getBaris() - 1, random)) instanceof Entrance) {
           found = true;
-          p.setAbsis(z.getBaris() - 1);
-          p.setOrdinat(random);
+          point.setAbsis(zoo.getBaris() - 1);
+          point.setOrdinat(random);
         }
         if (!found) {
           rand = new Random();
-          random = rand.nextInt(z.getKolom());
-          if ((z.getElement(random, 0)) instanceof Entrance) {
+          random = rand.nextInt(zoo.getKolom());
+          if ((zoo.getElement(random, 0)) instanceof Entrance) {
             found = true;
-            p.setAbsis(random);
-            p.setOrdinat(0);
-          } else if ((z.getElement(random, z.getKolom() - 1)) instanceof Entrance) {
+            point.setAbsis(random);
+            point.setOrdinat(0);
+          } else if ((zoo.getElement(random, zoo.getKolom() - 1)) instanceof Entrance) {
             found = true;
-            p.setAbsis(random);
-            p.setOrdinat(z.getKolom() - 1);
+            point.setAbsis(random);
+            point.setOrdinat(zoo.getKolom() - 1);
           }
         }
       }
     } else {
-      visited[p.getAbsis()][p.getOrdinat()] = true;
-      boolean b1 = ((p.getAbsis() > 0) && (!visited[p.getAbsis() - 1][p.getOrdinat()])
-        && ((z.getElement(p.getAbsis() - 1, p.getOrdinat()))) instanceof Road);
-      boolean b2 = ((p.getOrdinat() < z.getKolom() - 1) && (!visited[p.getAbsis()][p.getOrdinat() + 1])
-        && ((z.getElement(p.getAbsis(), p.getOrdinat() + 1))) instanceof Road);
-      boolean b3 = ((p.getAbsis() < z.getBaris() - 1) && (!visited[p.getAbsis() + 1][p.getOrdinat()])
-        && ((z.getElement(p.getAbsis() + 1, p.getOrdinat()))) instanceof Road);
-      boolean b4 = ((p.getOrdinat() > 0) && (!visited[p.getAbsis()][p.getOrdinat() - 1])
-        && ((z.getElement(p.getAbsis(), p.getOrdinat() - 1))) instanceof Road);
+      visited[point.getAbsis()][point.getOrdinat()] = true;
+      boolean b1 = ((point.getAbsis() > 0) && (!visited[point.getAbsis() - 1][point.getOrdinat()])
+          && ((zoo.getElement(point.getAbsis() - 1, point.getOrdinat()))) instanceof Road);
+      boolean b2 = ((point.getOrdinat() < zoo.getKolom() - 1)
+          && (!visited[point.getAbsis()][point.getOrdinat() + 1])
+          && ((zoo.getElement(point.getAbsis(), point.getOrdinat() + 1))) instanceof Road);
+      boolean b3 = ((point.getAbsis() < zoo.getBaris() - 1)
+          && (!visited[point.getAbsis() + 1][point.getOrdinat()])
+          && ((zoo.getElement(point.getAbsis() + 1, point.getOrdinat()))) instanceof Road);
+      boolean b4 = ((point.getOrdinat() > 0)
+          && (!visited[point.getAbsis()][point.getOrdinat() - 1])
+          && ((zoo.getElement(point.getAbsis(), point.getOrdinat() - 1))) instanceof Road);
       if ((!b1) && (!b2) && (!b3) && (!b4)) {
-        p.setAbsis(-1);
-        p.setOrdinat(-1);
+        point.setAbsis(-1);
+        point.setOrdinat(-1);
         return;
       }
       while (!found) {
@@ -136,35 +147,35 @@ public class Driver {
         if (random == 0) {
           if (b1) {
             found = true;
-            p.setAbsis(p.getAbsis() - 1);
+            point.setAbsis(point.getAbsis() - 1);
           } 
         } else if (random == 1) {
           if (b2) {
             found = true;
-            p.setOrdinat(p.getOrdinat() + 1);
+            point.setOrdinat(point.getOrdinat() + 1);
           }
         } else if (random == 2) {
           if (b3) {
             found = true;
-            p.setAbsis(p.getAbsis() + 1);
+            point.setAbsis(point.getAbsis() + 1);
           }
         } else if (random == 3) {
           if (b4) {
             found = true;
-            p.setOrdinat(p.getOrdinat() - 1);
+            point.setOrdinat(point.getOrdinat() - 1);
           } 
         }
       }
       getExperience();
-      if ((z.getElement(p)) instanceof Exit) {
-        System.out.println("Posisi : (" + p.getAbsis() + "," + p.getOrdinat() + ")");
+      if ((zoo.getElement(point)) instanceof Exit) {
+        System.out.println("Posisi : (" + point.getAbsis() + "," + point.getOrdinat() + ")");
         System.out.println("You've reached the end of this journey.");
-        p.setAbsis(-1);
-        p.setOrdinat(-1);
+        point.setAbsis(-1);
+        point.setOrdinat(-1);
       }
     }
-    if (p.getAbsis() != -1) {
-      System.out.println("Posisi : (" + p.getAbsis() + "," + p.getOrdinat() + ")");
+    if (point.getAbsis() != -1) {
+      System.out.println("Posisi : (" + point.getAbsis() + "," + point.getOrdinat() + ")");
       System.out.println(""); 
     }
   }
@@ -172,11 +183,12 @@ public class Driver {
    * Melakukan perhitungan makanan (sayuran) yang harus disiapkan.
    * @return Mengembalikan jumlah makanan (sayuran) yang harus disiapkan.
    */
+
   public float foodCalcVeggie() {
     float sum = 0;
-    for (int i = 0; i < z.getJumlahCage(); i++) {
-      for (int j = 0; j < (z.getCage(i)).getTotalAnimal(); j++) {
-        sum += ((z.getCage(i)).getAnimal(j)).getFoodVeggie();
+    for (int i = 0; i < zoo.getJumlahCage(); i++) {
+      for (int j = 0; j < (zoo.getCage(i)).getTotalAnimal(); j++) {
+        sum += ((zoo.getCage(i)).getAnimal(j)).getFoodVeggie();
       }
     }
     return sum;
@@ -185,11 +197,12 @@ public class Driver {
    * Melakukan perhitungan makanan (daging) yang harus disiapkan.
    * @return Mengembalikan jumlah makanan (daging) yang harus disiapkan.
    */
+
   public float foodCalcMeat() {
     float sum = 0;
-    for (int i = 0; i < z.getJumlahCage(); i++) {
-      for (int j = 0; j < (z.getCage(i)).getTotalAnimal(); j++) {
-        sum += ((z.getCage(i)).getAnimal(j)).getFoodMeat();
+    for (int i = 0; i < zoo.getJumlahCage(); i++) {
+      for (int j = 0; j < (zoo.getCage(i)).getTotalAnimal(); j++) {
+        sum += ((zoo.getCage(i)).getAnimal(j)).getFoodMeat();
       }
     }
     return sum;
@@ -198,6 +211,7 @@ public class Driver {
    * I.S. sembarang.
    * F.S. Menu telah tercetak ke layar.
    */
+
   public void displayMenu() {
     System.out.println("Main Menu:");
     System.out.println("1. Display Zoo");
@@ -210,14 +224,16 @@ public class Driver {
    * Getter Zoo.
    * @return Mengembalikan zoo.
    */
+
   public Zoo getZoo() {
-    return z;
+    return zoo;
   }
   /**
    * Getter Point.
    * @return Mengembalikan point.
    */
+
   public Point getPoint() {
-    return p;
+    return point;
   }
 }

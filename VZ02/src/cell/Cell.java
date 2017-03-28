@@ -118,7 +118,7 @@ public class Cell {
   public boolean isWaterHabitat() {
     return (render == '~');
   }
-  /**
+  /** 
     * Mengecek apakah cell berisi Exit.
     * @return Menghasilkan true jika code pada layar merupakan kode Exit.
     */

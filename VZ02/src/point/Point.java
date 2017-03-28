@@ -77,7 +77,7 @@ public class Point {
     */
 
   public Point nextX() {
-    return new Point(absis+1,ordinat);
+    return new Point(absis + 1,ordinat);
   }
   /**
     * Mengembalikan point di sebelah kiri point.
@@ -85,7 +85,7 @@ public class Point {
     */
 
   public Point prevX() {
-    return new Point(absis-1,ordinat);
+    return new Point(absis - 1,ordinat);
   }
   /**
     * Mengembalikan point di sebelah atas point.
@@ -93,7 +93,7 @@ public class Point {
     */
 
   public Point prevY() {
-    return new Point(absis,ordinat-1);
+    return new Point(absis,ordinat - 1);
   }
   /**
     * Mengembalikan point di sebelah bawah point.
@@ -101,7 +101,7 @@ public class Point {
     */
 
   public Point nextY() {
-    return new Point(absis,ordinat+1);
+    return new Point(absis,ordinat + 1);
   }
   /**
     * Memeriksa apakah Objek point p dan this sama.

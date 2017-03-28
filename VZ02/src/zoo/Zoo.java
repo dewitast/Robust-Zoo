@@ -1,18 +1,22 @@
 package zoo;
 
-import cage.Cage;
-import cell.Cell;
-import point.Point;
 import animal.Animal;
 
-import java.util.Scanner;
+import cage.Cage;
+
+import cell.Cell;
+
 import java.io.*;
+
+import java.util.Scanner;
+
+import point.Point;
 
 /**
  * File : Zoo.java
  * Kelas zoo merepresentasikan kebun binatang dengan matriks cell,
  * kumpulan cage.
- * @author Dewita Sonya Tarabunga - 13515021
+ * @author Dewita Sonya Tarabunga  -  13515021
  */
 public class Zoo {
   private final int MAXBARIS = 100;
@@ -179,30 +183,30 @@ public class Zoo {
           c = sc.next().charAt(0);
           if (c == '@') {
             cell[i][j] = new Cell("LandHabitat");
-            if ((i != 0) && (cell[i-1][j].isLandHabitat())) {
-              searchPoint(i-1, j).addPoint(i, j);
-            } else if ((j != 0) && (cell[i][j-1].isLandHabitat())) {
-              searchPoint(i, j-1).addPoint(i, j);
+            if ((i != 0) && (cell[i - 1][j].isLandHabitat())) {
+              searchPoint(i - 1, j).addPoint(i, j);
+            } else if ((j != 0) && (cell[i][j - 1].isLandHabitat())) {
+              searchPoint(i, j - 1).addPoint(i, j);
             } else {
               cg = new Cage(i, j);
               addCage(cg);
             }
           } else if (c == '^') {
             cell[i][j] = new Cell("AirHabitat");
-            if ((i != 0) && (cell[i-1][j].isAirHabitat())) {
-              searchPoint(i-1, j).addPoint(i, j);
-            } else if ((j != 0) && (cell[i][j-1].isAirHabitat())) {
-              searchPoint(i, j-1).addPoint(i, j);
+            if ((i != 0) && (cell[i - 1][j].isAirHabitat())) {
+              searchPoint(i - 1, j).addPoint(i, j);
+            } else if ((j != 0) && (cell[i][j - 1].isAirHabitat())) {
+              searchPoint(i, j - 1).addPoint(i, j);
             } else {
               cg = new Cage(i, j);
               addCage(cg);
             }
           } else if (c == '~') {
             cell[i][j] = new Cell("WaterHabitat");
-            if ((i != 0) && (cell[i-1][j].isWaterHabitat())) {
-              searchPoint(i-1, j).addPoint(i, j);
-            } else if ((j != 0) && (cell[i][j-1].isWaterHabitat())) {
-              searchPoint(i, j-1).addPoint(i, j);
+            if ((i != 0) && (cell[i - 1][j].isWaterHabitat())) {
+              searchPoint(i - 1, j).addPoint(i, j);
+            } else if ((j != 0) && (cell[i][j - 1].isWaterHabitat())) {
+              searchPoint(i, j - 1).addPoint(i, j);
             } else {
               cg = new Cage(i, j);
               addCage(cg);
@@ -235,7 +239,9 @@ public class Zoo {
     try {
       Scanner sc = new Scanner(fileName);
       char c;
-      int abs, ord, jh;
+      int abs;
+      int ord;
+      int jh;
       Point p;
       String[] h;
       Animal a;
@@ -250,143 +256,166 @@ public class Zoo {
           h[0] = "Land";
           h[1] = "Water";
           a = new Animal(p, "Alligator", "Grrrrrr", "Carnivore", h, 125, 6.25, 0, jh, false, c);
-          if ((getElement(abs-1, ord-1).isLandHabitat())||(getElement(abs-1, ord-1).isWaterHabitat()))
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if ((getElement(abs - 1, ord - 1).isLandHabitat())
+              || (getElement(abs - 1, ord - 1).isWaterHabitat())) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'C') {
           h = new String[1];
           jh = 1;
           h[0] = "Land";
           a = new Animal(p, "Cobra", "Ssshh!", "Carnivore", h, 20, 1, 0, jh, false, c);
-          if (getElement(abs-1, ord-1).isLandHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1, ord - 1).isLandHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'M') {
           h = new String[2];
           jh = 2;
           h[0] = "Air";
           h[1] = "Water";
           a = new Animal(p, "Cormorant", "Ooookkk!", "Carnivore", h, 3.6, 0.18, 0, jh, true, c);
-          if ((getElement(abs-1,ord-1).isAirHabitat())||(getElement(abs-1, ord-1).isWaterHabitat()))
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if ((getElement(abs - 1,ord - 1).isAirHabitat())
+              || (getElement(abs - 1, ord - 1).isWaterHabitat())) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'N') {
           h = new String[1];
           jh = 1;
           h[0] = "Water";
           a = new Animal(p, "Dolphin", "A a a a a", "Carnivore", h, 75, 3.75, 0, jh, true, c);
-          if (getElement(abs-1, ord-1).isWaterHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1, ord - 1).isWaterHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'D') {
           h = new String[1];
           jh = 1;
           h[0] = "Water";
           a = new Animal(p, "Duck", "Quaackk!", "Omnivore", h, 12, 0.6, 0.6, jh, true, c);
-          if (getElement(abs-1, ord-1).isWaterHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1, ord - 1).isWaterHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'U') {
           h = new String[1];
           jh = 1;
           h[0] = "Water";
           a = new Animal(p, "Dugong", "Splashh!", "Herbivore", h, 500, 0, 25, jh, true, c);
-          if (getElement(abs-1, ord-1).isWaterHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1, ord - 1).isWaterHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'E') {
           h = new String[1];
           jh = 1;
           h[0] = "Air";
           a = new Animal(p, "Eagle", "Nguiikk!", "Carnivore", h, 5.8, 0.29, 0, jh, false, c);
-          if (getElement(abs-1, ord-1).isAirHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1, ord - 1).isAirHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'H') {
           h = new String[1];
           jh = 1;
           h[0] = "Land";
           a = new Animal(p, "Elephant", "Prett!", "Herbivore", h, 5000, 0, 250, jh, true, c);
-          if (getElement(abs-1, ord-1).isLandHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1, ord - 1).isLandHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'F') {
           h = new String[1];
           jh = 1;
           h[0] = "Land";
           a = new Animal(p, "Giraffe", "Hmm!", "Herbivore", h, 1100, 0, 55, jh, true, c);
-          if (getElement(abs-1, ord-1).isLandHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1, ord - 1).isLandHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'G') {
           h = new String[1];
           jh = 1;
           h[0] = "Land";
           a = new Animal(p, "Goat", "Mbeeeee", "Herbivore", h, 90, 0, 4.5, jh, false, c);
-          if (getElement(abs-1, ord-1).isLandHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1, ord - 1).isLandHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'I') {
           h = new String[1];
           jh = 1;
           h[0] = "Land";
           a = new Animal(p, "Iguana", "Purrrr", "Herbivore", h, 6, 0, 0.3, jh, true, c);
-          if (getElement(abs-1, ord-1).isLandHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1, ord - 1).isLandHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'J') {
           h = new String[1];
           jh = 1;
           h[0] = "Air";
           a = new Animal(p, "Jalak", "Tweet!", "Herbivore", h, 0.1, 0, 0.005, jh, true, c);
-          if (getElement(abs-1, ord-1).isAirHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1, ord - 1).isAirHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'K') {
           h = new String[1];
           jh = 1;
           h[0] = "Land";
           a = new Animal(p, "Komodo", "Slpp!", "Carnivore", h, 120, 6, 0, jh, false, c);
-          if (getElement(abs-1, ord-1).isLandHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1, ord - 1).isLandHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'L') {
           h = new String[1];
           jh = 1;
           h[0] = "Land";
           a = new Animal(p, "Lion", "Roaarr!", "Carnivore", h, 150, 7.5, 0, jh, false, c);
-          if (getElement(abs-1, ord-1).isLandHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1, ord - 1).isLandHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'R') {
           h = new String[1];
           jh = 1;
           h[0] = "Water";
           a = new Animal(p, "Orca", "Ngiak!", "Carnivore", h, 4000, 200, 0, jh, false, c);
-          if (getElement(abs-1, ord-1).isWaterHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1, ord - 1).isWaterHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'O') {
           h = new String[1];
           jh = 1;
           h[0] = "Air";
           a = new Animal(p, "Owl", "Hoot!", "Carnivore", h, 1.5, 0.075, 0, jh, true, c);
-          if (getElement(abs-1,ord-1).isAirHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1,ord - 1).isAirHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'P') {
           h = new String[1];
           jh = 1;
           h[0] = "Air";
           a = new Animal(p, "Parrot", "Cuiitt", "Omnivore", h, 1.2, 0.06, 0.06, jh, true, c);
-          if (getElement(abs-1,ord-1).isAirHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1,ord - 1).isAirHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'B') {
           h = new String[2];
           jh = 2;
           h[0] = "Land";
           h[1] = "Water";
           a = new Animal(p, "PolarBear", "Auuummm", "Carnivore", h, 300, 15, 0, jh, false, c);
-          if ((getElement(abs-1,ord-1).isLandHabitat())||(getElement(abs-1,ord-1).isWaterHabitat()))
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if ((getElement(abs - 1,ord - 1).isLandHabitat())
+              || (getElement(abs - 1,ord - 1).isWaterHabitat())) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'T') {
           h = new String[1];
           jh = 1;
           h[0] = "Land";
           a = new Animal(p, "Tiger", "Growl", "Carnivore", h, 200, 10, 0, jh, false, c);
-          if (getElement(abs-1,ord-1).isLandHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1,ord - 1).isLandHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         } else if (c == 'W') {
           h = new String[1];
           jh = 1;
           h[0] = "Water";
           a = new Animal(p, "Walrus", "Aaarhhh", "Carnivore", h, 1000, 50, 0, jh, false, c);
-          if (getElement(abs-1,ord-1).isWaterHabitat())
-            searchPoint(abs-1, ord-1).adoptAnimal(a);
+          if (getElement(abs - 1,ord - 1).isWaterHabitat()) {
+            searchPoint(abs - 1, ord - 1).adoptAnimal(a);
+          }
         }
       }
       sc.close();
@@ -400,30 +429,30 @@ public class Zoo {
     * @param ordAwal ordinat titik yang menjadi titik awal pencetakan.
     * @param absAkhir absis titik yang menjadi titik akhir pencetakan.
     * @param ordAkhir ordinat titik yang menjadi titik akhir pencetakan.
-    * @return String yang merupakan hasil konversi zoo dimulai dari (absAwal, ordAwal) sampai (ordAwal, ordAkhir).
+    * @return konversi Zoo dari (absAwal, ordAwal) sampai (ordAwal, ordAkhir).
     */
 
   public String toString(int absAwal, int ordAwal, int absAkhir, int ordAkhir) {
-	  StringBuffer[] s = new StringBuffer[baris];
-	  for (int i = 0; i < baris; ++i) {
-		  s[i] = new StringBuffer();
-		  for (int j = 0; j < kolom; ++j) {
-			  s[i] = s[i].append(getElement(i,j).render());
-			  s[i] = s[i].append(' ');
-		  }
-	  }
-	  Point p;
-	  for (int i = 0; i < jumlahCage; ++i) {
-		  Cage cg = cage[i];
-		  for (int j = 0; j < cg.getTotalAnimal(); ++j) {
-			  p = cage[i].getAnimal(j).getPos();
-			  s[p.getAbsis()].setCharAt(2*p.getOrdinat(),cage[i].getAnimal(j).render()); 
-		  }
-	  }
-	  String out = new String();
-	  for (int i = absAwal; i <= absAkhir; ++i) {
-		  out = out + s[i].substring(2*ordAwal, 2*ordAkhir+1) + "\n";
-	  }
-	  return out;
+    StringBuffer[] s = new StringBuffer[baris];
+    for (int i = 0; i < baris; ++i) {
+      s[i] = new StringBuffer();
+      for (int j = 0; j < kolom; ++j) {
+        s[i] = s[i].append(getElement(i,j).render());
+        s[i] = s[i].append(' ');
+      }
+    }
+    Point p;
+    for (int i = 0; i < jumlahCage; ++i) {
+      Cage cg = cage[i];
+      for (int j = 0; j < cg.getTotalAnimal(); ++j) {
+        p = cage[i].getAnimal(j).getPos();
+        s[p.getAbsis()].setCharAt(2 * p.getOrdinat(),cage[i].getAnimal(j).render()); 
+      }
+    }
+    String out = new String();
+    for (int i = absAwal; i <= absAkhir; ++i) {
+      out = out + s[i].substring(2 * ordAwal, 2 * ordAkhir + 1) + "\n";
+    }
+    return out;
   }
 }

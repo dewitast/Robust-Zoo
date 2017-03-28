@@ -1,6 +1,8 @@
 package animal;
-import point.*;
-import renderable.*;
+
+import point.Point;
+
+import renderable.Renderable;
 
 /**
  * File : Animal.java
@@ -15,6 +17,7 @@ public abstract class Animal implements Renderable {
   /**
    * Constructor tanpa parameter.
    */
+
   public Animal() {
     weight = 0;
     food = 0;
@@ -27,6 +30,7 @@ public abstract class Animal implements Renderable {
    * @param f nilai jumlah makanan binatang.
    * @param t jinak atau tidaknya binatang.
    */
+
   public Animal(double w, double f, boolean t) {
     weight = w;
     food = f;
@@ -37,6 +41,7 @@ public abstract class Animal implements Renderable {
    * Mengembalikan nilai berat binatang.
    * @return nilai berat binatang.
    */
+
   public double getWeight() {
     return weight;
   }
@@ -44,6 +49,7 @@ public abstract class Animal implements Renderable {
    * Jenis makanan yang dimakan Aves.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Aves.
    */
+
   public double getFood() {
     return food;
   }
@@ -51,26 +57,31 @@ public abstract class Animal implements Renderable {
    * Mengembalikan nilai jumlah makanan (daging) binatang.
    * @return nilai jumlah makanan (daging) binatang.
    */
+
   public double getFoodMeat() {
-    if (getFoodType() == "Carnivore" || getFoodType() == "Omnivore")
+    if (getFoodType() == "Carnivore" || getFoodType() == "Omnivore") {
       return (weight * 0.05);
-    else
+    } else {
       return 0;
+    }
   }
   /**
    * Mengembalikan nilai jumlah makanan (sayur) binatang.
    * @return nilai jumlah makanan (sayur) binatang.
    */
+
   public double getFoodVeggie() {
-    if (getFoodType() == "Herbivore" || getFoodType() == "Omnivore")
+    if (getFoodType() == "Herbivore" || getFoodType() == "Omnivore") {
       return (weight * 0.05);
-    else
+    } else {
       return 0;
+    }
   }
   /**
    * Mengembalikan jinak tidaknya binatang.
    * @return jinak tidaknya binatang.
    */
+
   public boolean getTame() {
     return tame;
   }
@@ -78,6 +89,7 @@ public abstract class Animal implements Renderable {
    * Mengembalikan point posisi binatang.
    * @return point posisi binatang.
    */
+
   public Point getPos() {
     return pos;
   }
@@ -86,6 +98,7 @@ public abstract class Animal implements Renderable {
    * F.S. Berat binatang bernilai w.
    * @param w nilai berat yang akan dimasukkan.
    */
+
   public void setWeight(double w) {
     weight = w;
   }
@@ -94,6 +107,7 @@ public abstract class Animal implements Renderable {
    * F.S. Jumlah makanan binatang bernilai f.
    * @param f nilai jumlah makanan yang akan dimasukkan.
    */
+
   public void setFood(double f) {
     food = f;
   }
@@ -102,6 +116,7 @@ public abstract class Animal implements Renderable {
    * F.S. Status jinak binatang bernilai t.
    * @param t kejinakan yang akan dimasukkan.
    */
+
   public void setTame(boolean t) {
     tame = t;
   }
@@ -110,6 +125,7 @@ public abstract class Animal implements Renderable {
    * F.S. Lokasi binatang bernilai p.
    * @param p lokasi yang akan dimasukkan.
    */
+
   public void setPoint(Point p) {
     pos = new Point(p);
   }
@@ -119,6 +135,7 @@ public abstract class Animal implements Renderable {
    * @param abs nilai absis lokasi yang akan dimasukkan.
    * @param ord nilai ordinat lokasi yang akan dimasukkan.
    */
+
   public void setPoint(int abs, int ord) {
     pos = new Point(abs, ord);
   }
@@ -126,28 +143,33 @@ public abstract class Animal implements Renderable {
    * Mengeluarkan string yang merupakan bentuk interaksi dari binatang.
    * @return String yang merupakan suara binatang.
    */
+
   public abstract String interact();
   /**
    * Melakukan cloning untuk menciptakan objek Animal baru.
    * @return Mengembalikan objek Animal baru.
    */
+
   public abstract Animal deepCopy();
   /**
    * Mengembalikan nilai jumlah makanan binatang.
    * @return nilai jumlah makanan binatang.
    */
+
   public abstract String getFoodType();
   /**
    * Memeriksa apakah Objek animal a dan this sama.
    * @param a Objek animal yang akan diperiksa.
    * @return True jika p sama dengan this.
    */
- public boolean isSame(Animal a) {
-   return (pos.isSame(a.pos));
- }
- /**
-  * Mengembalikan karakter yang akan dicetak.
-  * @return karakter yang akan dicetak.
-  */
+
+  public boolean isSame(Animal a) {
+    return (pos.isSame(a.pos));
+  }
+  /**
+   * Mengembalikan karakter yang akan dicetak.
+   * @return karakter yang akan dicetak.
+   */
+
   public abstract char render();
 }
