@@ -1,9 +1,13 @@
 
 package cell;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.*;
+import static org.junit.Assert.assertFalse;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
 
 /**
  * Testing cell.
