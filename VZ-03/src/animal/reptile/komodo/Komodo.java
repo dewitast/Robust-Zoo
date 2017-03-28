@@ -1,6 +1,8 @@
 package animal.reptile.komodo;
-import animal.reptile.*;
-import animal.*;
+
+import animal.Animal;
+
+import animal.reptile.Reptile;
 
 /**
  * File : Komodo.java
@@ -12,6 +14,7 @@ public class Komodo extends Reptile {
    * Constructor.
    * Menciptakan objek Komodo.
    */
+
   public Komodo() {
     super(120, 6, false);
   }
@@ -22,6 +25,7 @@ public class Komodo extends Reptile {
    * @param f Jumlah makanan Komodo.
    * @param t Status jinak Komodo.
    */
+
   public Komodo(double w, double f, boolean t) {
     super(w, f, t);
   }
@@ -30,6 +34,7 @@ public class Komodo extends Reptile {
    * Menciptakan objek Komodo hasil salinan k.
    * @param k Komodo yang akan disalin.
    */
+
   public Komodo(Komodo k) {
     super(k.weight, k.food, k.tame);
     setPoint(k.pos);
@@ -38,27 +43,31 @@ public class Komodo extends Reptile {
    * Jenis makanan yang dimakan Komodo.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Komodo.
    */
+
   public String getFoodType() {
     return "Carnivore";
   }
   /**
    * Memeriksa apakah Komodo adalah hewan darat.
-   * @return Mengembalikan true jika Komodo adalah hewan darat dan false jika Komodo bukan hewan darat.
+   * @return Mengembalikan true jika Komodo adalah hewan darat.
    */
+
   public boolean isLandAnimal() {
     return true;
   }
   /**
    * Memeriksa apakah Komodo adalah hewan air.
-   * @return Mengembalikan true jika Komodo adalah hewan air dan false jika Komodo bukan hewan air.
+   * @return Mengembalikan true jika Komodo adalah hewan air.
    */
+
   public boolean isWaterAnimal() {
     return false;
   }
   /**
    * Memeriksa apakah Komodo adalah hewan udara.
-   * @return Mengembalikan true jika Komodo adalah hewan udara dan false jika Komodo bukan hewan udara.
+   * @return Mengembalikan true jika Komodo adalah hewan udara.
    */
+
   public boolean isFlyingAnimal() {
     return false;
   }
@@ -66,6 +75,7 @@ public class Komodo extends Reptile {
    * Interaksi yang dilakukan Komodo.
    * @return Mengembalikan string yang merepresentasikan suara Komodo.
    */
+
   public String interact() {
     return ("Slpp!");
   }
@@ -73,6 +83,7 @@ public class Komodo extends Reptile {
    * Render dari Komodo.
    * @return Mengembalikan char yang merupakan representasi kode Komodo.
    */
+
   public char render() {
     return 'K';
   }
@@ -80,6 +91,7 @@ public class Komodo extends Reptile {
    * Melakukan cloning untuk menciptakan objek Komodo baru.
    * @return Mengembalikan objek Komodo baru.
    */
+
   public Animal deepCopy() {
     return new Komodo(this);
   }
