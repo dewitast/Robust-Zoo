@@ -381,72 +381,34 @@ public class Zoo {
       }
    }
    /**
-     * Mengkonversi kelas Zoo menjadi sebuah string untuk dicetak.
-     * @param absAwal absis titik yang menjadi titik awal pencetakan.
-     * @param ordAwal ordinat titik yang menjadi titik awal pencetakan.
-     * @param absAkhir absis titik yang menjadi titik akhir pencetakan.
-     * @param ordAkhir ordinat titik yang menjadi titik akhir pencetakan.
-     * @return String yang merupakan hasil konversi zoo dimulai dari (absAwal, ordAwal) sampai (ordAwal, ordAkhir).
-     */
-<<<<<<< HEAD
-   public String toString() {
-    Scanner input = new Scanner(System.in);
-    boolean check = false;
-    int abs1 = -99;
-    int ord1 = -99;
-    int abs2 = -99;
-    int ord2 = -99;
-    while (!check) {
-   System.out.print("Absis kiri atas : ");
-   abs1 = input.nextInt();
-   System.out.print("Ordinat kiri atas : ");
-      ord1 = input.nextInt();
-      if ((abs1 < 0) || (abs1 > getBaris()) || (ord1 < 0) || (ord1 > getKolom()))
-        System.out.println("Input salah");
-      else
-       check = true;
-    }
-    check = false;
-    while (!check) {
-   System.out.print("Absis kanan bawah : ");
-   abs2 = input.nextInt();
-   System.out.print("Ordinat kanan bawah : ");
-   ord2 = input.nextInt();
-   if ((abs2 < 0) || (abs2 > getBaris()) || (ord2 < 0) || (ord2 > getKolom()))
-     System.out.println("Input salah");
-   else
-     check = true;
-    }
-=======
-   public String toString(int absAwal, int ordAwal, int absAkhir, int ordAkhir) {
->>>>>>> c6449928dc1aa98f29be32ee501e26a4f2d1cddd
-    StringBuffer[] s = new StringBuffer[baris];
-    for (int i = abs1; i <= abs2; ++i) {
-     s[i] = new StringBuffer();
-     for (int j = ord1; j <= ord2; ++j) {
-      s[i] = s[i].append(getElement(i,j).render());
-      s[i] = s[i].append(' ');
-     }
-    }
-    Point p;
-    for (int i = 0; i < jumlahCage; ++i) {
-     Cage cg = cage[i];
-     for (int j = 0; j < cg.getTotalAnimal(); ++j) {
-      p = cage[i].getAnimal(j).getPos();
-      if ((p.getAbsis() >= abs1) && (p.getAbsis() <= abs2) && (p.getOrdinat() >= ord1) && (p.getOrdinat() <= ord2))
-        s[p.getAbsis()].setCharAt(2*p.getOrdinat(),cage[i].getAnimal(j).render());
-     }
-    }
-    String out = new String();
-<<<<<<< HEAD
-    for (int i = abs1; i <= abs2; ++i) {
-     out = out + s[i] + "\n";
-=======
-    for (int i = absAwal; i <= absAkhir; ++i) {
-     out = out + s[i].substring(2*ordAwal, 2*ordAkhir+1) + "\n";
->>>>>>> c6449928dc1aa98f29be32ee501e26a4f2d1cddd
-    }
-    input.close();
-    return out;
-   }
+    * Mengkonversi kelas Zoo menjadi sebuah string untuk dicetak.
+    * @param absAwal absis titik yang menjadi titik awal pencetakan.
+    * @param ordAwal ordinat titik yang menjadi titik awal pencetakan.
+    * @param absAkhir absis titik yang menjadi titik akhir pencetakan.
+    * @param ordAkhir ordinat titik yang menjadi titik akhir pencetakan.
+    * @return String yang merupakan hasil konversi zoo dimulai dari (absAwal, ordAwal) sampai (ordAwal, ordAkhir).
+    */
+  public String toString(int absAwal, int ordAwal, int absAkhir, int ordAkhir) {
+	  StringBuffer[] s = new StringBuffer[baris];
+	  for (int i = 0; i < baris; ++i) {
+		  s[i] = new StringBuffer();
+		  for (int j = 0; j < kolom; ++j) {
+			  s[i] = s[i].append(getElement(i,j).render());
+			  s[i] = s[i].append(' ');
+		  }
+	  }
+	  Point p;
+	  for (int i = 0; i < jumlahCage; ++i) {
+		  Cage cg = cage[i];
+		  for (int j = 0; j < cg.getTotalAnimal(); ++j) {
+			  p = cage[i].getAnimal(j).getPos();
+			  s[p.getAbsis()].setCharAt(2*p.getOrdinat(),cage[i].getAnimal(j).render()); 
+		  }
+	  }
+	  String out = new String();
+	  for (int i = absAwal; i <= absAkhir; ++i) {
+		  out = out + s[i].substring(2*ordAwal, 2*ordAkhir+1) + "\n";
+	  }
+	  return out;
+  }
 }
