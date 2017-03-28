@@ -4,6 +4,7 @@
 package cage;
 
 import point.*;
+
 import animal.*;
 import animal.alligator.*;
 import static org.junit.Assert.*;
