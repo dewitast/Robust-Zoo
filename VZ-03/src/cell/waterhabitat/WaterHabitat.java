@@ -23,6 +23,6 @@ public class WaterHabitat extends Cell {
    */
   
   public char render() {
-  	return '~';
+    return '~';
   }
 }

@@ -14,7 +14,7 @@ public class LandHabitat extends Cell {
    */
 
   public boolean isHabitat() {
-	  return true;
+    return true;
   }
   /**
    * Render dari LandHabitat.
@@ -22,6 +22,6 @@ public class LandHabitat extends Cell {
    */
   
   public char render() {
-  	return '@';
+    return '@';
   }
 }
