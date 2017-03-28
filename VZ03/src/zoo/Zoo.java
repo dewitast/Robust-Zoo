@@ -10,6 +10,7 @@ import cell.road.*;
 import cell.road.entrance.*;
 import cell.road.exit.*;
 import point.*;
+
 import java.io.*;
 import java.util.Scanner;
 import animal.alligator.*;
@@ -193,45 +194,45 @@ public class Zoo {
 		for (int i = 0; i < baris; i++) {
 		    for (int j = 0; j < kolom; j++) {
 		      c = sc.next().charAt(0);
-		      if (c=='@') {
+		      if (c == '@') {
                 cell[i][j] = new LandHabitat();
-                if ((i!=0)&&(cell[i-1][j] instanceof LandHabitat)) {
-                    searchPoint(i-1,j).addPoint(i-1,j);
-                } else if ((j!=0)&&(cell[i][j-1] instanceof LandHabitat)) {
-                    searchPoint(i,j-1).addPoint(i,j-1);
+                if ((i != 0)&&(cell[i-1][j] instanceof LandHabitat)) {
+                    searchPoint(i-1, j).addPoint(i, j);
+                } else if ((j != 0)&&(cell[i][j-1] instanceof LandHabitat)) {
+                    searchPoint(i, j-1).addPoint(i, j);
                 } else {
-                	cg = new Cage(i,j);
+                	cg = new Cage(i, j);
   		            addCage(cg);
                 }
-              } else if (c=='^') {
+              } else if (c == '^') {
             	  cell[i][j] = new AirHabitat();
-                  if ((i!=0)&&(cell[i-1][j] instanceof AirHabitat)) {
-                      searchPoint(i-1,j).addPoint(i-1,j);
-                  } else if ((j!=0)&&(cell[i][j-1] instanceof AirHabitat)) {
-                      searchPoint(i,j-1).addPoint(i,j-1);
+                  if ((i != 0)&&(cell[i-1][j] instanceof AirHabitat)) {
+                      searchPoint(i-1, j).addPoint(i, j);
+                  } else if ((j != 0)&&(cell[i][j-1] instanceof AirHabitat)) {
+                      searchPoint(i, j-1).addPoint(i, j);
                   } else {
                   	cg = new Cage(i,j);
     		            addCage(cg);
                   }
-              } else if (c=='~') {
+              } else if (c == '~') {
             	  cell[i][j] = new WaterHabitat();
-                  if ((i!=0)&&(cell[i-1][j] instanceof WaterHabitat)) {
-                      searchPoint(i-1,j).addPoint(i-1,j);
-                  } else if ((j!=0)&&(cell[i][j-1] instanceof WaterHabitat)) {
-                      searchPoint(i,j-1).addPoint(i,j-1);
+                  if ((i != 0)&&(cell[i-1][j] instanceof WaterHabitat)) {
+                      searchPoint(i-1, j).addPoint(i, j);
+                  } else if ((j != 0)&&(cell[i][j-1] instanceof WaterHabitat)) {
+                      searchPoint(i, j-1).addPoint(i, j);
                   } else {
-                  	cg = new Cage(i,j);
+                  	cg = new Cage(i, j);
     		            addCage(cg);
                   }
-          } else if (c=='S') {
+          } else if (c == 'S') {
             cell[i][j] = new Restaurant();
-          } else if (c=='#') {
+          } else if (c == '#') {
             cell[i][j] = new Park();
-          } else if (c=='+') {
+          } else if (c == '+') {
             cell[i][j] = new Road();
-          } else if (c=='X') {
+          } else if (c == 'X') {
             cell[i][j] = new Exit();
-          } else if (c=='Z') {
+          } else if (c == 'Z') {
             cell[i][j] = new Entrance();
           }
         }
@@ -342,5 +343,34 @@ public class Zoo {
     } catch (IOException e) {
       System.out.println("File not found!");
     }
+  }
+
+  /**
+    * Mengkonversi kelas Zoo menjadi sebuah string untuk dicetak.
+    * @return String yang merupakan hasil konversi zoo.
+    */
+  public String toString() {
+	  StringBuffer[] s = new StringBuffer[baris];
+	  for (int i = 0; i < baris; ++i) {
+		  s[i] = new StringBuffer();
+		  for (int j = 0; j < kolom; ++j) {
+			  s[i] = s[i].append(getElement(i,j).render());
+			  s[i] = s[i].append(' ');
+		  }
+	  }
+	  Point p;
+	  for (int i = 0; i < jumlahCage; ++i) {
+		  Cage cg = cage[i];
+		  for (int j = 0; j < cg.getTotalAnimal(); ++j) {
+			  System.out.println(""+i+" "+j+" 2");
+			  p = cage[i].getAnimal(j).getPos();
+			  s[p.getAbsis()].setCharAt(2*p.getOrdinat(),cage[i].getAnimal(j).render()); 
+		  }
+	  }
+	  String out = new String();
+	  for (int i = 0; i < baris; ++i) {
+		  out = out + s[i] + "\n";
+	  }
+	  return out;
   }
 }

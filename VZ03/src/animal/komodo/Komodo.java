@@ -1,5 +1,6 @@
 package animal.komodo;
 import animal.reptile.*;
+import animal.*;
 
 /**
  * File : Komodo.java
@@ -31,6 +32,7 @@ public class Komodo extends Reptile {
    */
   public Komodo(Komodo k) {
     super(k.weight, k.food, k.tame);
+    setPoint(k.pos);
   }
   /**
    * Jenis makanan yang dimakan Komodo.
@@ -78,7 +80,7 @@ public class Komodo extends Reptile {
    * Melakukan cloning untuk menciptakan objek Komodo baru.
    * @return Mengembalikan objek Komodo baru.
    */
-  public Komodo clone() {
+  public Animal deepCopy() {
     return new Komodo(this);
   }
 }

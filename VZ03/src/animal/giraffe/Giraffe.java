@@ -1,5 +1,6 @@
 package animal.giraffe;
 import animal.mammal.*;
+import animal.*;
 
 /**
  * File : Giraffe.java
@@ -31,6 +32,7 @@ public class Giraffe extends Mammal {
    */
   public Giraffe(Giraffe g) {
     super(g.weight, g.food, g.tame);
+    setPoint(g.pos);
   }
   /**
    * Jenis makanan yang dimakan Giraffe.
@@ -78,7 +80,7 @@ public class Giraffe extends Mammal {
    * Melakukan cloning untuk menciptakan objek Girrafe baru.
    * @return Mengembalikan objek Girrafe baru.
    */
-  public Giraffe clone() {
+  public Animal deepCopy() {
     return new Giraffe(this);
   }
 }

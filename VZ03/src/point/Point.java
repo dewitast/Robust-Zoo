@@ -91,4 +91,12 @@ public class Point {
   public Point nextY() {
     return new Point(absis, ordinat+1);
   }
+  /**
+   * Memeriksa apakah Objek point p dan this sama.
+   * @param p Objek point yang akan diperiksa.
+   * @return True jika p sama dengan this.
+   */
+ public boolean isSame(Point p) {
+   return (absis == p.absis && ordinat == p.ordinat);
+ }
 }

@@ -1,5 +1,6 @@
 package animal.elephant;
 import animal.mammal.*;
+import animal.*;
 
 /**
  * File : Elephant.java
@@ -31,6 +32,7 @@ public class Elephant extends Mammal {
    */
   public Elephant(Elephant e) {
     super(e.weight, e.food, e.tame);
+    setPoint(e.pos);
   }
   /**
    * Jenis makanan yang dimakan Elephant.
@@ -78,7 +80,7 @@ public class Elephant extends Mammal {
    * Melakukan cloning untuk menciptakan objek Elephant baru.
    * @return Mengembalikan objek Elephant baru.
    */
-  public Elephant clone() {
+  public Animal deepCopy() {
     return new Elephant(this);
   }
 }

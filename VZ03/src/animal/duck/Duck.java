@@ -1,5 +1,6 @@
 package animal.duck;
 import animal.aves.*;
+import animal.*;
 
 /**
  * File : Duck.java
@@ -31,6 +32,7 @@ public class Duck extends Aves {
    */
   public Duck(Duck d) {
     super(d.weight, d.food, d.tame);
+    setPoint(d.pos);
   }
   /**
    * Jenis makanan yang dimakan Duck.
@@ -78,7 +80,7 @@ public class Duck extends Aves {
    * Melakukan cloning untuk menciptakan objek Duck baru.
    * @return Mengembalikan objek Duck baru.
    */
-  public Duck clone() {
+  public Animal deepCopy() {
     return new Duck(this);
   }
 }

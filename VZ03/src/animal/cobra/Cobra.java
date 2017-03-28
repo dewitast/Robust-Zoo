@@ -1,5 +1,6 @@
 package animal.cobra;
 import animal.reptile.*;
+import animal.*;
 
 /**
  * File : Cobra.java
@@ -31,6 +32,7 @@ public class Cobra extends Reptile {
    */
   public Cobra(Cobra c) {
     super(c.weight, c.food, c.tame);
+    setPoint(c.pos);
   }
   /**
    * Jenis makanan yang dimakan Cobra.
@@ -78,7 +80,7 @@ public class Cobra extends Reptile {
    * Melakukan cloning untuk menciptakan objek Cobra baru.
    * @return Mengembalikan objek Cobra baru.
    */
-  public Cobra clone() {
+  public Animal deepCopy() {
     return new Cobra(this);
   }
 }

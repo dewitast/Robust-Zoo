@@ -158,8 +158,10 @@ public class Driver {
         p.setOrdinat(-1);
       }
     }
-    if (p.getAbsis() != -1)
+    if (p.getAbsis() != -1) {
       System.out.println("Posisi : (" + p.getAbsis() + "," + p.getOrdinat() + ")");
+      System.out.println(""); 
+    }
   }
   /**
    * Melakukan perhitungan makanan (sayuran) yang harus disiapkan.

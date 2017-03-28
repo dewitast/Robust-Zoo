@@ -1,5 +1,6 @@
 package animal.iguana;
 import animal.reptile.*;
+import animal.*;
 
 /** 
  * File : Iguana.java
@@ -31,6 +32,7 @@ public class Iguana extends Reptile {
    */
   public Iguana(Iguana i) {
     super(i.weight, i.food, i.tame);
+    setPoint(i.pos);
   }
   /**
    * Jenis makanan yang dimakan Iguana.
@@ -78,7 +80,7 @@ public class Iguana extends Reptile {
    * Melakukan cloning untuk menciptakan objek Iguana baru.
    * @return Mengembalikan objek Iguana baru.
    */
-  public Iguana clone() {
+  public Animal deepCopy() {
     return new Iguana(this);
   }
 }

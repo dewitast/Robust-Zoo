@@ -1,5 +1,6 @@
 package animal.orca;
 import animal.mammal.*;
+import animal.*;
 
 /**
  * File : Orca.java
@@ -31,6 +32,7 @@ public class Orca extends Mammal {
    */
   public Orca(Orca o) {
     super(o.weight, o.food, o.tame);
+    setPoint(o.pos);
   }
   /**
    * Jenis makanan yang dimakan Orca.
@@ -78,7 +80,7 @@ public class Orca extends Mammal {
    * Melakukan cloning untuk menciptakan objek Orca baru.
    * @return Mengembalikan objek Orca baru.
    */
-  public Orca clone() {
+  public Animal deepCopy() {
     return new Orca(this);
   }
 }

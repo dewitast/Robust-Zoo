@@ -1,5 +1,6 @@
 package animal.lion;
 import animal.mammal.*;
+import animal.*;
 
 /**
  * File : Lion.java
@@ -31,6 +32,7 @@ public class Lion extends Mammal {
    */
   public Lion(Lion l) {
     super(l.weight, l.food, l.tame);
+    setPoint(l.pos);
   }
   /**
    * Jenis makanan yang dimakan Lion.
@@ -78,7 +80,7 @@ public class Lion extends Mammal {
    * Melakukan cloning untuk menciptakan objek Lion baru.
    * @return Mengembalikan objek Lion baru.
    */
-  public Lion clone() {
+  public Animal deepCopy() {
     return new Lion(this);
   }
 }

@@ -1,5 +1,6 @@
 package animal.jalak;
 import animal.aves.*;
+import animal.*;
 
 /**
  * File : Jalak.java
@@ -31,6 +32,7 @@ public class Jalak extends Aves {
    */
   public Jalak(Jalak j) {
     super(j.weight, j.food, j.tame);
+    setPoint(j.pos);
   }
   /**
    * Jenis makanan yang dimakan Jalak.
@@ -78,7 +80,7 @@ public class Jalak extends Aves {
    * Melakukan cloning untuk menciptakan objek Jalak baru.
    * @return Mengembalikan objek Jalak baru.
    */
-  public Jalak clone() {
+  public Animal deepCopy() {
     return new Jalak(this);
   }
 }

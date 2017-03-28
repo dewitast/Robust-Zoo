@@ -1,5 +1,6 @@
 package animal.cormorant;
 import animal.aves.*;
+import animal.*;
 
 /**
  * File : Cormorant.java
@@ -31,6 +32,7 @@ public class Cormorant extends Aves {
    */
   public Cormorant(Cormorant c) {
     super(c.weight, c.food, c.tame);
+    setPoint(c.pos);
   }
   /**
    * Jenis makanan yang dimakan Cormorant.
@@ -78,7 +80,7 @@ public class Cormorant extends Aves {
    * Melakukan cloning untuk menciptakan objek Cormorant baru.
    * @return Mengembalikan objek Cormorant baru.
    */
-  public Cormorant clone() {
+  public Animal deepCopy() {
     return new Cormorant(this);
   }
 }
