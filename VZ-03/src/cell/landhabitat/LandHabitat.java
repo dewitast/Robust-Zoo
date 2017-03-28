@@ -1,5 +1,6 @@
 package cell.landhabitat;
-import cell.*;
+
+import cell.Cell;
 
 /**
  * File : LandHabitat.java
@@ -11,13 +12,15 @@ public class LandHabitat extends Cell {
    * Mengecek apakah cell berisi habitat
    * @return Mengembalikan true apabila cell adalah habitat.
    */
+
   public boolean isHabitat() {
-	return true;
+	  return true;
   }
   /**
    * Render dari LandHabitat.
    * @return Mengembalikan char yang merupakan representasi kode LandHabitat.
    */
+  
   public char render() {
   	return '@';
   }

@@ -1,16 +1,19 @@
 package cell.restaurant;
-import cell.*;
+
+import cell.Cell;
 
 /**
  * File : Restaurant.java
  * Kelas Restaurant merepresentasikan restaurant.
  * @author Sylvia Juliana - 13515070
  */
+
 public class Restaurant extends Cell {
   /**
    * Mengecek apakah cell berisi habitat
    * @return Mengembalikan true apabila cell adalah habitat.
    */
+
   public boolean isHabitat() {
     return false;
   }
@@ -18,6 +21,7 @@ public class Restaurant extends Cell {
    * Render dari Restaurant.
    * @return Mengembalikan char yang merupakan representasi kode Restaurant.
    */
+  
   public char render() {
   	return 'S';
   }

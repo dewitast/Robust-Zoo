@@ -1,26 +1,23 @@
-/**
- * 
- */
 package cell.road.entrance;
 
-import cell.*;
 import static org.junit.Assert.*;
+
+import cell.Cell;
 
 import org.junit.Test;
 
 /**
+ * Testing Entrance.
  * @author nim_13515111
- *
  */
 public class EntranceTest {
+  /**
+   * Test method for {@link cell.road.entrance.Entrance#render()}.
+   */
 
-	/**
-	 * Test method for {@link cell.road.entrance.Entrance#render()}.
-	 */
-	@Test
-	public void testRender() {
-		Cell c = new Entrance();
-		assertEquals('Z', c.render());
-	}
-
+  @Test
+  public void testRender() {
+    Cell c = new Entrance();
+    assertEquals('Z', c.render());
+  }
 }

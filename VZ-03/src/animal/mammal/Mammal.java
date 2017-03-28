@@ -1,16 +1,19 @@
 package animal.mammal;
-import animal.*;
+
+import animal.Animal;
 
 /**
  * File : Mammal.java
  * Kelas Mammal merupakan kelas untuk Mammal.
  * @author Kezia Suhendra - 13515063
  */
+
 public abstract class Mammal extends Animal {
   /**
    * Constructor.
    * Menciptakan objek Mammal.
    */
+
   public Mammal() {
   }
   /**
@@ -20,6 +23,7 @@ public abstract class Mammal extends Animal {
    * @param f Jumlah makanan Mammal.
    * @param t Status jinak Mammal.
    */
+
   public Mammal(double w, double f, boolean t) {
     super(w, f, t);
   }
@@ -27,6 +31,7 @@ public abstract class Mammal extends Animal {
    * Jenis makanan yang dimakan Mammal.
    * @return Mengembalikan string yang merepresentasikan jenis makanan Mammal.
    */
+
   public String getFoodType() {
   	return " ";
   }
@@ -34,6 +39,7 @@ public abstract class Mammal extends Animal {
    * Memeriksa apakah Mammal adalah hewan darat.
    * @return Mengembalikan true jika Mammal adalah hewan darat dan false jika Mammal bukan hewan darat.
    */
+
   public boolean isLandAnimal() {
   	return true;
   }
@@ -41,6 +47,7 @@ public abstract class Mammal extends Animal {
    * Memeriksa apakah Mammal adalah hewan air.
    * @return Mengembalikan true jika Mammal adalah hewan air dan false jika Mammal bukan hewan air.
    */
+
   public boolean isWaterAnimal() {
   	return false;
   }
@@ -48,6 +55,7 @@ public abstract class Mammal extends Animal {
    * Memeriksa apakah Mammal adalah hewan udara.
    * @return Mengembalikan true jika Mammal adalah hewan udara dan false jika Mammal bukan hewan udara.
    */
+  
   public boolean isFlyingAnimal() {
   	return false;
   }

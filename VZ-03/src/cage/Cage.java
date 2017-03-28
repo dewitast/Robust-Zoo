@@ -1,7 +1,10 @@
 package cage;
-import animal.*;
-import point.*;
+
+import animal.Animal;
+
 import java.util.Random;
+
+import point.Point;
 
 /**
  * File : Cage.java
@@ -9,9 +12,10 @@ import java.util.Random;
  * kumpulan binatang yang terdapat di dalamnya.
  * @author Dewita Sonya Tarabunga - 13515021
  */
+
 public class Cage {
   private final int MAXSIZE = 100;
-  public Point[] loc;
+  private Point[] loc;
   private int size;
   private Animal[] animal;
   private int totalAnimal;
@@ -19,16 +23,18 @@ public class Cage {
   /**
    * Constructor tanpa parameter.
    */
+
   public Cage() {
     size = 0;
     loc = new Point[MAXSIZE];
     totalAnimal = 0;
-    animal = new Animal[3*MAXSIZE/10];
+    animal = new Animal[3 * MAXSIZE / 10];
   }
   /**
    * Constructor dengan parameter.
    * @param size nilai ukuran cage.
    */
+
   public Cage(int size) {
     this.size = size;
     loc = new Point[MAXSIZE];
@@ -36,24 +42,26 @@ public class Cage {
     	loc[i] = new Point();
     }
     totalAnimal = 0;
-    animal = new Animal[3*MAXSIZE/10];
+    animal = new Animal[3 * MAXSIZE / 10];
   }
   /**
    * Constructor dengan parameter.
    * @param posOrd posisi ordinat.
    * @param posAbs posisi absis.
    */
+
   public Cage(int posAbs, int posOrd) {
     size = 1;
     loc = new Point[MAXSIZE];
     loc[0] = new Point(posAbs, posOrd);
     totalAnimal = 0;
-    animal = new Animal[3*MAXSIZE/10];
+    animal = new Animal[3 * MAXSIZE / 10];
   }
   /**
    * Constructor dengan parameter.
    * @param c cage yang akan di-copy.
    */
+
   public Cage(Cage c) {
     this.size = c.size;
     loc = new Point[MAXSIZE];
@@ -61,7 +69,7 @@ public class Cage {
       loc[i] = new Point(c.loc[i]);
     }
     totalAnimal = c.totalAnimal;
-    animal = new Animal[3*MAXSIZE/10];
+    animal = new Animal[3 * MAXSIZE / 10];
     for (int i = 0; i < totalAnimal; ++i) {
       animal[i] = (c.animal[i]).deepCopy();
     }
@@ -71,6 +79,7 @@ public class Cage {
    * Mengembalikan ukuran cage.
    * @return nilai ukuran cage.
    */
+
   public int getSize() {
     return size;
   }
@@ -79,6 +88,7 @@ public class Cage {
    * Mengembalikan jumlah binatang pada cage.
    * @return nilai jumlah binatang pada cage.
    */
+
   public int getTotalAnimal() {
     return totalAnimal;
   }
@@ -87,6 +97,7 @@ public class Cage {
    * Mengembalikan binatang pada array ke-indeks.
    * @return indeks nilai indeks pada array animal.
    */
+
   public Animal getAnimal(int indeks) {
     return animal[indeks];
   }
@@ -96,6 +107,7 @@ public class Cage {
    * serta binatang sesuai dengan jenis cage.
    * @param a Objek binatang yang akan dimasukkan.
    */
+
   public void adoptAnimal(Animal a) {
     if (isFull()) {
       System.out.println("Kandang penuh.");
@@ -119,6 +131,7 @@ public class Cage {
    * @param index nilai indeks penunjuk posisi pada cage.
    * @return true jika cage ke-i sudah terisi.
    */
+
   public boolean isOccupied(int index) {
     boolean found = false;
     int i = 0;
@@ -136,6 +149,7 @@ public class Cage {
    * @param p Objek point yang terdapat pada cage.
    * @return true jika point p sudah terisi.
    */
+
   public boolean isOccupied(Point p) {
     boolean found = false;
     int i = 0;
@@ -152,6 +166,7 @@ public class Cage {
    * @param a Objek binatang yang akan diperiksa.
    * @return true jika binatang a terdapat pada cage.
    */
+
   public boolean isInCage(Animal a) {
     boolean found = false;
     int i = 0;
@@ -168,6 +183,7 @@ public class Cage {
    * @param p Objek point yang akan diperiksa.
    * @return true jika point p terdapat pada cage.
    */
+
   public boolean isInCage(Point p) {
     boolean found = false;
     int i = 0;
@@ -183,13 +199,15 @@ public class Cage {
    * Memeriksa apakah cage penuh.
    * @return true jika binatang a terdapat pada cage.
    */
+
   public boolean isFull() {
-    return (totalAnimal == 3*size/10);
+    return (totalAnimal == 3 * size / 10);
   }
   /**
    * I.S. sembarang.
    * F.S. semua binatang yang terdapat pada cage berinteraksi.
    */
+
   public void interact() {
     for (int i = 0; i < totalAnimal; ++i) {
       System.out.println(animal[i].interact());
@@ -201,27 +219,30 @@ public class Cage {
    * @param posAbs nilai absis point yang akan dimasukkan.
    * @param posOrd nilai ordinat point yang akan dimasukkan.
    */
+
   public void addPoint(int posAbs, int posOrd) {
     loc[size] = new Point(posAbs, posOrd);
-	++size;
+	  ++size;
   }
   /**
    * Memeriksa apakah animal a dapat dimasukkan ke cage.
    * @param a Objek binatang yang akan diperiksa.
    * @return true jika animal a dapat dimasukkan ke cage.
    */
+
   public boolean canPut(Animal a) {
     if (totalAnimal == 0) {
       return true;
     }
     else {
-      return (animal[0].getTame()==a.getTame());
+      return (animal[0].getTame() == a.getTame());
     }
   }
   /**
    * I.S. sembarang.
    * F.S. Binatang di cage bergerak, walau mungkin diam.
    */
+  
   public void move() {
     Random rand = new Random();
     int random;
