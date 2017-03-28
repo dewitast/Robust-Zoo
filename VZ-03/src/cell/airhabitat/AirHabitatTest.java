@@ -1,6 +1,8 @@
 package cell.airhabitat;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import static org.junit.Assert.assertTrue;
 
 import cell.Cell;
 
@@ -18,8 +20,8 @@ public class AirHabitatTest {
 
   @Test
   public void testIsHabitat() {
-	  Cell c = new AirHabitat();
-	  assertTrue(c.isHabitat());
+    Cell c = new AirHabitat();
+    assertTrue(c.isHabitat());
   }
   /**
    * Test method for {@link cell.airhabitat.AirHabitat#render()}.
@@ -27,7 +29,7 @@ public class AirHabitatTest {
 
   @Test
   public void testRender() {
-	  Cell c = new AirHabitat();
-	  assertEquals('^', c.render());
+    Cell c = new AirHabitat();
+    assertEquals('^', c.render());
   }
 }
