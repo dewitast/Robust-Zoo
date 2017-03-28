@@ -40,24 +40,22 @@ public class Driver {
 	    * sekitar tercetak pada layar.
 	    */
 	  public void getExperience() {
-	    if (p.getAbsis()>0) {
+	    if (p.getAbsis() > 0) {
 	      if (z.getElement(p.prevX()).isHabitat()) {
 	        (z.searchPoint(p.prevX())).interact();
 	      }
 	    }
-	    if (p.getAbsis()<z.getBaris()-1) {
+	    if (p.getAbsis() < z.getBaris() - 1) {
 	      if ((z.getElement(p.nextX())).isHabitat()) {
 	        (z.searchPoint(p.nextX())).interact();
 	      }
 	    }
-	    if (p.getOrdinat()>0)
-	    {
+	    if (p.getOrdinat() > 0) {
 	      if ((z.getElement(p.prevY())).isHabitat()) {
 	        (z.searchPoint(p.prevY())).interact();
 	      }
 	    }
-	    if (p.getAbsis()<z.getKolom()-1)
-	    {
+	    if (p.getAbsis() < z.getKolom() - 1) {
 	      if ((z.getElement(p.nextY())).isHabitat()) {
 	        (z.searchPoint(p.nextY())).interact();
 	      }
@@ -76,7 +74,7 @@ public class Driver {
 	    Random rand = new Random();
 	    int random;
 	    boolean found = false;
-	    if ((p.getAbsis()==-1)&&(p.getOrdinat()==-1)) {
+	    if ((p.getAbsis() == -1) && (p.getOrdinat() == -1)) {
 	      System.out.println("Welcome to the zoo.");
 	      System.out.println(" ");
 	      while (!found) {
@@ -87,12 +85,11 @@ public class Driver {
 	        }
 	        rand = new Random();
 	        random = rand.nextInt(z.getBaris());
-	        if ((z.getElement(0,random)).isEntrance()) {
+	        if ((z.getElement(0, random)).isEntrance()) {
 	          found = true;
 	          p.setAbsis(0);
 	          p.setOrdinat(random);
-	        }
-	        else if ((z.getElement(z.getBaris()-1,random)).isEntrance()) {
+	        } else if ((z.getElement(z.getBaris()-1,random)).isEntrance()) {
 	          found = true;
 	          p.setAbsis(z.getBaris()-1);
 	          p.setOrdinat(random);
@@ -104,21 +101,23 @@ public class Driver {
 	            found = true;
 	            p.setAbsis(random);
 	            p.setOrdinat(0);
-	          }
-	          else if ((z.getElement(random,z.getKolom()-1)).isEntrance()) {
+	          } else if ((z.getElement(random,z.getKolom()-1)).isEntrance()) {
 	            found = true;
 	            p.setAbsis(random);
 	            p.setOrdinat(z.getKolom()-1);
 	          }
 	        }
 	      }
-	    }
-	    else {
+	    } else {
 	      visited[p.getAbsis()][p.getOrdinat()] = true;
-	      boolean b1 = ((p.getAbsis()>0)&&(!visited[p.getAbsis()-1][p.getOrdinat()])&&((z.getElement(p.getAbsis()-1,p.getOrdinat()))).isRoad());
-	      boolean b2 = ((p.getOrdinat()<z.getKolom()-1)&&(!visited[p.getAbsis()][p.getOrdinat()+1])&&((z.getElement(p.getAbsis(),p.getOrdinat()+1))).isRoad());
-	      boolean b3 = ((p.getAbsis()<z.getBaris()-1)&&(!visited[p.getAbsis()+1][p.getOrdinat()])&&((z.getElement(p.getAbsis()+1,p.getOrdinat()))).isRoad());
-	      boolean b4 = ((p.getOrdinat()>0)&&(!visited[p.getAbsis()][p.getOrdinat()-1])&&((z.getElement(p.getAbsis(),p.getOrdinat()-1))).isRoad());
+	      boolean b1 = ((p.getAbsis()>0)&&(!visited[p.getAbsis()-1][p.getOrdinat()])
+	    		  &&((z.getElement(p.getAbsis()-1,p.getOrdinat()))).isRoad());
+	      boolean b2 = ((p.getOrdinat()<z.getKolom()-1)&&(!visited[p.getAbsis()][p.getOrdinat()+1])
+	    		  &&((z.getElement(p.getAbsis(),p.getOrdinat()+1))).isRoad());
+	      boolean b3 = ((p.getAbsis()<z.getBaris()-1)&&(!visited[p.getAbsis()+1][p.getOrdinat()])
+	    		  &&((z.getElement(p.getAbsis()+1,p.getOrdinat()))).isRoad());
+	      boolean b4 = ((p.getOrdinat()>0)&&(!visited[p.getAbsis()][p.getOrdinat()-1])
+	    		  &&((z.getElement(p.getAbsis(),p.getOrdinat()-1))).isRoad());
 	      if ((!b1)&&(!b2)&&(!b3)&&(!b4)) {
 	        p.setAbsis(-1);
 	        p.setOrdinat(-1);
@@ -132,20 +131,17 @@ public class Driver {
 	            found = true;
 	            p.setAbsis(p.getAbsis()-1);
 	          } 
-	        }
-	        else if (random == 1) {
+	        } else if (random == 1) {
 	          if (b2) {
 	            found = true;
 	            p.setOrdinat(p.getOrdinat()+1);
 	          }
-	        }
-	        else if (random == 2) {
+	        } else if (random == 2) {
 	          if (b3) {
 	            found = true;
 	            p.setAbsis(p.getAbsis()+1);
 	          }
-	        }
-	        else if (random == 3) {
+	        } else if (random == 3) {
 	          if (b4) {
 	            found = true;
 	            p.setOrdinat(p.getOrdinat()-1);
